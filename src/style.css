@@ -1,0 +1,29 @@
+/*
+Theme Name: one-global
+Theme URI: https://github.com/StasPlov/one-global
+Author: Stas Plov
+Author URI: https://github.com/StasPlov
+Description: one global them
+Version: 1.0
+Requires PHP: 7.3
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Tags: wordpress, html, javascript, css, webpack, babel
+Text Domain: one global
+*/
+
+@import './assets/fonts/Lato/stylesheet.css';
+@import './assets/fonts/Сaudex/stylesheet.css';
+@import './assets/fonts/OpenSans/stylesheet.css';
+
+@import url('https://use.fontawesome.com/releases/v6.2.0/css/all.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      font-family: 'Lato', 'Caudex', 'Open Sans';;
+    }
+}
