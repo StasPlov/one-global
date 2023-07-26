@@ -43,15 +43,62 @@
 					</div>
 
 					<div class="flex flex-1 justify-center">
-						<img :src="require('../Assets/Icons/menu_burger.svg')" alt="menu icon" class="min-w-[30px]" @click="menuIsActive = !menuIsActive">
+						<img :src="require('../Assets/Icons/menu_burger.svg')" alt="menu icon" class="min-w-[30px]" id="main-menu-button">
 					</div>
 				</div>
 			</nav>
 
-			<Transition>
-				<HeaderMenu v-if="menuIsActive"
-				></HeaderMenu>
-			</Transition>
+			<div class="bg-black/80 absolute right-0 max-w-[calc(100%/2)] w-full h-[600px] hidden" id="main-menu">
+				<div class="flex flex-col gap-24 py-14 px-28">
+					<div class="flex justify-end">
+						<span class="text-white text-4xl" id="main-menu-button-close">x</span>
+					</div>
+
+					<div class="flex flex-row gap-4 w-full text-start">
+						<ul class="flex flex-col gap-5 w-full">
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">Home</span>
+							</li>
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">About us</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Innovation</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Hub</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Capital</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">Contact us</span>
+							</li>
+						</ul>
+
+						<ul class="flex flex-col gap-5 w-full">
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">Media center</span>
+							</li>
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">Publications & reports</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">Careers</span>
+							</li>
+
+							<li class="flex cursor-pointer">
+								<span class="text-white transition hover:text-[#057EED] text-xl">For Investors*</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</header>
 		
 		<main>

@@ -40,16 +40,6 @@ function wp_blank_load_scripts() {
 add_action( 'wp_enqueue_scripts', 'wp_blank_load_scripts' );
 
 /**
- * Specify CSS bundle path.
- *
- * @return void
- */
-function wp_blank_load_styles() {
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/../dist/bundle.css' );
-}
-//add_action( 'wp_enqueue_scripts', 'wp_blank_load_styles' );
-
-/**
  * Register widget area.
  *
  * @return void
@@ -69,4 +59,14 @@ function wp_blank_widgets_init() {
 }
 add_action( 'widgets_init', 'wp_blank_widgets_init' );
 
+function get_menu_items_by_registered_slug($menu_slug) {
+	$menu_items = array();
+  
+	if ( ($locations = get_nav_menu_locations()) && isset($locations[$menu_slug]) && $locations[$menu_slug] != 0 ) {
+	  $menu = get_term( $locations[ $menu_slug ] );
+	  $menu_items = wp_get_nav_menu_items($menu->term_id);
+	}
+  
+	return $menu_items;
+  }
 ?>

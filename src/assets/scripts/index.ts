@@ -1,6 +1,5 @@
-addEventListener("DOMContentLoaded", init);
+import MainMenu from "./MainMenu";
 
-function init(params: any): void {
-    //const d = document.createElement('div');
-    //d.innerHTML = 'silence is gold';
-}
+addEventListener("DOMContentLoaded", () => {
+    const mainMenu = new MainMenu();
+});
