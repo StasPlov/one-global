@@ -12,93 +12,92 @@
 	</head>
 
 	<body>
-		<header class="relative z-10">
-			<nav class="bg-black min-h-[90px] flex justify-between border-b border-solid border-[#c4c4c44d]">
+		<!-- header -->
+		<header class="sticky top-[0rem] z-20">
+			<nav class="bg-black h-[var(--header-menu-height)] flex justify-between border-b border-solid border-[#c4c4c44d]">
 				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 ">
-					<img :src="require('@/Assets/logo.png')" alt="ONE GLOBAL HOLDING" class="max-h-16">
+					<?php $logo = get_field('main_logo', 'general-settings'); ?>
+					<a href="/">
+						<img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" class="max-h-16">
+					</a>
 				</div>
-
-				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 group">
-					<span class="text-sm text-white group-hover:text-[#057EED] transition">ONE GLOBAL Innovation</span>
-				</div>
-
-				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 group">
-					<span class="text-sm text-white group-hover:text-[#057EED] transition">ONE GLOBAL Hub</span>
-				</div>
-
-				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 group">
-					<span class="text-sm text-white group-hover:text-[#057EED] transition">ONE GLOBAL Capital</span>
-				</div>
+				
+				<?php $topMenuList = get_field('top_menu', 'general-settings'); ?>
+				<?php if(is_array($topMenuList)): ?>
+				<?php foreach($topMenuList as $item ) : ?>
+				<a href="<?php echo $item['item']['url']; ?>" target="<?php echo $item['item']['target']; ?>" title="<?php echo $item['item']['title']; ?>" class="max-md:hidden flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 group">
+					<span class="text-sm text-white transition uppercase"><?php echo $item['item']['name']; ?></span>
+				</a>
+				<?php endforeach; ?>
+				<?php endif; ?>
 
 				<div class="flex px-5 flex-1 items-center justify-center gap-4 border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10" >
-					<div class="flex flex-1 justify-center">
-						<div class="flex gap-4">
-							<div class="flex gap-3 min-w-max">
-								<img :src="require('../Assets/Icons/planet.svg')" alt="planet icon">
-								<span class="text-sm text-white">English</span>
+					<div class="flex flex-1 justify-center max-md:hidden">
+						<div class="flex gap-4 items-center">
+
+							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
+							<a href="<?php echo $item['url']; ?>">
+							<div class="flex gap-3 min-w-max items-center">
+								<img src="<?php echo $item['flag']; ?>" alt="<?php echo $item['name']; ?>">
+								<span class="text-sm text-white">
+									<?php echo $item['name'];  ?>
+								</span>
 							</div>
-							
-							<img :src="require('../Assets/Icons/arrow_right.svg')" alt="arrow icon">
+							</a>
+							<?php endforeach; ?>
+
+							<img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_right.svg'?>" alt="arrow icon">
 						</div>
 					</div>
 
 					<div class="flex flex-1 justify-center">
-						<img :src="require('../Assets/Icons/menu_burger.svg')" alt="menu icon" class="min-w-[30px]" id="main-menu-button">
+						<img src="<?php echo get_template_directory_uri().'/assets/Icons/menu_burger.svg'; ?>" alt="menu icon" class="min-w-[1.875rem]" id="main-menu-button">
 					</div>
 				</div>
 			</nav>
 
-			<div class="bg-black/80 absolute right-0 max-w-[calc(100%/2)] w-full h-[600px] hidden" id="main-menu">
-				<div class="flex flex-col gap-24 py-14 px-28">
-					<div class="flex justify-end">
-						<span class="text-white text-4xl" id="main-menu-button-close">x</span>
+			<!-- menu -->
+			<div class="bg-black/80 absolute right-0 max-w-[calc(100%/2)] w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden" id="main-menu">
+				<div class="flex flex-col gap-24 py-14 px-28 w-full max-md:py-9 max-md:px-16">
+					<div class="flex justify-end max-md:hidden">
+						<span class="text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90" id="main-menu-button-close">✕</span>
 					</div>
-
-					<div class="flex flex-row gap-4 w-full text-start">
-						<ul class="flex flex-col gap-5 w-full">
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">Home</span>
-							</li>
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">About us</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Innovation</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Hub</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">One Global Capital</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">Contact us</span>
-							</li>
-						</ul>
-
-						<ul class="flex flex-col gap-5 w-full">
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">Media center</span>
-							</li>
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">Publications & reports</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">Careers</span>
-							</li>
-
-							<li class="flex cursor-pointer">
-								<span class="text-white transition hover:text-[#057EED] text-xl">For Investors*</span>
-							</li>
-						</ul>
+					
+					<?php $mainMenuList = get_field('main_menu', 'general-settings');?>
+					<div class="grid grid-flow-col grid-rows-6 gap-4 w-full text-start max-md:flex max-md:flex-col max-md:items-end">
+						<?php if(!empty($mainMenuList)) : ?>
+						<?php foreach ($mainMenuList as $item) : ?>
+						<a href="<?php echo $item['item']['url']; ?>" target="<?php echo $item['item']['target']; ?>" title="<?php echo $item['item']['title']; ?>">
+						<li class="flex cursor-pointer">
+							<span class="text-white transition hover:text-[#057EED] text-xl"><?php  echo $item['item']['name']; ?></span>
+						</li>
+						</a>
+						<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
 				</div>
+
+				<div class="hidden flex-col w-full mb-[var(--header-menu-height)] max-md:flex">
+					<?php if(!empty($menu_login_items)) : ?>
+					<?php foreach ($menu_login_items as $item) : ?>
+					<?php if(!empty($item['url'])) : ?>
+					<a href="<?php echo $item['url']; ?>">
+					<?php endif; ?>
+					<button class="flex items-center gap-[0.625rem] border-b border-solid border-[#c4c4c44d] max-md:border-t px-6 py-5 w-full transition hover:bg-white/10 cursor-pointer">
+						<?php if(!empty($item['icon'])) : ?>
+						<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-5">
+						<?php endif; ?>
+						<span class="text-sm text-white/40 font-lato font-medium uppercase"><?php echo $item['title']; ?></span>
+					</button>
+					<?php if(!empty($item['url'])) : ?>
+					</a>
+					<?php endif; ?>
+					<?php endforeach; ?>
+					<?php endif; ?>
+				</div>
 			</div>
+			<!-- menu end -->
 		</header>
+		<!-- header end -->
 		
 		<main>

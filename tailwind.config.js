@@ -125,6 +125,12 @@ module.exports = {
 			ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
 			pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 			bounce: 'bounce 1s infinite',
+			flicker: 'flicker 5s linear infinite',
+			fadeInLeft: 'fadeInLeft 1s ease 0s 1 normal forwards',
+			fadeInRight: 'fadeInRight 1s ease 0s 1 normal forwards',
+			fadeInTop: 'fadeInTop 1s ease 0s 1 normal forwards',
+			fadeInBottom: 'fadeInBottom 1s ease 0s 1 normal forwards',
+			rotateEnd: 'rotateEnd 1s ease 0s 1 normal forwards'
 		},
 		aria: {
 			checked: 'checked="true"',
@@ -384,7 +390,7 @@ module.exports = {
 				'Montserrat'
 			],
 			caudex: [
-				'Сaudex'
+				'caudex'
 			],
 			sans: [
 				'Open Sans',
