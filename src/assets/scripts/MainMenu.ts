@@ -1,9 +1,10 @@
 export default class MainMenu {
     constructor() {
-       this.initClick();
+        this.initClick();
     }
 
     initClick() {
+        this.closeMenu('main-menu');
         document.addEventListener("click", (event) => {
             const element = event.target as HTMLElement;
 

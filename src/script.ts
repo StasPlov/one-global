@@ -1,2 +1,2 @@
-import "./assets/scripts/index";
 import "./style.css";
+import "./assets/scripts/index";
