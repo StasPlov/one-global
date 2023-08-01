@@ -14,7 +14,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted poster="<?php echo $header_background['video']['icon']; ?>">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
             <source src="<?php echo $header_background['video']['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -68,7 +68,7 @@
 
 <!-- wee inovate -->
 <div class="relative w-full h-screen overflow-hidden" id="scroll-trigger" style="background-image: linear-gradient(to bottom right, transparent 50%, #d4d4d4, transparent 50.1%);">
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
     
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
@@ -594,7 +594,7 @@
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
                 <?php if($key < 4) : ?>
                 <div class="flex items-center justify-center">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" style="width: 12.5rem;">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
                 </div>
                 <?php endif ?>
                 <?php endforeach ?>

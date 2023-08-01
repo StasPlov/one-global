@@ -224,7 +224,7 @@
     $content_button = get_field('content_button');
 ?>
 <div class="w-full overflow-hidden relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
     
     <div>
         <?php 
@@ -244,7 +244,7 @@
         ?>
         <?php if ( $query->have_posts()) : while ( $query->have_posts()) : $query->the_post();?>
         <?php 
-            $info = get_field('info'); 
+            $info = get_field('info');
         ?>
         <div class="flex border border-solid border-[#1c212633] max-md:flex-[100%] max-md:flex-wrap max-md:border-x-0 max-md:border-t-0">
             <div class="flex-[37.7%] flex items-center border-r border-solid border-[#1c212633]">

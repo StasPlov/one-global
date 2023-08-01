@@ -7,14 +7,14 @@
         <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
     </div>
 	
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed bg-cover bg-center" style="background-image: url(<?php echo get_template_directory_uri().'/assets/Images/3d-motion-flow-background-with-digital-particles 1.png'?>)">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed bg-cover bg-center" style="background-image: url(<?php echo get_template_directory_uri().'/assets/images/3d-motion-flow-background-with-digital-particles 1.png'?>)">
     </div>
 </div>
 <!-- header end -->
 
 <!-- content -->
 <div class="w-full min-h-screen relative">
-    <img :src="require('@/Assets/Images/Ellipse 4 (1).svg')" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
+    <img :src="require('@/assets/images/Ellipse 4 (1).svg')" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
     
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
@@ -58,7 +58,7 @@
 
 <!-- next -->
 <div class="flex justify-between pl-[11.25rem] pr-[4.375rem] pt-[8.125rem] pb-[10.375rem] relative max-md:px-[2.1875rem] relative">
-    <img :src="require('@/Assets/Images/Ellipse 5 (1).svg')" alt="" class="absolute bottom-[0%] left-0 select-none z-0 animate-flicker" draggable="false">
+    <img :src="require('@/assets/images/Ellipse 5 (1).svg')" alt="" class="absolute bottom-[0%] left-0 select-none z-0 animate-flicker" draggable="false">
 
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>

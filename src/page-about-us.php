@@ -51,15 +51,18 @@
     $history_items = get_field('history_items');
 ?>
 <div class="min-h-screen w-full relative overflow-hidden">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 3.svg'?>" alt="" class="absolute bottom-[10%] left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 2.svg'?>" alt="" class="absolute top-0 right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
         <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
     </div>
 
-    <div class="flex flex-col gap-[9.375rem] px-[11.25rem] py-[9.375rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col gap-[9.375rem] px-[11.25rem] py-[9.375rem] max-md:px-[2.1875rem] ">
         <?php if(!empty($history_items)) : ?>
-        <?php foreach ($history_items as $key => $item) : ?>
-        <div class="flex flex-col gap-7" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
+        <div class="flex flex-col gap-7" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s" style="margin-left: <?php echo $n?>%;">
             <div class="flex flex-col gap-4">
                 <h2 class="text-[#1C2126] font-caudex text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>

@@ -125,7 +125,7 @@
 
 <!-- Subscribe -->
 <div class="min-h-screen w-full relative bg-black">
-    <img :src="require('@/Assets/Images/Home2 5 (4).png')" alt="" class="absolute w-full h-full top-0 left-0 sele" id="view-anim" draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+    <img :src="require('@/assets/images/Home2 5 (4).png')" alt="" class="absolute w-full h-full top-0 left-0 sele" id="view-anim" draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
         
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>

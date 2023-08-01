@@ -74,7 +74,7 @@
                                 <a href="<?php echo $item['url']['url']; ?>">
                                 <?php endif; ?>
 
-                                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="max-h-12">
+                                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="h-12 container">
 
                                 <?php if(!empty($item['url'])) : ?>
                                 </a>

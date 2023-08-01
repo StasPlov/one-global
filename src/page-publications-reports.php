@@ -16,13 +16,13 @@
         </div>
 
         <div class="flex-1">
-            <img :src="require('@/Assets/Images/shutterstock_2151424679 2.png')" alt="image" draggable="false" class="h-full w-full object-cover select-none">
+            <img :src="require('@/assets/images/shutterstock_2151424679 2.png')" alt="image" draggable="false" class="h-full w-full object-cover select-none">
         </div>
     </div>
 
     <!-- mobile -->
     <div class="hidden max-md:flex flex-col">
-        <div class="flex items-center min-h-screen bg-fixed bg-cover bg-center" id="paralax" :style="`background-image: url('${require('@/Assets/Images/shutterstock_2151424679 2.png')}')`">
+        <div class="flex items-center min-h-screen bg-fixed bg-cover bg-center" id="paralax" :style="`background-image: url('${require('@/assets/images/shutterstock_2151424679 2.png')}')`">
             
         </div>
 
@@ -45,7 +45,7 @@
         <div class="flex flex-col w-full">
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/unsplash_Q8_-Cc-IXRY (1).png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/unsplash_Q8_-Cc-IXRY (1).png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
@@ -75,7 +75,7 @@
 
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/unsplash_PhYq704ffdA (1).png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/unsplash_PhYq704ffdA (1).png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
@@ -105,7 +105,7 @@
 
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/radek-kilijanek-WFQxXtgh79E-unsplash 2 (1).png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/radek-kilijanek-WFQxXtgh79E-unsplash 2 (1).png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
@@ -135,7 +135,7 @@
 
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/unsplash_dcL8ESbsGis.png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/unsplash_dcL8ESbsGis.png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
@@ -165,7 +165,7 @@
 
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/pawel-czerwinski-HKHwdinroSo-unsplash 2.png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/pawel-czerwinski-HKHwdinroSo-unsplash 2.png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633] max-md:border-b-0">
@@ -195,7 +195,7 @@
 
             <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max max-md:hidden">
                 <div class="flex-1">
-                    <img :src="require('@/Assets/Images/unsplash_IT6aov1ScW0.png')" alt="image" class="h-full w-full object-cover">
+                    <img :src="require('@/assets/images/unsplash_IT6aov1ScW0.png')" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
