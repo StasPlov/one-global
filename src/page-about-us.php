@@ -154,7 +154,7 @@
         <?php foreach ($board_items as $key => $item) : ?>
         <?php if($keyItem == $key) : ?>
         <?php foreach ($item['items'] as $keyUser => $user) : ?>
-        <div class="flex flex-col" id="view-anim" data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
+        <div class="flex flex-col " id="view-anim" data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
             <div class="flex-1 h-[19.75rem]">
                 <img src="<?php echo $user['image']['url']; ?>" alt="<?php echo $user['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">
             </div>
@@ -166,7 +166,7 @@
                     </h3>
 
                     <div class="flex gap-2">
-                        <span class="border-r border-solid border-[#1c212633] pr-2">
+                        <span class="border-r border-solid border-[#1c212633] pr-2 rtl:border-r-0 rtl:border-l rtl:border-solid rtl:border-[#1c212633] rtl:pl-2">
                             <?php echo $user['post']; ?>
                         </span>
                         <span class="text-[#1C2126] font-lato text-sm font-light">
@@ -323,9 +323,7 @@
                 </span>
             </div>
 
-            <form id="feedbackForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" 
-				class="max-w-[46.875rem] flex flex-col gap-12 w-[25.3125rem] z-0 bg-white rounded-xl px-[5rem]"
-			>
+            <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
                         <input type="text" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
@@ -348,8 +346,8 @@
                     </a>
                     <?php endif; ?>
                     <?php endif; ?>
-				</div>
-            </form>
+                </div>
+            </div>
         
         </div>
     </div>

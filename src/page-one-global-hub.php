@@ -9,12 +9,10 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	
-
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
-        <?php if(!empty($header_background)) :?>
+		<?php if(!empty($header_background)) : ?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
-            <source src="<?php echo $header_background['url']; ?>" type="<?php echo $header_background['mime_type']; ?>">
+            <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
 
@@ -29,8 +27,7 @@
             <h1 class="text-4xl text-white z-0 text-start tracking-wide leading-normal max-w-[37.5rem]"><?php echo $header_title; ?></h1>
             <?php endif; ?>
 
-            <?php if(!empty($header_button)) : ?>
-			<?php if($header_button['is_enable']) : ?>
+            <?php if(!empty($header_button) && $header_button['is_enable'] && !empty($header_button['text'])) : ?>
 			<?php if(!empty($header_button['url'])) : ?>
 			<a href="<?php echo $header_button['url']['url']; ?>">
 			<?php endif; ?>
@@ -42,10 +39,9 @@
                 </div>
 				<?php endif; ?>
             </button>
-				<?php if(!empty($media_center_button['url'])) : ?>
+				<?php if(!empty($header_button['url'])) : ?>
 				</a>
 				<?php endif; ?>
-			<?php endif; ?>
 			<?php endif; ?>
         </div>
     </div>
@@ -59,8 +55,6 @@
     $about_image = get_field('about_image');
 ?>
 <div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	
-
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
         <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem] rtl:pr-[11.25rem] rtl:pl-0">
             <div class="flex flex-col items-start gap-28">

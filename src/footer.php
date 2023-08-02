@@ -52,7 +52,13 @@
                     <div class="flex flex-col gap-5 items-start">
                         <?php if(!empty($item['menu'])) : ?>
                         <?php foreach ($item['menu'] as $itemMenu) : ?>
-                        <span class="text-sm text-white/40 font-lato font-normal"><?php echo $itemMenu['title']; ?></span>
+
+						<?php if(!empty($itemMenu['url'])) : ?>
+							<a href="<?php echo $itemMenu['url']['url']; ?>" target="<?php echo $itemMenu['url']['target']; ?>" class="text-white/40 text-sm font-lato font-medium leading-7"><?php echo $itemMenu['url']['name']; ?></a>
+						<?php elseif(!empty($itemMenu['title'])) : ?>
+							<span class="text-sm text-white/40 font-lato font-normal"><?php echo $itemMenu['title']; ?></span>
+						<?php endif; ?>
+
                         <?php endforeach; ?>
                         <?php endif; ?>
                     </div>

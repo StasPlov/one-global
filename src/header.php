@@ -19,7 +19,7 @@
 			<nav class="bg-black h-[var(--header-menu-height)] flex justify-between border-b border-solid border-[#c4c4c44d]">
 				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 ">
 					<?php $logo = get_field('main_logo', 'general-settings'); ?>
-					<a href="/">
+					<a href="<?php echo pll_home_url()?>">
 						<img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt'] ?>" class="max-h-16">
 					</a>
 				</div>
@@ -38,7 +38,7 @@
 						<div class="flex gap-4 items-center">
 
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
-							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4">
+							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 rtl:first:border-l rtl:first:border-solid rtl:first:border-white rtl:first:pl-4">
 							<div class="flex gap-3 min-w-max items-center">
 								<span class="text-sm text-white capitalize">
 									<?php echo $item['slug'];  ?>

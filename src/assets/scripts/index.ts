@@ -53,8 +53,8 @@ addEventListener("DOMContentLoaded", () => {
 	const userBoard = new UserBoard();
 	const send = new Send();
 
-    /* window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {
         let { scrollY } = window;
         document.body.style.setProperty('--scroll', (scrollY / (document.body.offsetHeight - window.innerHeight)).toString());
-    }, false); */
+    }, false);
 });

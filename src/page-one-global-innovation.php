@@ -108,18 +108,16 @@
     $what_does_info = get_field('what_does_info');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-	
-
     <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem]">
         <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
             <h2 class="text-[5rem] text-white font-medium font-caudex italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
-                <div class="flex-1 flex flex-col gap-7">
+                <div class="flex-1 flex flex-col gap-7 text-white">
                     <?php echo $what_does_description_first; ?>
                 </div>
 
-                <div class="flex-1 flex flex-col gap-7">
+                <div class="flex-1 flex flex-col gap-7 text-white">
                     <?php echo $what_does_description_two; ?>
                 </div>
             </div>
