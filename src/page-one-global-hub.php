@@ -9,15 +9,10 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
-
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
         <?php if(!empty($header_background)) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted poster="<?php echo $header_background['icon']; ?>">
-            <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
+            <source src="<?php echo $header_background['url']; ?>" type="<?php echo $header_background['mime_type']; ?>">
         </video>
         <?php endif; ?>
 
@@ -25,21 +20,31 @@
         
         <div class="flex flex-col items-start gap-12">
             <?php if(!empty($header_logo)) :?>
-            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>" class="h-[14.0625rem] z-0">
+            <img src="<?php echo $header_logo['url']; ?>" alt="<?php echo $header_logo['alt']; ?>" class="h-40 z-0 object-contain">
             <?php endif; ?>
             
             <?php if(!empty($header_title)) :?>
             <h1 class="text-4xl text-white z-0 text-start tracking-wide leading-normal max-w-[37.5rem]"><?php echo $header_title; ?></h1>
             <?php endif; ?>
 
-            <?php if($header_button['is_enable']) :?>
-            <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-bounce">
+            <?php if(!empty($header_button)) : ?>
+			<?php if($header_button['is_enable']) : ?>
+			<?php if(!empty($header_button['url'])) : ?>
+			<a href="<?php echo $header_button['url']['url']; ?>">
+			<?php endif; ?>
+            <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                 <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $header_button['text']; ?></span>
-                <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $header_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
+                <?php if(!empty($header_button['icon'])) : ?>
+				<div class="group-hover:animate-bounce">
+					<img src="<?php echo $header_button['icon']['url']; ?>" alt="<?php echo $header_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
                 </div>
+				<?php endif; ?>
             </button>
-            <?php endif; ?>
+				<?php if(!empty($media_center_button['url'])) : ?>
+				</a>
+				<?php endif; ?>
+			<?php endif; ?>
+			<?php endif; ?>
         </div>
     </div>
 </div>
@@ -51,18 +56,13 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
-
+<div class="w-full min-h-screen bg-white py-[10.625rem]">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
         <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem]">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-14">
                     <?php if($about_title) :?>
-                    <h2 class="text-[5rem] font-medium font-caudex italic text-start"><?php echo $about_title; ?></h2>
+                    <h2 class="text-[5rem] font-medium font-caudex italic text-start leading-none"><?php echo $about_title; ?></h2>
                     <?php endif; ?>
 
                     <div class="flex flex-col gap-7 max-md:hidden">
@@ -104,11 +104,6 @@
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
     
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
-
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
             <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2">
@@ -157,11 +152,6 @@
 <div class="w-full min-h-screen bg-white pt-[20rem] pb-[15.125rem] relative overflow-hidden">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
-	
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
 
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
@@ -220,14 +210,8 @@
     $success_stories_items = get_field('success_stories_items');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
-
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
-
+    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
+    
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
             <h2 class="text-[5rem] text-white font-medium font-lato text-start leading-[5.625rem]"><?php echo $success_stories_title; ?></h2>
@@ -244,9 +228,9 @@
         <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
-            <div class="flex flex-col gap-8" >
+            <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105 cursor-pointer">
                 <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1 object-contain">
                 </div>
 
                 <div class="flex flex-col gap-10 items-start">
@@ -257,13 +241,21 @@
                             <?php echo $item['description']; ?>
                         </span>
                     </div>
-					
+                    
+                    <?php if(!empty($item['button']) && $item['button']['is_enable'] && !empty($item['button']['text'])) : ?>
+                    <?php if(!empty($item['button']['url'])) : ?>
                     <a href="<?php echo $item['button']['url']; ?>">
-                    <button class="flex gap-2 justify-between items-center border border-solid border-white/50 z-0 py-[0.375rem] px-[2.625rem] rounded-[3.125rem] transition hover:bg-white/10 cursor-pointer" id="view-anim" data-animation="animate-bounce">
-                        <span class="text-sm text-white/50 py-1"><?php echo $item['button']['text']; ?></span>
-                        <img src="<?php echo $item['button']['icon']['url']; ?>" alt="" class="opacity-50">
-                    </button>
+                    <?php endif; ?>
+					<button class="flex items-center gap-[0.625rem] border-b border-solid border-[#c4c4c44d] max-md:border-t px-6 py-5 w-full transition hover:bg-white/10 cursor-pointer">
+						<?php if(!empty($item['button']['icon'])) : ?>
+						<img src="<?php echo $item['button']['icon']['url']; ?>" alt="<?php echo $item['button']['icon']['alt']; ?>" class="w-5">
+						<?php endif; ?>
+						<span class="text-sm text-white/50 font-lato font-medium uppercase"><?php echo $item['button']['text']; ?></span>
+					</button>
+                    <?php if(!empty($item['button']['url'])) : ?>
                     </a>
+                    <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -280,20 +272,15 @@
     $ready_description = get_field('ready_description');
     $ready_image = get_field('ready_image');
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
-
+<div class="w-full min-h-screen bg-white py-[10.625rem]">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
         <div class="flex flex-col gap-[4.1875rem] flex-1 w-[57%] z-0 pl-[11.25rem] items-start max-md:px-[35px] max-md:w-full">
             <h2 class="text-5xl font-normal text-[#1C2126] font-caudex italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
 
             <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse">
                 <?php if($ready_button['is_enable']) : ?>
-                <a href="<?php echo $ready_button['url']; ?>">
-                <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-bounce">
+                <a href="<?php echo $ready_button['url'] ?? ''; ?>">
+                <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
                     <span class="text-[#1c2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $ready_button['text']; ?></span>
                     <div class="group-hover:animate-bounce">
                         <img src="<?php echo $ready_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">

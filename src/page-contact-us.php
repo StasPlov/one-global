@@ -58,7 +58,7 @@
     $form_button_text = get_field('form_button_text');
 ?>
 <div class="w-full py-[4.375rem] max-md:pb-0">
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
 
     <div class="flex max-md:flex-col-reverse">
         <div class="flex-1 flex items-center justify-center">

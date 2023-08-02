@@ -13,7 +13,7 @@
         
         <div class="flex flex-col items-start gap-12 z-0">
             <h1 class="text-[5rem] font-lato font-medium text-white text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $header_title; ?></h1>  
-            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[37.5rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $header_description; ?></h2>
+            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[43.75rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $header_description; ?></h2>
         </div>
     </div>
 </div>
@@ -21,12 +21,12 @@
 
 <!-- portfolio -->
 <?php 
-	$portfolio_title = get_field('portfolio_title');
-	$portfolio_description_one = get_field('portfolio_description_one'); 
-	$portfolio_description_two = get_field('portfolio_description_two');
-	$portfolio_menu = get_field('portfolio_menu'); 
-	$portfolio_items = get_field('portfolio_items'); 
-	$portfolio_load_button = get_field('portfolio_load_button'); 
+    $portfolio_title = get_field('portfolio_title');
+    $portfolio_description_one = get_field('portfolio_description_one'); 
+    $portfolio_description_two = get_field('portfolio_description_two'); 
+    $portfolio_menu = get_field('portfolio_menu'); 
+    $portfolio_items = get_field('portfolio_items'); 
+    $portfolio_load_button = get_field('portfolio_load_button'); 
 ?>
 <div class="min-h-screen w-full">
     <div class="flex flex-col items-center gap-[8.125rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
@@ -34,7 +34,7 @@
         <div class="w-full flex flex-col gap-11 max-md:gap-24">
             <h1 class="font-caudex text-[#1C2126] text-[5rem] italic text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $portfolio_title; ?></h1>
 
-            <div class="flex gap-[9.375rem] max-md:flex-col max-md:gap-7">
+            <div class="flex gap-[7.5rem] max-md:flex-col max-md:gap-7">
                 <span class="flex-1 text-[#1C2126] text-2xl font-lato font-medium leading-8 text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                     <?php echo $portfolio_description_one; ?>
                 </span>
@@ -79,7 +79,7 @@
         </div>
         
         <?php if($portfolio_load_button['is_enable']) : ?>
-        <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-bounce">
+        <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
             <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $portfolio_load_button['text']; ?></span>
             <div class="group-hover:animate-bounce">
                 <img src="<?php echo $portfolio_load_button['icon']['url']; ?>" alt="<?php echo $portfolio_load_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
@@ -113,7 +113,7 @@
                 <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                     <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $for_investors_button['text']; ?></span>
                     <div class="group-hover:animate-bounce">
-                        <img src="<?php echo $for_investors_button['icon']['url']; ?>" alt="<?php echo $for_investors_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                        <img src="<?php echo $for_investors_button['icon']['url']; ?>" alt="<?php echo $for_investors_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
                     </div>
                 </button>
                 <?php endif; ?>

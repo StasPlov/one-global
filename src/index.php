@@ -14,7 +14,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted poster="<?php echo $header_background['video']['icon']; ?>">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
             <source src="<?php echo $header_background['video']['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -25,7 +25,7 @@
 
             <?php $headerLogoData = get_field('header_logo', 'home-page'); ?>
             <?php if($headerLogoData['isenable'] && !empty($headerLogoData['Image'])) : ?>
-            <img src="<?php echo $headerLogoData['Image']['url']; ?>" alt="<?php echo $headerLogoData['Image']['alt']; ?>" class="max-h-40 h-full z-0" id="view-anim" data-animation="animate-fadeInTop" data-duration="3s">
+            <img src="<?php echo $headerLogoData['Image']['url']; ?>" alt="<?php echo $headerLogoData['Image']['alt']; ?>" class="h-40  z-0 object-contain" id="view-anim" data-animation="animate-fadeInTop" data-duration="3s">
             <?php endif ?>
             
             <?php $headerTitleData = get_field('header_title', 'home-page'); ?>
@@ -67,8 +67,8 @@
 <!-- header end -->
 
 <!-- wee inovate -->
-<div class="relative w-full h-screen overflow-hidden relative" id="scroll-trigger">
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
+<div class="relative w-full h-screen overflow-hidden" id="scroll-trigger" style="background-image: linear-gradient(to bottom right, transparent 50%, #d4d4d4, transparent 50.1%);">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
     
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
         <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
@@ -115,7 +115,7 @@
             <div class="flex flex-col gap-6 max-w-[33.125rem] max-md:px-[2.1875rem] max-md:gap-[4.375rem] text-start items-start sticky top-[var(--header-menu-height)]" id="view-anim" data-animation="animate-fadeInRight">
                 <div class="flex flex-col gap-5">
                     <?php $headerAboutInfoData = get_field('about_us_info', 'home-page'); ?>
-                    <h2 class="font-caudex italic text-[1.375rem] text-[#14191D]/80 font-normal leading-7"><?php echo $headerAboutInfoData['title']; ?></h2>
+                    <h2 class="font-caudex text-[1.375rem] text-[#14191D]/80 leading-7"><?php echo $headerAboutInfoData['title']; ?></h2>
 
                     <span class="font-lato font-light text-lg leading-7 text-[#14191D]">
                         <?php echo $headerAboutInfoData['description']; ?>
@@ -228,7 +228,7 @@
 
 <!-- og innovation -->
 <?php $headerOgInnovationData = get_field('og_innovation', 'home-page'); ?>
-<div class="w-full h-screen bg-black pl-[11.25rem] py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0">
+<div class="w-full h-screen bg-black py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0 <? echo ((pll_current_language() == 'ar') ? "pl-0 pr-[11.25rem]" : "pl-[11.25rem]" ); ?>">
     <img src="<?php echo $headerOgInnovationData['background_image']['url']; ?>" alt="<?php echo $headerOgInnovationData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
 	
 	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
@@ -269,7 +269,7 @@
         </div>
 
         <div class="flex-1 h-full z-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
-            <img src="<?php echo $headerOgInnovationData['image']['url']; ?>" alt="<?php echo $headerOgInnovationData['image']['alt']; ?>" class="h-full w-full object-cover">
+            <img src="<?php echo $headerOgInnovationData['image']['url']; ?>" alt="<?php echo $headerOgInnovationData['image']['alt']; ?>" class="h-full w-full object-cover max-md:h-screen">
         </div>
     </div>
 </div>
@@ -287,7 +287,7 @@
 	
     <div class="flex flex-col items-center h-full py-[6.375rem] pb-[9.375rem] gap-28 max-md:flex-col-reverse">
         <div class="flex flex-col items-start gap-16 ml-80 z-0 max-md:m-0 max-md:px-[35px]">
-            <img src="<?php echo $headerOgHubData['logo']['url']; ?>" alt="<?php echo $headerOgHubData['logo']['alt']; ?>" class="h-48 z-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
+            <img src="<?php echo $headerOgHubData['logo']['url']; ?>" alt="<?php echo $headerOgHubData['logo']['alt']; ?>" class="h-40 z-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
 
             <div class="flex items-center gap-16 max-md:flex-col max-md:items-start">
                 <span class="font-lato font-light text-lg leading-7 text-white text-start max-w-[32.1875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
@@ -326,7 +326,7 @@
 <?php 
 	$headerOgCapitalData = get_field('og_capital', 'home-page'); 
 ?>
-<div class="w-full h-screen bg-black pr-[11.25rem] py-[6.25rem] pt-[10.625rem] relative overflow-hidden max-md:pt-0 max-md:px-0">
+<div class="w-full h-screen bg-black py-[6.25rem] pt-[10.625rem] relative overflow-hidden max-md:pt-0 max-md:px-0 <? echo ((pll_current_language() == 'ar') ? 'pr-0 pl-[11.25rem]' : 'pr-[11.25rem]' ); ?>">
     <img src="<?php echo $headerOgCapitalData['background_image']['url']; ?>" alt="<?php echo $headerOgCapitalData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
 
 	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
@@ -594,7 +594,7 @@
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
                 <?php if($key < 4) : ?>
                 <div class="flex items-center justify-center">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" style="wisth: 12.5rem;">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
                 </div>
                 <?php endif ?>
                 <?php endforeach ?>

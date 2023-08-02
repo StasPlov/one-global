@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html <?php language_attributes(); ?>>
+	<html <?php language_attributes(); ?> class="max-md:text-[12px]">
 
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
@@ -44,8 +44,6 @@
 							</div>
 							</a>
 							<?php endforeach; ?>
-
-							<img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_right.svg'?>" alt="arrow icon">
 						</div>
 					</div>
 

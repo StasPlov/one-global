@@ -29,7 +29,7 @@
 
 <!-- Title -->
 <div class="w-full relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
 
     <div class="flex flex-col gap-10 pl-[11.25rem] pr-[25rem] pt-[8.125rem] pb-[10.375rem] max-md:px-[2.1875rem]">
         <div class="flex justify-between">
@@ -178,7 +178,7 @@
                         </div>
 
                         <div class="flex justify-between gap-3 items-start">
-                            <img :src="require('@/Assets/Images/Frame 244.svg')" alt="" class="">
+                            <img :src="require('@/assets/images/Frame 244.svg')" alt="" class="">
                             <span class="text-[#1C2126] font-lato text-[0.75rem] font-normal text-start max-md:text-white">By using this form you agree with the storage and handling of your data by this website.</span>
                         </div>
 

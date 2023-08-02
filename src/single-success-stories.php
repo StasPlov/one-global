@@ -154,7 +154,7 @@
                 <?php if(!empty($for_investors_button['url'])) : ?>
                 <a href="<?php echo $for_investors_button['url']['url']; ?>">
                 <?php endif; ?>
-                <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-bounce">
+                <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
                     <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $for_investors_button['text']; ?></span>
                     <div class="group-hover:animate-bounce">
                         <img src="<?php echo $for_investors_button['icon']['url']; ?>" alt="<?php echo $for_investors_button['icon']['alt']; ?>"  class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
