@@ -1,16 +1,10 @@
 import MainMenu from "./MainMenu";
 import UserBoard from "./UserBoard";
+import Send from "./Send";
 
 addEventListener("DOMContentLoaded", () => {
-    const mainMenu = new MainMenu();
-	const userBoard = new UserBoard();
 
-    /* window.addEventListener('scroll', () => {
-        let { scrollY } = window;
-        document.body.style.setProperty('--scroll', (scrollY / (document.body.offsetHeight - window.innerHeight)).toString());
-    }, false); */
-
-    window.addEventListener('scroll', () => {
+	/* window.addEventListener('scroll', () => {
         let { scrollY } = window;
         const elList = document.querySelectorAll('#paralax') as NodeListOf<HTMLElement>;
         
@@ -53,5 +47,14 @@ addEventListener("DOMContentLoaded", () => {
         
             entry.target.classList.remove(entry.target.getAttribute('data-animation') as never);
         });
-    });
+    }); */
+	
+    const mainMenu = new MainMenu();
+	const userBoard = new UserBoard();
+	const send = new Send();
+
+    /* window.addEventListener('scroll', () => {
+        let { scrollY } = window;
+        document.body.style.setProperty('--scroll', (scrollY / (document.body.offsetHeight - window.innerHeight)).toString());
+    }, false); */
 });

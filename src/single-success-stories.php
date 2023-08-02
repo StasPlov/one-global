@@ -7,12 +7,9 @@
     $header_description = get_field('header_description');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+    
 
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed bg-cover bg-center max-md:px-[2.1875rem]" id="paralax" style="background-image: url('<?php echo $header_background['url'] ;?>')">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" id="paralax" style="background-image: url('<?php echo $header_background['url'] ;?>')">
         <div class="bg-black/30 absolute w-full h-full top-0 left-0"></div>
         
         <div class="flex flex-col items-start gap-12 z-0">
@@ -34,10 +31,7 @@
     $title_button = get_field('title_button');
 ?>
 <div class="flex flex-col relative">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+    
 
     <div class="flex flex-col items-start px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]  max-md:pb-[8.125rem]">
         <div class="flex flex-col items-start">
@@ -47,7 +41,7 @@
             <?php endif; ?>
             <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $title_button['icon']['url']; ?>" alt="<?php echo $title_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 group-hover:invert">
+                    <img src="<?php echo $title_button['icon']['url']; ?>" alt="<?php echo $title_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
                 </div>
 
                 <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $title_button['text']; ?></span>
@@ -59,7 +53,7 @@
         </div>
 
         <div class="flex flex-col items-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
-            <img src="<?php echo $title_logo['url']; ?>" alt="<?php echo $title_logo['alt']; ?>" draggable="false" class="select-none transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 group-hover:invert max-h-[13.125rem]">
+            <img src="<?php echo $title_logo['url']; ?>" alt="<?php echo $title_logo['alt']; ?>" draggable="false" class="select-none transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3  max-h-[13.125rem]">
             <h3 class="text-[#1C2126] font-lato text-2xl font-medium text-start">
                 <?php echo $title_description; ?>
             </h3>
@@ -76,10 +70,7 @@
     $content_button = get_field('content_button');
 ?>
 <div class="min-h-screen w-full overflow-hidden relative">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+    
 
     <div class="flex flex-col py-[8.125rem]">
 
@@ -108,7 +99,7 @@
                         <button class="relative flex gap-2 justify-between max-md:border max-md:border-solid max-md:border-[#1C2126] max-md:pr-9 items-center pr-9 pl-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pr-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $content_button['text']; ?></span>
                             <div class="group-hover:animate-bounce">
-                                <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-y-150 group-hover:translate-x-3 group-hover:invert">
+                                <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-y-150 group-hover:translate-x-3 ">
                             </div>
                         </button>
                         <?php if(!empty($content_button['url'])) : ?>
@@ -130,12 +121,9 @@
     $for_investors_button = get_field('for_investors_button');
     $for_investors_background = get_field('for_investors_background');
 ?>
-<div class="flex items-center min-h-screen w-full bg-fixed bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $for_investors_background['url']; ?>')">
+<div class="flex items-center min-h-screen w-full bg-fixed max-md:bg-scroll d bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $for_investors_background['url']; ?>')">
 
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+    
 
     <div class="flex-1 flex flex-col gap-[6.875rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
         <h1 class="text-[5rem] font-lato font-medium text-white text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">

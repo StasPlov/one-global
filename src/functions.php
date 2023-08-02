@@ -35,7 +35,20 @@ add_action( 'after_setup_theme', 'wp_blank_setup' );
  * @return void
  */
 function wp_blank_load_scripts() {
-	wp_enqueue_script( 'main', get_template_directory_uri()."/../dist/bundle.js");
+	$script_directory = get_template_directory() . '/../dist/'; // Укажите путь к директории со скриптами
+	$script_url = get_template_directory_uri() . '/../dist/'; // Укажите URL-адрес директории со скриптами
+	
+	$scripts = scandir($script_directory); // Получить список файлов в директории со скриптами
+  
+	foreach ($scripts as $script) {
+		$extension = pathinfo( $script, PATHINFO_EXTENSION );
+		if ($extension === 'js' ) {
+			$file = $script_url.basename($script, '.js').'.js';
+			
+			// Подключение всех файлов JS
+			wp_enqueue_script('main', $file);
+		}
+	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_blank_load_scripts' );
 
@@ -69,4 +82,119 @@ function get_menu_items_by_registered_slug($menu_slug) {
   
 	return $menu_items;
   }
+
+
+
+function handle_stayconnected_form_submission() {
+	$last_name = sanitize_text_field( $_POST['last_name'] );
+	$first_name = sanitize_text_field( $_POST['first_name'] );
+	$email = sanitize_email( $_POST['email'] );
+	$phone = sanitize_text_field( $_POST['phone'] );
+	$company = sanitize_text_field( $_POST['company'] );
+	$preferences = sanitize_text_field( $_POST['preferences'] );
+	$message = sanitize_textarea_field( $_POST['message'] );
+	
+	// Создание записи с полученными данными формы
+	$post_data = array(
+	  	'post_title' => 'Connected',
+		'post_type' => 'connected', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
+		'post_status' => 'publish',
+		'meta_input'  => [
+			'first_name' => $last_name,
+			'last_name' => $first_name,
+			'email_address' => $email,
+			'phone_number' => $phone,
+			'company_name' => $company,
+			'investment_preferences' => $preferences,
+			'additional_comments' => $message,
+		]
+	);
+	
+	$post_id = wp_insert_post( $post_data );
+  
+	// Отправка ответа обратно клиентской части
+	wp_send_json(true);
+}
+
+add_action( 'wp_ajax_submit_stayconnected_form', 'handle_stayconnected_form_submission');
+add_action( 'wp_ajax_nopriv_submit_stayconnected_form', 'handle_stayconnected_form_submission');
+
+function handle_feedback_form_submission() {
+	$last_name = sanitize_text_field( $_POST['last_name'] );
+	$first_name = sanitize_text_field( $_POST['first_name'] );
+	$email = sanitize_email( $_POST['email'] );
+	$phone = sanitize_text_field( $_POST['phone'] );
+	$company = sanitize_text_field( $_POST['company'] );
+	$preferences = sanitize_text_field( $_POST['preferences'] );
+	$message = sanitize_textarea_field( $_POST['message'] );
+	
+	// Создание записи с полученными данными формы
+	$post_data = array(
+	  	'post_title' => 'Connected',
+		'post_type' => 'connected', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
+		'post_status' => 'publish',
+		/* 'meta_input'  => [
+			'first_name' => $last_name,
+			'last_name' => $first_name,
+			'email_address' => $email,
+			'phone_number' => $phone,
+			'company_name' => $company,
+			'investment_preferences' => $preferences,
+			'additional_comments' => $message,
+		] */
+	);
+	
+	$post_id = wp_insert_post( $post_data );
+  
+	// Отправка ответа обратно клиентской части
+	wp_send_json(true);
+}
+
+add_action( 'wp_ajax_submit_feedback_form', 'handle_feedback_form_submission');
+add_action( 'wp_ajax_nopriv_submit_feedback_form', 'handle_feedback_form_submission');
+
+/* function handle_feedback_form_submission() {
+	if ( isset( $_POST['action'] ) && $_POST['action'] === 'submit_feedback_form' ) {
+	  $name = sanitize_text_field( $_POST['name'] );
+	  $email = sanitize_email( $_POST['email'] );
+	  $message = sanitize_textarea_field( $_POST['message'] );
+  
+	  // Создание записи с полученными данными формы
+	  $post_data = array(
+		'post_title' => $name,
+		'post_content' => $message,
+		'post_type' => 'feedback', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
+		'post_status' => 'publish'
+	  );
+  
+	  $post_id = wp_insert_post( $post_data );
+  
+	  // Дополнительные действия или обработка после успешной отправки формы
+	  // например, отправка уведомления администратору или отправка подтверждающего письма пользователю
+	}
+} */
+
+/* function handle_subscribe_form_submission() {
+	if ( isset( $_POST['action'] ) && $_POST['action'] === 'submit_subscribe_form' ) {
+	  $name = sanitize_text_field( $_POST['name'] );
+	  $email = sanitize_email( $_POST['email'] );
+	  $message = sanitize_textarea_field( $_POST['message'] );
+  
+	  // Создание записи с полученными данными формы
+	  $post_data = array(
+		'post_title' => $name,
+		'post_content' => $message,
+		'post_type' => 'subscribe', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
+		'post_status' => 'publish'
+	  );
+  
+	  $post_id = wp_insert_post( $post_data );
+  
+	  // Дополнительные действия или обработка после успешной отправки формы
+	  // например, отправка уведомления администратору или отправка подтверждающего письма пользователю
+	}
+}
+
+add_action( 'admin_post_nopriv_submit_feedback_form', 'handle_feedback_form_submission' );
+add_action( 'admin_post_submit_feedback_form', 'handle_feedback_form_submission' ); */
 ?>

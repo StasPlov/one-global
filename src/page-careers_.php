@@ -28,7 +28,7 @@
 
     <!-- mobile -->
     <div class="hidden max-md:flex flex-col">
-        <div class="flex items-center min-h-screen bg-fixed bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
+        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
                     <h1 class="text-white text-[5rem] font-caudex italic text-start flex flex-col">
@@ -126,11 +126,11 @@
                     <div class="flex gap-5">
                         <button class="flex-[3] relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Clear filter</span>
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                         </button>
 
                         <button class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 group-hover:invert">
+                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
                             <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Search for Job</span>
                         </button>
                     </div>
@@ -202,13 +202,13 @@
                             <input type="text" placeholder="All Locations" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 flex-1">
                             <button class="flex-1 relative flex gap-2 justify-center items-center pl-4 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                                 <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Clear filter</span>
-                                <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                                <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                             </button>
                         </div>
                     </div>
 
                     <button class="relative flex gap-4 justify-center  items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 group-hover:invert">
+                        <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
                         <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Search for Job</span>
                     </button>
                 </div>
@@ -295,7 +295,7 @@
                         <a href="<?php the_permalink(); ?>">
                         <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $content_button['text']; ?></span>
-                            <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                            <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                         </button>
                         </a>
                     </div>

@@ -7,7 +7,7 @@
         <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
     </div>
 	
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed bg-cover bg-center" style="background-image: url(<?php echo get_template_directory_uri().'/assets/images/3d-motion-flow-background-with-digital-particles 1.png'?>)">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center" style="background-image: url(<?php echo get_template_directory_uri().'/assets/images/3d-motion-flow-background-with-digital-particles 1.png'?>)">
     </div>
 </div>
 <!-- header end -->
@@ -26,7 +26,7 @@
             <a href="/blog">
             <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img :src="require('@/Assets/Icons/arrow_left_black.svg')" alt="" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 group-hover:invert">
+                    <img :src="require('@/Assets/Icons/arrow_left_black.svg')" alt="" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
                 </div>
                 <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Back to Blog</span>
             </button>
@@ -68,7 +68,7 @@
     <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
         <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Back to Case Studies</span>
         <div class="group-hover:animate-bounce">
-            <img :src="require('@/Assets/Icons/arrow_left_black.svg')" alt="" class="-rotate-90 transition duration-300 group-hover:-scale-y-150 group-hover:invert">
+            <img :src="require('@/Assets/Icons/arrow_left_black.svg')" alt="" class="-rotate-90 transition duration-300 group-hover:-scale-y-150 ">
         </div>
     </button>
 
@@ -78,19 +78,19 @@
         <div class="flex gap-2 max-md:grid max-md:grid-col">
             <button class="relative flex gap-2 justify-between items-center p-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img :src="require('@/Assets/Icons/bx_bxl-facebook.svg')" alt="" class="transition duration-300 group-hover:invert">
+                    <img :src="require('@/Assets/Icons/bx_bxl-facebook.svg')" alt="" class="transition duration-300 ">
                 </div>
             </button>
 
             <button class="relative flex gap-2 justify-between items-center p-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img :src="require('@/Assets/Icons/ant-design_twitter-outlined.svg')" alt="" class="transition duration-300 group-hover:invert">
+                    <img :src="require('@/Assets/Icons/ant-design_twitter-outlined.svg')" alt="" class="transition duration-300 ">
                 </div>
             </button>
 
             <button class="relative flex gap-2 justify-between items-center p-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img :src="require('@/Assets/Icons/bx_bxl-linkedin.svg')" alt="" class="transition duration-300 group-hover:invert">
+                    <img :src="require('@/Assets/Icons/bx_bxl-linkedin.svg')" alt="" class="transition duration-300 ">
                 </div>
             </button>
         </div>

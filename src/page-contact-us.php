@@ -28,7 +28,7 @@
 
     <!-- mobile -->
     <div class="hidden max-md:flex flex-col">
-        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
+        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
                     <h1 class="text-white text-[5rem] font-caudex italic text-start flex flex-col">
@@ -90,7 +90,7 @@
                             <?php echo $form_button_text; ?>
                         </span>
                         <div class="group-hover:animate-bounce">
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                         </div>
                     </button>
                 </div>

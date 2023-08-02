@@ -17,7 +17,7 @@
         <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
     </div>
 
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed bg-cover bg-center max-md:px-[2.1875rem]" style="background-image: url('<?php echo $header_image['url']; ?>')">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" style="background-image: url('<?php echo $header_image['url']; ?>')">
         <div>
             <h1 class="text-white font-caudex italic font-normal text-[5rem] text-start">
                 <?php echo $header_title; ?>
@@ -38,7 +38,7 @@
             <?php endif; ?>
             <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 group-hover:invert">
+                    <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
                 </div>
                 <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">
                     <?php echo $button_back['text']; ?>
@@ -172,7 +172,7 @@
                             <button type="file" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                                 <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_button['text']; ?></span>
                                 <div class="group-hover:animate-bounce">
-                                    <img src="<?php echo $form_button['icon']['url']; ?>" alt="<?php echo $form_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                                    <img src="<?php echo $form_button['icon']['url']; ?>" alt="<?php echo $form_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                                 </div>
                             </button>
                         </div>

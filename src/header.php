@@ -7,6 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
 
 		<?php wp_head(); ?>
 	</head>
@@ -31,15 +33,15 @@
 				<?php endforeach; ?>
 				<?php endif; ?>
 
-				<div class="flex px-5 flex-1 items-center justify-center gap-4 border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10" >
+				<div class="flex px-5 flex-1 items-center justify-center gap-4 border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10">
 					<div class="flex flex-1 justify-center max-md:hidden">
 						<div class="flex gap-4 items-center">
 
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
-							<a href="<?php echo $item['url']; ?>">
+							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4">
 							<div class="flex gap-3 min-w-max items-center">
-								<span class="text-sm text-white">
-									<?php echo $item['name'];  ?>
+								<span class="text-sm text-white capitalize">
+									<?php echo $item['slug'];  ?>
 								</span>
 							</div>
 							</a>
@@ -54,9 +56,9 @@
 			</nav>
 
 			<!-- menu -->
-			<div class="bg-black/80 absolute max-w-[calc(100%/2)] w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden" id="main-menu" style="<? echo ((pll_current_language() == 'ar') ? 'left: 0;' : 'right: 0;' ); ?>">
+			<div class="bg-black/80 absolute max-w-[calc(100%/2)] right-0 w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden rtl:right-auto rtl:left-0" id="main-menu">
 				<div class="flex flex-col gap-24 py-14 px-28 w-full max-md:py-9 max-md:px-16">
-					<div class="flex justify-end max-md:hidden">
+					<div class="flex justify-end max-md:hidden rtl:justify-start">
 						<span class="text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90" id="main-menu-button-close">✕</span>
 					</div>
 					

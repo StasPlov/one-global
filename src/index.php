@@ -7,10 +7,7 @@
 	$header_background = get_field('header_background', 'home-page');
 ?>
 <div class="relative w-full h-screen overflow-hidden" id="scroll-trigger2">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
@@ -65,13 +62,8 @@
 <!-- header end -->
 
 <!-- wee inovate -->
-<div class="relative w-full h-screen overflow-hidden" id="scroll-trigger" style="background-image: linear-gradient(to bottom right, transparent 50%, #d4d4d4, transparent 50.1%);">
+<div class="relative w-full h-screen overflow-hidden" id="scroll-trigger">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
-    
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
 
     <div class="absolute max-w-min text-start transition-all" id="scroll-anim" style="top: 45%; left: 45%;">
         <?php $headerWeInnovatetData = get_field('we_innovate_animation_text', 'home-page'); ?>
@@ -87,10 +79,7 @@
 	$about_us_button = get_field('about_us_button', 'home-page');
 ?>
 <div class="w-full bg-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+    
 
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col">
         <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
@@ -150,10 +139,7 @@
  	$our_promise_title = get_field('our_promise_title', 'home-page');
 ?>
 <div class="flex min-h-screen items-center w-full relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem]">
         <h2 class="font-lato font-medium text-[5rem] text-start max-w-[29.375rem] w-full" id="view-anim" data-animation="animate-fadeInTop" data-duration="1.5s">
@@ -179,10 +165,7 @@
 	$digital_info_block = get_field('digital_info_block', 'home-page'); 
 ?> 
 <div class="w-full min-h-screen relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col gap-[8.75rem] h-full items-center px-[11.25rem] max-md:px-[2.1875rem]">
        
@@ -224,13 +207,10 @@
 
 <!-- og innovation -->
 <?php $headerOgInnovationData = get_field('og_innovation', 'home-page'); ?>
-<div class="w-full h-screen bg-black py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0 <? echo ((pll_current_language() == 'ar') ? "pl-0 pr-[11.25rem]" : "pl-[11.25rem]" ); ?>">
+<div class="w-full h-screen bg-black py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0 <?php echo ((pll_current_language() == 'ar') ? "pl-0 pr-[11.25rem]" : "pl-[11.25rem]" ); ?>">
     <img src="<?php echo $headerOgInnovationData['background_image']['url']; ?>" alt="<?php echo $headerOgInnovationData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
 	
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
         <div class="flex flex-1 z-0 max-md:px-[2.1875rem]">
@@ -255,7 +235,7 @@
 						</div>
 						<?php endif; ?>
 					</button>
-					<?php if(!empty($media_center_button['url'])) : ?>
+					<?php if(!empty($headerOgInnovationData['button']['url'])) : ?>
 						</a>
 					<?php endif; ?>
 				<?php endif; ?>
@@ -274,10 +254,7 @@
 <div class="w-full min-h-screen bg-black relative overflow-hidden">
     <img src="<?php echo $headerOgHubData['background_image']['url']; ?>" alt="<?php echo $headerOgHubData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
 	
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 	
     <div class="flex flex-col items-center h-full py-[6.375rem] pb-[9.375rem] gap-28 max-md:flex-col-reverse">
         <div class="flex flex-col items-start gap-16 ml-80 z-0 max-md:m-0 max-md:px-[35px]">
@@ -301,7 +278,7 @@
 					</div>
 					<?php endif; ?>
 				</button>
-					<?php if(!empty($media_center_button['url'])) : ?>
+					<?php if(!empty($headerOgHubData['button']['url'])) : ?>
 					</a>
 					<?php endif; ?>
 				<?php endif; ?>
@@ -310,7 +287,7 @@
         </div>
 
         <div class="max-h-[26.125rem] max-w-[87%] h-full w-full self-end z-0 max-md:max-w-none max-md:max-h-none max-md:h-[31.25rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
-            <img src="<?php echo $headerOgHubData['image']['url']; ?>" alt="<?php echo $headerOgHubData['image']['alt']; ?>" class="h-full max-h-[inherit] max-md:h-[34.125rem] w-full object-cover ">
+            <img src="<?php echo $headerOgHubData['image']['url']; ?>" alt="<?php echo $headerOgHubData['image']['alt']; ?>" class="h-full max-h-[inherit] max-md:h-[34.125rem] w-full object-cover">
         </div>
     </div>
 </div>
@@ -323,10 +300,7 @@
 <div class="w-full h-screen bg-black py-[6.25rem] pt-[10.625rem] relative overflow-hidden max-md:pt-0 max-md:px-0 <? echo ((pll_current_language() == 'ar') ? 'pr-0 pl-[11.25rem]' : 'pr-[11.25rem]' ); ?>">
     <img src="<?php echo $headerOgCapitalData['background_image']['url']; ?>" alt="<?php echo $headerOgCapitalData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
 
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-row-reverse gap-28 justify-start items-center h-full max-md:flex-col-reverse">
         <div class="flex flex-1 justify-end z-0 max-md:px-[35px]">
@@ -352,7 +326,7 @@
 					</div>
 					<?php endif; ?>
 				</button>
-					<?php if(!empty($media_center_button['url'])) : ?>
+					<?php if(!empty($headerOgCapitalData['button']['url'])) : ?>
 					</a>
 					<?php endif; ?>
 				<?php endif; ?>
@@ -383,10 +357,7 @@
         <?php endif ?>
     </div>
 	
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div>
         <div class="grid grid-cols-3 grid-rows-4 gap-0 max-md:hidden">
@@ -480,7 +451,7 @@
         <div class="hidden flex-col max-md:flex">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFirstData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[31.25rem] h-full w-full object-cover">
+                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -498,7 +469,7 @@
 
             <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesTwoData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesTwoData['image']['url']; ?>" alt="<?php echo $headerOurServicesTwoData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesTwoData['image']['url']; ?>" alt="<?php echo $headerOurServicesTwoData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -516,7 +487,7 @@
 
             <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesThreeData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesThreeData['image']['url']; ?>" alt="<?php echo $headerOurServicesThreeData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesThreeData['image']['url']; ?>" alt="<?php echo $headerOurServicesThreeData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start ax-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -534,7 +505,7 @@
 
             <div class="col-start-3 row-start-4 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFourData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFourData['image']['url']; ?>" alt="<?php echo $headerOurServicesFourData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesFourData['image']['url']; ?>" alt="<?php echo $headerOurServicesFourData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:py-[6.25rem]">
@@ -566,10 +537,7 @@
     <img src="<?php echo $headerInvestedVenturesBgData['image']['url'] ?>" alt="<?php echo $headerInvestedVenturesBgData['image']['alt'] ?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="5s">
     <?php endif ?>
 	
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col gap-14 px-[11.25rem] z-0 max-md:px-0">
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>

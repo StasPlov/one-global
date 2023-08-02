@@ -9,10 +9,7 @@
     $about_image_title = get_field('about_image_title');
 ?>
 <div class="w-full bg-white h-full relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
+    
 
     <div class="flex gap-28 h-full max-md:flex-col max-md:min-h-screen">
         <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
@@ -54,15 +51,12 @@
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 3.svg'?>" alt="" class="absolute bottom-[10%] left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 2.svg'?>" alt="" class="absolute top-0 right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
 
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
+    
 
     <div class="flex flex-col gap-[9.375rem] px-[11.25rem] py-[9.375rem] max-md:px-[2.1875rem] ">
         <?php if(!empty($history_items)) : ?>
         <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
-        <div class="flex flex-col gap-7" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s" style="margin-left: <?php echo $n?>%;">
+        <div class="flex flex-col gap-7" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s" style="<? echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
             <div class="flex flex-col gap-4">
                 <h2 class="text-[#1C2126] font-caudex text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>
@@ -86,7 +80,7 @@
     $elevating_title_two = get_field('elevating_title_two');
     $elevating_desription_two = get_field('elevating_desription_two');
 ?>
-<div class="flex min-h-screen w-full bg-fixed bg-cover bg-center overflow-hidden" id="paralax" style="background-image: url('<?php echo $elevating_background['url']; ?>')">
+<div class="flex min-h-screen w-full bg-fixed max-md:bg-scroll bg-cover bg-center overflow-hidden" id="paralax" style="background-image: url('<?php echo $elevating_background['url']; ?>')">
     <div class="flex flex-1 flex-col items-start gap-[9.375rem] px-[11.25rem] py-[11.25rem] max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-8">
             <span class="text-white font-lato text-base font-medium text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
@@ -125,7 +119,7 @@
                 <?php if(!empty($board_items)) : ?>
                 <?php foreach ($board_items as $key => $item) : ?>
                 <button class="flex-1 flex items-center justify-center px-[2.75rem] py-[1.375rem] bg-white transition z-10" style="<?php if($keyItem != $key) { echo 'background: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>">
-                    <span class="text-white font-lato text-sm font-medium uppercase max-phoneS:text-[0.5rem]" style="text-wrap: nowrap; <?php if($keyItem == $key) { echo 'color: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>"> 
+                    <span class="text-white font-lato text-sm font-medium uppercase max-phoneM:text-[0.6rem]" style="text-wrap: nowrap; <?php if($keyItem == $key) { echo 'color: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>"> 
                         <?php echo $item['button_text']; ?>
                     </span>
                 </button>
@@ -203,10 +197,7 @@
 <div class="w-full bg-black relative overflow-hidden">
     <img src="<?php echo $geography_background['url'];?>" alt="<?php echo $geography_background['alt'];?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="1s">
     
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
+    
     
     <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
@@ -258,12 +249,9 @@
     $media_center_image_title = get_field('media_center_image_title');
 ?>
 <div class="w-full bg-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
+    
 
-    <div class="flex py-[11.25rem] gap-14 h-full max-md:flex-col">
+    <div class="flex py-[11.25rem] gap-14 h-full max-md:flex-col max-md:pt-[5rem]">
         <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
             <!-- mobile -->
             <div class="w-full h-full top-0 left-0 items-center px-[11.25rem] hidden max-md:flex max-md:px-[2.1875rem] max-md:pb-16">
@@ -299,7 +287,7 @@
                 <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                     <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $media_center_button['text']; ?></span>
                     <div class="group-hover:animate-bounce">
-                        <img src="<?php echo $media_center_button['icon']['url']; ?>" alt="<?php echo $media_center_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 group-hover:invert">
+                        <img src="<?php echo $media_center_button['icon']['url']; ?>" alt="<?php echo $media_center_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                     </div>
                 </button>
                 <?php if(!empty($media_center_button['url'])) : ?>
@@ -321,26 +309,23 @@
     $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder');
     $subscribe_button = get_field('subscribe_button');
 ?>
-<div class="min-h-screen w-full relative bg-black">
+<div class="min-h-screen w-full relative bg-black overflow-hidden">
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele" id="view-anim" draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
-    
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center">
             <div class="flex flex-col items-center gap-4 z-0">
-                <h2 class="text-white font-caudex font-normal text-[4rem] leading-[4rem] italic">
+                <h2 class="text-white font-caudex font-normal text-[4rem] leading-[4rem] italic max-md:text-start">
                     <?php echo $subscribe_title; ?>
                 </h2>
-                <span class="text-white font-lato text-center text-lg font-light max-w-[30.625rem]">
+                <span class="text-white font-lato text-center text-lg font-light max-w-[30.625rem] max-md:text-start">
                     <?php echo $subscribe_description; ?>
                 </span>
             </div>
 
-            <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
+            <form id="feedbackForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" 
+				class="max-w-[46.875rem] flex flex-col gap-12 w-[25.3125rem] z-0 bg-white rounded-xl px-[5rem]"
+			>
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
                         <input type="text" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
@@ -353,7 +338,7 @@
                     <?php if(!empty($subscribe_button['url'])) : ?>
                     <a href="<?php echo $subscribe_button['url']['url']; ?>">
                     <?php endif; ?>
-                    <button class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                    <button type="submit" class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                         <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_button['text']; ?></span>
                         <div class="group-hover:animate-bounce">
                             <img src="<?php echo $subscribe_button['icon']['url']; ?>" alt="<?php echo $subscribe_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
@@ -363,8 +348,8 @@
                     </a>
                     <?php endif; ?>
                     <?php endif; ?>
-                </div>
-            </div>
+				</div>
+            </form>
         
         </div>
     </div>

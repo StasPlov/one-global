@@ -9,10 +9,7 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
         <?php if(!empty($header_background)) :?>
@@ -62,13 +59,10 @@
     $about_image = get_field('about_image');
 ?>
 <div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
-        <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem]">
+        <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem] rtl:pr-[11.25rem] rtl:pl-0">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-14">
                     <?php if($about_title) :?>
@@ -114,10 +108,7 @@
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
     
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 	
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
@@ -168,10 +159,7 @@
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
 
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
@@ -232,10 +220,7 @@
 <div class="w-full min-h-screen bg-black relative">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
     
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
@@ -253,7 +238,7 @@
         <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
-            <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105 cursor-pointer">
+            <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
                 <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg">
                     <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1 object-contain">
                 </div>
@@ -269,7 +254,7 @@
                     
                     <?php if(!empty($item['button']) && $item['button']['is_enable'] && !empty($item['button']['text'])) : ?>
                     <?php if(!empty($item['button']['url'])) : ?>
-                    <a href="<?php echo $item['button']['url']; ?>">
+                    <a href="<?php echo $item['button']['url']; ?>" class="cursor-default">
                     <?php endif; ?>
 					<button class="flex items-center gap-[0.625rem] border-b border-solid border-[#c4c4c44d] max-md:border-t px-6 py-5 w-full transition hover:bg-white/10 cursor-pointer">
 						<?php if(!empty($item['button']['icon'])) : ?>
@@ -298,13 +283,10 @@
     $ready_image = get_field('ready_image');
 ?>
 <div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
-        <div class="flex flex-col gap-[4.1875rem] flex-1 w-[57%] z-0 pl-[11.25rem] items-start max-md:px-[35px] max-md:w-full">
+        <div class="flex flex-col gap-[4.1875rem] flex-1 w-[57%] z-0 pl-[11.25rem] items-start max-md:px-[35px] max-md:w-full rtl:pr-[11.25rem] rtl:pl-0">
             <h2 class="text-5xl font-normal text-[#1C2126] font-caudex italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
 
             <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse">
@@ -331,5 +313,6 @@
     </div>
 </div>
 <!-- ready end -->
+
 
 <?php get_footer(); ?>

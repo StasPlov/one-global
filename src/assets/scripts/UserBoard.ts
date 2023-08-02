@@ -12,15 +12,13 @@ export default class UserBoard {
 
     constructor() {
         this.initBoard();
-		this.changeBoard();
-		this.initBoardSee();
     }
 
     initBoard() {
 		this.board = document.querySelector(`#${this.boardId}`) as HTMLElement;
 
 		if(this.board === null) {
-			throw new Error("user board not found");
+			return;
 		}
 
 		this.boardTabList = Array.from(this.board.querySelectorAll(`[${this.boardTabAttr}]`));
@@ -34,6 +32,9 @@ export default class UserBoard {
 		if(!this.boardMenuList) {
 			throw new Error("user board menus tab not found");
 		}
+
+		this.changeBoard();
+		this.initBoardSee();
     }
 
 	initBoardSee() {

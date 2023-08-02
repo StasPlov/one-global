@@ -9,10 +9,7 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
         <?php if(!empty($header_background)) :?>
@@ -62,10 +59,7 @@
     $about_image = get_field('about_image');
 ?>
 <div class="w-full min-h-screen bg-white relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse">
         <!-- mobile -->
@@ -114,10 +108,7 @@
     $what_does_info = get_field('what_does_info');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
-    </div>
+	
 
     <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem]">
         <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
@@ -161,7 +152,7 @@
 
 <!-- our framework -->
 <?php 
-    $venture_building_title = get_field('what_does_title');
+    $venture_building_title = get_field('venture_building_title');
     $venture_building_image = get_field('venture_building_image');
 ?>
 <div class="w-full min-h-screen bg-white">
