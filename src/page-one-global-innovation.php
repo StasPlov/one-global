@@ -9,6 +9,11 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
+	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
+        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
+        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
+    </div>
+
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
         <?php if(!empty($header_background)) :?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
@@ -56,7 +61,12 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white">
+<div class="w-full min-h-screen bg-white relative">
+	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
+        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
+        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
+    </div>
+
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse">
         <!-- mobile -->
         <div class="hidden flex-col gap-7 max-md:px-[2.1875rem] max-md:flex">
@@ -68,7 +78,7 @@
         </div>
         <!-- end mobile -->
 
-        <div class="flex-1">
+        <div class="flex-1 relative max-h-screen max-w-[40.625rem] max-md:max-w-none">
             <?php if($about_image) :?>
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]">
             <?php endif; ?>
@@ -103,7 +113,12 @@
     $what_does_description_two = get_field('what_does_description_two');
     $what_does_info = get_field('what_does_info');
 ?>
-<div class="w-full min-h-screen bg-black">
+<div class="w-full min-h-screen bg-black relative">
+	<div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
+        <div class="border-r border-solid border-[#c4c4c45e] w-[60%] max-md:w-[150%]"></div>
+        <div class="border-r border-solid border-[#c4c4c45e] w-[80%] max-md:hidden"></div>
+    </div>
+
     <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem]">
         <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
             <h2 class="text-[5rem] text-white font-medium font-caudex italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
@@ -155,7 +170,7 @@
             <h2 class="text-[5rem] text-[#14191D] font-medium font-lato text-start leading-[5rem]"><?php echo $venture_building_title; ?></h2>
         </div>
 
-        <div class="flex items-center justify-center px-[5rem]">
+        <div class="flex items-center justify-center max-md:px-[35px] px-[11.25rem]">
             <img src="<?php echo $venture_building_image['url']; ?>" alt="<?php echo $venture_building_image['alt']; ?>" class="object-contain">
         </div>
     </div>

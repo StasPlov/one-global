@@ -112,20 +112,23 @@
 <!-- board -->
 <?php 
     $board_items = get_field('board_items');
-    $activeMenuId = 0;
+	$board_count = count($board_items);
+    $activeBoardId = 0;
 ?>
-<div class="w-full overflow-hidden">
-    <div class="grid grid-cols-3 grid-flow-row max-md:flex max-md:flex-col">
+<div class="w-full overflow-hidden" id="user-board" data-first-board-active="<?php echo $activeBoardId; ?>">
+	<?php if(!empty($board_count)) : ?>
+	<?php foreach ($board_items as $keyItem => $item) : ?>
+    <div class="grid grid-cols-3 grid-flow-row max-md:flex max-md:flex-col" data-board-tab-id="<?php echo $keyItem; ?>">
         
         <div class="flex flex-col">
             <div class="flex">
                 <?php if(!empty($board_items)) : ?>
                 <?php foreach ($board_items as $key => $item) : ?>
-                <div class="flex-1 flex items-center justify-center px-[2.75rem] py-[1.375rem] bg-white" style="<?php if($activeMenuId == $key) { echo 'background: #000103;'; } ?>">
-                    <span class="text-white font-lato text-sm font-medium uppercase" style="text-wrap: nowrap; <?php if($activeMenuId != $key) { echo 'color: #000103;'; } ?>"> 
+                <button class="flex-1 flex items-center justify-center px-[2.75rem] py-[1.375rem] bg-white transition z-10" style="<?php if($keyItem != $key) { echo 'background: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>">
+                    <span class="text-white font-lato text-sm font-medium uppercase max-phoneS:text-[0.5rem]" style="text-wrap: nowrap; <?php if($keyItem == $key) { echo 'color: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>"> 
                         <?php echo $item['button_text']; ?>
                     </span>
-                </div>
+                </button>
                 <?php endforeach; ?>
                 <?php endif; ?>
             </div>
@@ -133,8 +136,8 @@
             <div class="flex-1 flex items-center justify-center h-full">
                 <?php if(!empty($board_items)) : ?>
                 <?php foreach ($board_items as $key => $item) : ?>
-                <?php if($activeMenuId == $key) : ?>
-                <div class="flex flex-col gap-5">
+                <?php if($keyItem == $key) : ?>
+                <div class="flex flex-col gap-5 max-md:pt-[2.1875rem]">
                     <h3 class="text-[#1C2126] font-lato text-2xl font-medium text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $item['title']?>
                     </h3>
@@ -155,10 +158,10 @@
         
         <?php if(!empty($board_items)) : ?>
         <?php foreach ($board_items as $key => $item) : ?>
-        <?php if($activeMenuId == $key) : ?>
-        <?php foreach ($item['items'] as $user) : ?>
-        <div class="flex flex-col">
-            <div class="flex-1 max-h-[19.75rem]">
+        <?php if($keyItem == $key) : ?>
+        <?php foreach ($item['items'] as $keyUser => $user) : ?>
+        <div class="flex flex-col" id="view-anim" data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
+            <div class="flex-1 h-[19.75rem]">
                 <img src="<?php echo $user['image']['url']; ?>" alt="<?php echo $user['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">
             </div>
 
@@ -184,6 +187,8 @@
         <?php endforeach; ?>
         <?php endif; ?>
     </div>
+	<?php endforeach; ?>
+	<?php endif; ?>
 </div>
 <!-- board end -->
 

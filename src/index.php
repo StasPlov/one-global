@@ -33,11 +33,10 @@
             <h1 class="text-4xl text-white z-0 text-start tracking-wide leading-normal max-w-[37.5rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerTitleData['text']; ?></h1>
             <?php endif ?>
 			
-			<?php if(!empty($header_button)) : ?>
-			<?php if($header_button['is_enable']) : ?>
-			<?php if(!empty($header_button['url'])) : ?>
-			<a href="<?php echo $header_button['url']['url']; ?>">
-			<?php endif; ?>
+			<?php if(!empty($header_button) && $header_button['is_enable']) : ?>
+				<?php if(!empty($header_button['url'])) : ?>
+				<a href="<?php echo $header_button['url']['url']; ?>">
+				<?php endif; ?>
             <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                 <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $header_button['text']; ?></span>
                 <?php if(!empty($header_button['icon'])) : ?>
@@ -46,10 +45,9 @@
                 </div>
 				<?php endif; ?>
             </button>
-				<?php if(!empty($media_center_button['url'])) : ?>
+				<?php if(!empty($header_button['url'])) : ?>
 				</a>
 				<?php endif; ?>
-			<?php endif; ?>
 			<?php endif; ?>
 			
         </div>
@@ -122,8 +120,7 @@
                     </span>
                 </div>
 				
-				<?php if(!empty($about_us_button)) : ?>
-				<?php if($about_us_button['is_enable']) : ?>
+				<?php if(!empty($about_us_button) && $about_us_button['is_enable']) : ?>
 					<?php if(!empty($about_us_button['url'])) : ?>
 					<a href="<?php echo $about_us_button['url']['url']; ?>">
 					<?php endif; ?>
@@ -139,7 +136,6 @@
 					<?php if(!empty($about_us_button['url'])) : ?>
 					</a>
 					<?php endif; ?>
-				<?php endif; ?>
 				<?php endif; ?>
             </div>
         </div>
@@ -247,29 +243,27 @@
                     </span>
                 </div>
 
-                <?php if(!empty($headerOgInnovationData['button'])) : ?>
-				<?php if($headerOgInnovationData['button']['is_enable']) : ?>
-				<?php if(!empty($headerOgInnovationData['button']['url'])) : ?>
-				<a href="<?php echo $headerOgInnovationData['button']['url']['url']; ?>">
-				<?php endif; ?>
-				<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
-					<span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $headerOgInnovationData['button']['text']; ?></span>
-					<?php if(!empty($headerOgInnovationData['button']['icon'])) : ?>
-					<div class="group-hover:animate-bounce">
-						<img src="<?php echo $headerOgInnovationData['button']['icon']['url']; ?>" alt="<?php echo $headerOgInnovationData['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
-					</div>
+                <?php if(!empty($headerOgInnovationData['button']) && $headerOgInnovationData['button']['is_enable']) : ?>
+					<?php if(!empty($headerOgInnovationData['button']['url'])) : ?>
+						<a href="<?php echo $headerOgInnovationData['button']['url']['url']; ?>">
 					<?php endif; ?>
-				</button>
+					<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+						<span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $headerOgInnovationData['button']['text']; ?></span>
+						<?php if(!empty($headerOgInnovationData['button']['icon'])) : ?>
+						<div class="group-hover:animate-bounce">
+							<img src="<?php echo $headerOgInnovationData['button']['icon']['url']; ?>" alt="<?php echo $headerOgInnovationData['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
+						</div>
+						<?php endif; ?>
+					</button>
 					<?php if(!empty($media_center_button['url'])) : ?>
-					</a>
+						</a>
 					<?php endif; ?>
-				<?php endif; ?>
 				<?php endif; ?>
             </div>
         </div>
 
-        <div class="flex-1 h-full z-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
-            <img src="<?php echo $headerOgInnovationData['image']['url']; ?>" alt="<?php echo $headerOgInnovationData['image']['alt']; ?>" class="h-full w-full object-cover max-md:h-screen">
+        <div class="flex-1 h-full z-0 max-md:h-[31.25rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+            <img src="<?php echo $headerOgInnovationData['image']['url']; ?>" alt="<?php echo $headerOgInnovationData['image']['alt']; ?>" class="h-full w-full object-cover">
         </div>
     </div>
 </div>
@@ -315,8 +309,8 @@
             </div>
         </div>
 
-        <div class="max-h-[26.125rem] max-w-[87%] h-full w-full self-end z-0 max-md:max-w-none max-md:max-h-none" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
-            <img src="<?php echo $headerOgHubData['image']['url']; ?>" alt="<?php echo $headerOgHubData['image']['alt']; ?>" class="h-full max-h-[inherit] max-md:h-[34.125rem] w-full object-cover">
+        <div class="max-h-[26.125rem] max-w-[87%] h-full w-full self-end z-0 max-md:max-w-none max-md:max-h-none max-md:h-[31.25rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+            <img src="<?php echo $headerOgHubData['image']['url']; ?>" alt="<?php echo $headerOgHubData['image']['alt']; ?>" class="h-full max-h-[inherit] max-md:h-[34.125rem] w-full object-cover ">
         </div>
     </div>
 </div>
@@ -486,7 +480,7 @@
         <div class="hidden flex-col max-md:flex">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFirstData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
+                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[31.25rem] h-full w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -504,7 +498,7 @@
 
             <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesTwoData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesTwoData['image']['url']; ?>" alt="<?php echo $headerOurServicesTwoData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesTwoData['image']['url']; ?>" alt="<?php echo $headerOurServicesTwoData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -522,7 +516,7 @@
 
             <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesThreeData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesThreeData['image']['url']; ?>" alt="<?php echo $headerOurServicesThreeData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesThreeData['image']['url']; ?>" alt="<?php echo $headerOurServicesThreeData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start ax-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -540,7 +534,7 @@
 
             <div class="col-start-3 row-start-4 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFourData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFourData['image']['url']; ?>" alt="<?php echo $headerOurServicesFourData['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
+                <img src="<?php echo $headerOurServicesFourData['image']['url']; ?>" alt="<?php echo $headerOurServicesFourData['image']['alt']; ?>" class="h-[31.25rem] w-full object-cover">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:py-[6.25rem]">
@@ -604,7 +598,7 @@
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
                 <?php if($key > 3) : ?>
                 <div class="flex items-center justify-center">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
                 </div>
                 <?php endif ?>
                 <?php endforeach ?>

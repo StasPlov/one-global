@@ -101,3 +101,8 @@ Text Domain: one global
 		transform: rotate(360deg);
 	}
 }
+
+
+.hidde {
+	display: none!important;
+}

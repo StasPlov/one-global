@@ -92,20 +92,20 @@
 					</div>
 
 					<?php if(!empty($menu_login_items)) : ?>
-					<?php foreach ($menu_login_items as $item) : ?>
-					<?php if(!empty($item['url'])) : ?>
-					<a href="<?php echo $item['url']; ?>">
-					<?php endif; ?>
-					<button class="flex items-center gap-[0.625rem] border-b border-solid border-[#c4c4c44d] max-md:border-t px-6 py-5 w-full transition hover:bg-white/10 cursor-pointer">
-						<?php if(!empty($item['icon'])) : ?>
-						<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-5">
-						<?php endif; ?>
-						<span class="text-sm text-white/40 font-lato font-medium uppercase"><?php echo $item['title']; ?></span>
-					</button>
-					<?php if(!empty($item['url'])) : ?>
-					</a>
-					<?php endif; ?>
-					<?php endforeach; ?>
+						<?php foreach ($menu_login_items as $item) : ?>
+							<?php if(!empty($item['url'])) : ?>
+								<a href="<?php echo $item['url']; ?>">
+							<?php endif; ?>
+							<button class="flex items-center gap-[0.625rem] border-b border-solid border-[#c4c4c44d] max-md:border-t px-6 py-5 w-full transition hover:bg-white/10 cursor-pointer">
+								<?php if(!empty($item['icon'])) : ?>
+								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-5">
+								<?php endif; ?>
+								<span class="text-sm text-white/40 font-lato font-medium uppercase"><?php echo $item['title']; ?></span>
+							</button>
+							<?php if(!empty($item['url'])) : ?>
+								</a>
+							<?php endif; ?>
+						<?php endforeach; ?>
 					<?php endif; ?>
 				</div>
 			</div>

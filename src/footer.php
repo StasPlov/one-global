@@ -7,6 +7,7 @@
     $footer_background = get_field('footer_background', 'general-settings');
     $footer_menu = get_field('footer_menu', 'general-settings');
     $menu_login_items = get_field('menu_login_items', 'general-settings');
+	$footer_menu_icon_title = get_field('footer_menu_icon_title', 'general-settings');
 
 ?>
 <footer class="flex flex-col bg-black border-t border-solid border-[#c4c4c44d] relative">
@@ -22,7 +23,7 @@
         <div class="flex flex-1 max-md:hidden">
             <div class="flex-1 border-r border-solid border-[#c4c4c44d]">
                 <div class="flex flex-col gap-6 items-start px-6 py-5">
-                    <h3 class="text-sm text-white/40 font-lato font-normal uppercase">Our subsidiaries</h3>
+                    <h3 class="text-sm text-white/40 font-lato font-normal uppercase"><?php echo $footer_menu_icon_title; ?></h3>
 
                     <div class="flex flex-col gap-5 items-start">
                         <?php if(!empty($footer_menu_icon)) : ?>

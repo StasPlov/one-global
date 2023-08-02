@@ -28,7 +28,7 @@
 
     <!-- mobile -->
     <div class="hidden max-md:flex flex-col">
-        <div class="flex items-center min-h-screen bg-fixed bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
+        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
                     <h1 class="text-white text-[5rem] font-caudex italic text-start flex flex-col">
@@ -126,11 +126,11 @@
 
 <!-- map -->
 <?php 
-    $map_image = get_field('map_image');
+    $map_link = get_field('map_link');
 ?>
-<div class="w-full flex items-center justify-center">
-    <?php if(!empty($map_image)) : ?>
-    <img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" class="rounded-xl max-md:h-[34.5625rem] object-cover">
+<div class="w-full flex items-center justify-center max-md:h-[34.5625rem] object-cover overflow-hidden px-[11.25rem] h-[43.75rem] pb-[8.125rem] max-md:px-0 max-md:pb-0 max-md:max-h-screen">
+    <?php if(!empty($map_link)) : ?>
+		<iframe src="<?php echo $map_link['url']; ?>" class="rounded-xl max-md:rounded-none	" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <?php endif; ?>
 </div>
 <!-- map end -->

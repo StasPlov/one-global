@@ -1,7 +1,9 @@
 import MainMenu from "./MainMenu";
+import UserBoard from "./UserBoard";
 
 addEventListener("DOMContentLoaded", () => {
     const mainMenu = new MainMenu();
+	const userBoard = new UserBoard();
 
     /* window.addEventListener('scroll', () => {
         let { scrollY } = window;
