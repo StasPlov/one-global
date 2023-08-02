@@ -38,7 +38,7 @@
 						<div class="flex gap-4 items-center">
 
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
-							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 rtl:first:border-l rtl:first:border-solid rtl:first:border-white rtl:first:pl-4">
+							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 first:rtl:border-r-0 first:rtl:border-l first:rtl:border-solid first:rtl:border-white first:rtl:pl-4">
 							<div class="flex gap-3 min-w-max items-center">
 								<span class="text-sm text-white capitalize">
 									<?php echo $item['slug'];  ?>
