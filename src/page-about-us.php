@@ -320,8 +320,6 @@
                     <?php echo $subscribe_description; ?>
                 </span>
             </div>
-            
-            <div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
 
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
@@ -331,6 +329,8 @@
                     </div>
                 </div>
                 
+                <div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
+
                 <div class="flex-1 flex justify-center items-center z-0">
                     <?php if($subscribe_button['is_enable']) : ?>
                     <?php if(!empty($subscribe_button['url'])) : ?>
