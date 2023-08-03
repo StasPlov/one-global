@@ -7,8 +7,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
-		<meta http-equiv="cache-control" content="no-cache">
-		<meta http-equiv="expires" content="0">
 
 		<?php wp_head(); ?>
 	</head>
@@ -36,7 +34,6 @@
 				<div class="flex px-5 flex-1 items-center justify-center gap-4 border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10">
 					<div class="flex flex-1 justify-center max-md:hidden">
 						<div class="flex gap-4 items-center">
-
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
 							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 first:rtl:border-r-0 first:rtl:border-l first:rtl:border-solid first:rtl:border-white first:rtl:pl-4">
 							<div class="flex gap-3 min-w-max items-center">
@@ -80,9 +77,9 @@
 					<div class="flex justify-center">
 						<div class="flex gap-8">
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
-							<a href="<?php echo $item['url']; ?>">
-							<div class="flex gap-3 min-w-max items-center px-6 py-5">
-								<span class="text-sm text-white rtl:text-lg"><?php echo $item['name'];  ?></span>
+							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 first:rtl:border-r-0 first:rtl:border-l first:rtl:border-solid first:rtl:border-white first:rtl:pl-4">
+							<div class="flex gap-3 min-w-max items-center">
+								<span class="text-sm text-white capitalize rtl:text-lg"><?php echo $item['slug'];  ?></span>
 							</div>
 							</a>
 							<?php endforeach; ?>

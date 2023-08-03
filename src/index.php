@@ -11,7 +11,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline>
             <source src="<?php echo $header_background['video']['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>

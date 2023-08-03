@@ -11,7 +11,7 @@
 <div class="relative w-full h-screen overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background)) : ?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline>
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -284,8 +284,10 @@
             <h2 class="text-5xl font-normal text-[#1C2126] font-caudex rtl:font-droidSansArabic italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
 
             <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse">
+
+			
                 <?php if($ready_button['is_enable']) : ?>
-                <a href="<?php echo $ready_button['url'] ?? ''; ?>">
+                <a href="<?php echo $ready_button['url']['url'] ?? ''; ?>">
                 <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
                     <span class="text-[#1c2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $ready_button['text']; ?></span>
                     <div class="group-hover:animate-bounce">

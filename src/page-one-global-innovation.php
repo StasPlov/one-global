@@ -13,7 +13,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
         <?php if(!empty($header_background)) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted>
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline>
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -130,15 +130,26 @@
                 <h3 class="text-5xl text-white font-caudex rtl:font-droidSansArabic italic text-start max-w-[35.1875rem] leading-[3.5rem]"><?php echo $what_does_info['title']; ?></h3>
                 
                 <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse max-md:gap-10">
-                    
-                    <a href="<?php echo $what_does_info['button']['url']; ?>">
-                    <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
-                        <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $what_does_info['button']['text']; ?></span>
-                        <div class="group-hover:animate-bounce">
-                            <img src="<?php echo $what_does_info['button']['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
-                        </div>
-                    </button>
-                    </a>
+
+					<?php if(!empty($what_does_info['button']) && $what_does_info['button']['is_enable'] && $what_does_info['button']['text']) : ?>
+						<?php if(!empty($what_does_info['button']['url'])) : ?>
+						<a href="<?php echo $what_does_info['button']['url']['url']; ?>">
+						<?php endif; ?>
+					<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+						<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+							<?php echo $what_does_info['button']['text']; ?>
+						</span>
+						
+						<?php if(!empty($what_does_info['button']['icon'])) : ?>
+						<div class="group-hover:animate-bounce">
+							<img src="<?php echo $what_does_info['button']['icon']['url']; ?>" alt="<?php echo $what_does_info['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
+						</div>
+						<?php endif; ?>
+					</button>
+						<?php if(!empty($what_does_info['button']['url'])) : ?>
+						</a>
+						<?php endif; ?>
+					<?php endif; ?>
 
                     <span class="font-lato rtl:font-droidSansArabic text-lg font-light text-white"><?php echo $what_does_info['description']; ?></span>
                 </div>
