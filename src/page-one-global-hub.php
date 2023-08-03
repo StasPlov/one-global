@@ -106,7 +106,7 @@
 	
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
-            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2">
+            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2" style="z-index: 1;">
                 <?php if(!empty($what_does_items)) : ?>
                 <?php foreach ($what_does_items as $item) : ?>
                 <div class="flex flex-col gap-[1.375rem] flex-1">
@@ -182,7 +182,7 @@
         </div>
 
         <div class="flex flex-col gap-[10.625rem] z-0">
-            <div class="flex flex-col gap-[6.5625rem] px-[11.25rem] self-center items-start">
+            <div class="flex flex-col gap-[6.5625rem] px-[11.25rem] items-start">
                 <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"><?php echo $business_accelerator_title; ?></h2>
                 
                 <?php if(!empty($business_accelerator_items)) : ?>

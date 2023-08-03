@@ -63,7 +63,7 @@
     <div class="flex max-md:flex-col-reverse">
         <div class="flex-1 flex items-center justify-center">
             <!-- form -->
-            <form id="contactsForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none">
+            <form class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none" id="contactsForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
