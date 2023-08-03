@@ -63,7 +63,7 @@
     <div class="flex max-md:flex-col-reverse">
         <div class="flex-1 flex items-center justify-center">
             <!-- form -->
-            <div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+            <div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none"  data-animation="animate-fadeInLeft" data-duration="3s">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
@@ -101,12 +101,12 @@
         <div class="flex-1 max-md:px-[2.1875rem] max-md:pb-16">
             <div class="flex flex-col items-start gap-9">
                 <?php if(!empty($info_contacts)) : ?>
-                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium"  data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
 
-                <div class="flex flex-col gap-6" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+                <div class="flex flex-col gap-6"  data-animation="animate-fadeInRight" data-duration="4s">
                     <?php if(!empty($info_contacts['items'])) : ?>
                     <?php foreach ($info_contacts['items'] as $item) : ?>
-                    <div class="flex flex-col gap-6" id="view-anim" data-animation="animate-fadeInLeft" data-duration="4s">
+                    <div class="flex flex-col gap-6"  data-animation="animate-fadeInLeft" data-duration="4s">
                         <div class="flex gap-6">
                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="select-none" draggable="false">  
                             <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">

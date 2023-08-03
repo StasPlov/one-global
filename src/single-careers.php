@@ -143,7 +143,7 @@
     $form_background = get_field('form_background', 'careers-single');
 ?>
 <div class="w-full relative bg-black">
-    <img src="<?php echo $form_background['url']; ?>" alt="<?php echo $form_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele" id="view-anim" draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+    <img src="<?php echo $form_background['url']; ?>" alt="<?php echo $form_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
 
     <div class="flex items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center">

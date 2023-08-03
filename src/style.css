@@ -200,8 +200,11 @@ Text Domain: one global
 }
 
 @keyframes scrollAnimationScale {
+	from {
+		transform: scale(1);
+  	}
 	to {
-		transform: scale(25);
+		transform: scale(10);
   	}
 }
 

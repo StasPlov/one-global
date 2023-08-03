@@ -12,15 +12,15 @@
     
 
     <div class="flex gap-28 h-full max-md:flex-col max-md:min-h-screen">
-        <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <div class="flex-1 relative"  data-animation="animate-fadeInLeft" data-duration="2s">
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-screen" draggable="false">  
             
-            <div class="flex w-full h-full max-md:flex-col max-md:gap-20 absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:px-[2.1875rem] max-md:justify-center max-md:items-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
+            <div class="flex w-full h-full max-md:flex-col max-md:gap-20 absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:px-[2.1875rem] max-md:justify-center max-md:items-start"  data-animation="animate-fadeInLeft" data-duration="2.5s">
                 <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-sm:relative max-md:text-start">
                     <?php echo $about_image_title; ?>
                 </span>
 
-                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start"  data-animation="animate-fadeInRight" data-duration="2.5s">
                     <?php echo $about_description; ?>
                 </h2>
             </div>
@@ -29,11 +29,11 @@
         <div class="flex flex-1 items-center justify-center">
             <div class="flex flex-col gap-6 max-w-[33.125rem] text-start items-start sticky top-[var(--header-menu-height)] max-md:max-w-none max-md:px-[2.1875rem]">
                 <div class="flex flex-col gap-5">
-                    <h2 class="font-caudex rtl:font-droidSansArabic italic text-[1.375rem] text-[#14191D]/80 font-normal leading-7 max-md:hidden" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <h2 class="font-caudex rtl:font-droidSansArabic italic text-[1.375rem] text-[#14191D]/80 font-normal leading-7 max-md:hidden"  data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $about_title; ?>
                     </h2>
 
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#14191D]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#14191D]"  data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $about_description; ?>
                     </span>
                 </div>
@@ -48,15 +48,15 @@
     $history_items = get_field('history_items');
 ?>
 <div class="min-h-screen w-full relative overflow-hidden">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 3.svg'?>" alt="" class="absolute bottom-[10%] left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 2.svg'?>" alt="" class="absolute top-0 right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 3.svg'?>" alt="" class="absolute bottom-[10%] left-0"  data-animation="animate-fadeInRight" data-duration="4s">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 2.svg'?>" alt="" class="absolute top-0 right-0"  data-animation="animate-fadeInRight" data-duration="4s">
 
     
 
     <div class="flex flex-col gap-[9.375rem] px-[11.25rem] py-[9.375rem] max-md:px-[2.1875rem] ">
         <?php if(!empty($history_items)) : ?>
         <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
-        <div class="flex flex-col gap-7" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s" style="<? echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
+        <div class="flex flex-col gap-7"  data-animation="animate-fadeInLeft" data-duration="2s" style="<? echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
             <div class="flex flex-col gap-4">
                 <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>
@@ -83,19 +83,19 @@
 <div class="flex min-h-screen w-full bg-fixed max-md:bg-scroll bg-cover bg-center overflow-hidden" id="paralax" style="background-image: url('<?php echo $elevating_background['url']; ?>')">
     <div class="flex flex-1 flex-col items-start gap-[9.375rem] px-[11.25rem] py-[11.25rem] max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-8">
-            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                 <?php echo $elevating_title; ?>
             </span>
-            <h2 class="text-[4rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+            <h2 class="text-[4rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic"  data-animation="animate-fadeInLeft" data-duration="3s">
                 <?php echo $elevating_description; ?>
             </h2>  
         </div>
 
         <div class="flex flex-col gap-8 self-end">
-            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start"  data-animation="animate-fadeInRight" data-duration="2s">
                 <?php echo $elevating_title_two; ?>
             </span>
-            <h2 class="text-[2.5rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic max-w-[47.5rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+            <h2 class="text-[2.5rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic max-w-[47.5rem]"  data-animation="animate-fadeInRight" data-duration="3s">
                 <?php echo $elevating_desription_two; ?>
             </h2>  
         </div>
@@ -132,11 +132,11 @@
                 <?php foreach ($board_items as $key => $item) : ?>
                 <?php if($keyItem == $key) : ?>
                 <div class="flex flex-col gap-5 max-md:pt-[2.1875rem]">
-                    <h3 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <h3 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $item['title']?>
                     </h3>
 
-                    <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-light text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
+                    <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-light text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="2.5s">
                         <?php echo $item['description']?>
                     </span>
                 </div>
@@ -154,7 +154,7 @@
         <?php foreach ($board_items as $key => $item) : ?>
         <?php if($keyItem == $key) : ?>
         <?php foreach ($item['items'] as $keyUser => $user) : ?>
-        <div class="flex flex-col " id="view-anim" data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
+        <div class="flex flex-col "  data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
             <div class="flex-1 h-[19.75rem]">
                 <img src="<?php echo $user['image']['url']; ?>" alt="<?php echo $user['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">
             </div>
@@ -195,16 +195,16 @@
     $geography_map = get_field('geography_map');
 ?>
 <div class="w-full bg-black relative overflow-hidden">
-    <img src="<?php echo $geography_background['url'];?>" alt="<?php echo $geography_background['alt'];?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="1s">
+    <img src="<?php echo $geography_background['url'];?>" alt="<?php echo $geography_background['alt'];?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInRight" data-duration="1s">
 
     <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
             <div class="flex flex-col gap-6">
-                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-[4rem] font-normal text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-[4rem] font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $geography_title;?>
                 </h2>
 
-                <div class="max-w-[26.25rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <div class="max-w-[26.25rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <span class="text-white text-lg font-light leading-9 text-start">
                         <?php echo $geography_description;?>
                     </span>
@@ -213,11 +213,11 @@
 
             <div class="flex flex-col items-start gap-9">
                 <?php if(!empty($geography_contacts)) : ?>
-                <span class="text-white font-lato rtl:font-droidSansArabic text-lg font-light" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $geography_contacts['title']; ?></span>
+                <span class="text-white font-lato rtl:font-droidSansArabic text-lg font-light"  data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $geography_contacts['title']; ?></span>
                 
                 <?php if(!empty($geography_contacts['items'])) : ?>
                 <?php foreach ($geography_contacts['items'] as $item) : ?>
-                <div class="flex flex-col gap-6" id="view-anim" data-animation="animate-fadeInLeft" data-duration="4s">
+                <div class="flex flex-col gap-6"  data-animation="animate-fadeInLeft" data-duration="4s">
                     <div class="flex gap-6">
                         <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="select-none" draggable="false">  
                         <span class="text-white font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">
@@ -232,7 +232,7 @@
         </div>
         
         <?php if(!empty($geography_map)) : ?>
-        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%]" draggable="false" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%]" draggable="false"  data-animation="animate-fadeInRight" data-duration="4s">
         <?php endif; ?>
     </div>
 </div>
@@ -250,7 +250,7 @@
     
 
     <div class="flex py-[11.25rem] gap-14 h-full max-md:flex-col max-md:pt-[5rem]">
-        <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <div class="flex-1 relative"  data-animation="animate-fadeInLeft" data-duration="2s">
             <!-- mobile -->
             <div class="w-full h-full top-0 left-0 items-center px-[11.25rem] hidden max-md:flex max-md:px-[2.1875rem] max-md:pb-16">
                 <span class="text-[#14191D] z-0 text-[5rem] font-lato rtl:font-droidSansArabic text-start"><?php echo $media_center_image_title; ?></span>
@@ -267,7 +267,7 @@
         </div>
 
         <div class="flex flex-1 items-center justify-center">
-            <div class="flex flex-col gap-6 max-w-[33.125rem] text-start items-start sticky top-[var(--header-menu-height)] max-md:max-w-none max-md:px-[2.1875rem]" id="view-anim" data-animation="animate-fadeInRight">
+            <div class="flex flex-col gap-6 max-w-[33.125rem] text-start items-start sticky top-[var(--header-menu-height)] max-md:max-w-none max-md:px-[2.1875rem]"  data-animation="animate-fadeInRight">
                 <div class="flex flex-col gap-5">
                     <h2 class="font-caudex rtl:font-droidSansArabic italic text-[1.375rem] text-[#14191D]/80 font-normal leading-7">
                         <?php echo $media_center_title; ?>
@@ -308,7 +308,7 @@
     $subscribe_button = get_field('subscribe_button');
 ?>
 <div class="min-h-screen w-full relative bg-black overflow-hidden">
-    <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele" id="view-anim" draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+    <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center">

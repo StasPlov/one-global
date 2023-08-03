@@ -12,8 +12,8 @@
         <div class="bg-black/30 absolute w-full h-full top-0 left-0"></div>
         
         <div class="flex flex-col items-start gap-12 z-0">
-            <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $header_title; ?></h1>  
-            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[43.75rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $header_description; ?></h2>
+            <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $header_title; ?></h1>  
+            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[43.75rem]"  data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $header_description; ?></h2>
         </div>
     </div>
 </div>
@@ -32,14 +32,14 @@
     <div class="flex flex-col items-center gap-[8.125rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
         <!-- title -->
         <div class="w-full flex flex-col gap-11 max-md:gap-24">
-            <h1 class="font-caudex rtl:font-droidSansArabic text-[#1C2126] text-[5rem] italic text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $portfolio_title; ?></h1>
+            <h1 class="font-caudex rtl:font-droidSansArabic text-[#1C2126] text-[5rem] italic text-start"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $portfolio_title; ?></h1>
 
             <div class="flex gap-[7.5rem] max-md:flex-col max-md:gap-7">
-                <span class="flex-1 text-[#1C2126] text-2xl font-lato rtl:font-droidSansArabic font-medium leading-8 text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                <span class="flex-1 text-[#1C2126] text-2xl font-lato rtl:font-droidSansArabic font-medium leading-8 text-start"  data-animation="animate-fadeInLeft" data-duration="3s">
                     <?php echo $portfolio_description_one; ?>
                 </span>
 
-                <span class="flex-1 text-[#1C2126] text-2xl font-lato rtl:font-droidSansArabic font-medium leading-8 text-start" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                <span class="flex-1 text-[#1C2126] text-2xl font-lato rtl:font-droidSansArabic font-medium leading-8 text-start"  data-animation="animate-fadeInRight" data-duration="2.5s">
                     <?php echo $portfolio_description_two; ?>
                 </span>
             </div>

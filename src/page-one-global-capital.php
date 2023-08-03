@@ -52,13 +52,13 @@
 	
 
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse">
-        <div class="hidden flex-col gap-7 max-md:flex px-[2.1875rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
+        <div class="hidden flex-col gap-7 max-md:flex px-[2.1875rem]"  data-animation="animate-fadeInRight" data-duration="1.5s">
             <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[33.875rem]">
                 <?php echo $about_description; ?>
             </span>
         </div>
         
-        <div class="flex-1 relative max-h-screen max-w-[40.625rem] max-md:max-w-none" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <div class="flex-1 relative max-h-screen max-w-[40.625rem] max-md:max-w-none"  data-animation="animate-fadeInLeft" data-duration="2s">
             <?php if($about_image) :?>
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]" draggable="false">
             <?php endif; ?>
@@ -67,9 +67,9 @@
         <div class="flex flex-1 items-center justify-center max-md:px-[2.1875rem]">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-14">
-                    <h2 class="text-[5rem] font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-none" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s"><?php echo $about_title; ?></h2>
+                    <h2 class="text-[5rem] font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-none"  data-animation="animate-fadeInRight" data-duration="2.5s"><?php echo $about_title; ?></h2>
 
-                    <div class="flex flex-col gap-7 max-md:hidden font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[33.875rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
+                    <div class="flex flex-col gap-7 max-md:hidden font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[33.875rem]"  data-animation="animate-fadeInRight" data-duration="1.5s">
                         <?php echo $about_description; ?>
                     </div>
                 </div>
@@ -92,14 +92,14 @@
 
     <div class="flex flex-col gap-[18.75rem] py-[11.25rem] z-0">
         <div class="flex flex-col gap-32 px-[11.25rem] z-0 max-md:px-[2.1875rem]">
-            <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $what_does_title; ?></h2>
+            <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
-                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $what_does_description_first; ?>
                 </div>
 
-                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]"  data-animation="animate-fadeInRight" data-duration="3s">
                     <?php echo $what_does_description_two; ?>
                 </div>
             </div>
@@ -119,7 +119,7 @@
     <div class="flex flex-col -z-0">
         <div class="flex w-full pt-[9.375rem] px-[11.25rem] items-center relative max-md:px-[2.1875rem] max-md:py-[6.25rem]">
             <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 8 (2).svg'?>" alt="" class="absolute top-0 left-0 select-none max-md:hidden z-10" draggable="false">
-            <h2 class="text-[5rem] text-[#14191D] font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $optimal_returns_title; ?></h2>
+            <h2 class="text-[5rem] text-[#14191D] font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $optimal_returns_title; ?></h2>
         </div>
 
         <div class="flex flex-col">
@@ -169,10 +169,10 @@
 
     <div class="flex flex-col gap-[18.75rem] py-[11.25rem] z-0">
         <div class="flex flex-col gap-32 px-[11.25rem] z-0 max-md:px-[2.1875rem]">
-            <h2 class="text-[5rem] text-white font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $for_investors_title; ?></h2>
+            <h2 class="text-[5rem] text-white font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="1.5s"><?php echo $for_investors_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col">
-                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <div class="flex-1 flex flex-col gap-7 font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[33.875rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $for_investors_description; ?>
                 </div>
 
@@ -181,7 +181,7 @@
                     <?php if(!empty($for_investors_button['url'])) : ?>
                     <a href="<?php echo $for_investors_button['url']; ?>">
                     <?php endif; ?>
-                    <button id="formOpenButton" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <button id="formOpenButton" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0"  data-animation="animate-fadeInLeft" data-duration="3s">
                         <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $for_investors_button['text']; ?></span>
                         <?php if(!empty($for_investors_button['icon'])) : ?>
                         <div class="group-hover:animate-bounce">

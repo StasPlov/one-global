@@ -13,10 +13,10 @@
         <div class="bg-black/30 absolute w-full h-full top-0 left-0"></div>
         
         <div class="flex flex-col items-start gap-12 z-0">
-            <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+            <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
                 <?php echo $header_title ;?>
             </h1>  
-            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[37.5rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
+            <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[37.5rem]"  data-animation="animate-fadeInLeft" data-duration="2.5s">
                 <?php echo $header_description ;?>
             </h2>
         </div>
@@ -52,7 +52,7 @@
             <?php endif; ?>
         </div>
 
-        <div class="flex flex-col items-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <div class="flex flex-col items-start"  data-animation="animate-fadeInLeft" data-duration="2s">
             <img src="<?php echo $title_logo['url']; ?>" alt="<?php echo $title_logo['alt']; ?>" draggable="false" class="select-none transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3  max-h-[13.125rem]">
             <h3 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">
                 <?php echo $title_description; ?>
@@ -76,17 +76,17 @@
 
         <div class="flex pr-[4.375rem] max-md:pr-0">
             <div class="flex min-h-screen w-full bg-white shadow-[0.625rem_0.625rem_1.875rem_0rem_#057eed33] py-[5.625rem] max-md:shadow-none max-md:flex-col">
-                <div class="flex-1" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <div class="flex-1"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <img src="<?php echo $content_image['url']; ?>" alt="<?php echo $content_image['alt']; ?>" draggable="false" class="h-full w-full object-top object-contain max-h-screen max-md:object-cover max-md:h-[34.1875rem]">
                 </div>
 
                 <div class="flex-1 flex flex-col gap-24 pl-[3.375rem] pr-[5.375rem] max-md:pt-20 max-md:px-[2.1875rem]">
                     <div class="flex flex-col gap-7 max-md:gap-20">
-                        <div class="flex flex-col gap-7 text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-bold text-start" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+                        <div class="flex flex-col gap-7 text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-bold text-start"  data-animation="animate-fadeInRight" data-duration="3s">
                             <?php echo $content_title; ?>
                         </div>
 
-                        <div class="flex flex-col gap-7 font-lato rtl:font-droidSansArabic text-[#1C2126] text-lg font-light text-start" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                        <div class="flex flex-col gap-7 font-lato rtl:font-droidSansArabic text-[#1C2126] text-lg font-light text-start"  data-animation="animate-fadeInRight" data-duration="2s">
                             <?php echo $content_description; ?>
                         </div>
                     </div>
@@ -126,18 +126,18 @@
     
 
     <div class="flex-1 flex flex-col gap-[6.875rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
-        <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
             <?php echo $for_investors_title; ?>
         </h1>  
 
         <div class="flex max-md:flex-col max-md:gap-20 max-md:items-start">
             <div class="flex-1">
-                <div class="max-w-[30.375rem] font-lato rtl:font-droidSansArabic text-white text-lg font-light leading-7 text-start" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                <div class="max-w-[30.375rem] font-lato rtl:font-droidSansArabic text-white text-lg font-light leading-7 text-start"  data-animation="animate-fadeInLeft" data-duration="3s">
                     <?php echo $for_investors_description; ?>
                 </div>
             </div>
 
-            <div class="flex-1 flex justify-center items-center" id="view-anim" data-animation="animate-fadeInRight" data-duration="2,5s">
+            <div class="flex-1 flex justify-center items-center"  data-animation="animate-fadeInRight" data-duration="2,5s">
                 <?php if($for_investors_button['is_enable']) : ?>
                 <?php if(!empty($for_investors_button['url'])) : ?>
                 <a href="<?php echo $for_investors_button['url']['url']; ?>">

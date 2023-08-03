@@ -59,13 +59,13 @@
         <div class="grid grid-cols-3 grid-rows-3 gap-0 max-md:hidden">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $info_first['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $info_first['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $info_first['description']; ?>
                     </span>
                 </div>
@@ -75,23 +75,23 @@
                 <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-full w-full object-cover">
             </div>
 
-            <div class="max-h-[26.875rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+            <div class="max-h-[26.875rem]"  data-animation="animate-fadeInRight" data-duration="3.5s">
                 <img src="<?php echo $info_first['image_two']['url']; ?>" alt="<?php echo $info_first['image_two']['alt']; ?>" class="h-full w-full object-cover">
             </div>
 
-            <div class="max-h-[26.875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3.5s">
+            <div class="max-h-[26.875rem]"  data-animation="animate-fadeInLeft" data-duration="3.5s">
                 <img src="<?php echo $info_two['image']['url']; ?>" alt="<?php echo $info_two['image']['alt']; ?>" class="h-full w-full object-cover">
             </div>
 
             <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $info_two['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $info_two['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $info_two['description']; ?>
                     </span>
                 </div>
@@ -99,19 +99,19 @@
 
             <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] border-r border-solid border-[#1c212633]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $info_three['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $info_three['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $info_three['description']; ?>
                     </span>
                 </div>
             </div>
 
-            <div class="col-span-2 row-start-3 max-h-[26.875rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+            <div class="col-span-2 row-start-3 max-h-[26.875rem]"  data-animation="animate-fadeInRight" data-duration="3s">
                 <div class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
@@ -144,13 +144,13 @@
                 <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $info_first['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $info_first['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $info_first['description']; ?>
                     </span>
                 </div>
@@ -160,13 +160,13 @@
                 <img src="<?php echo $info_first['image_two']['url']; ?>" alt="<?php echo $info_first['image_two']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $info_two['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $info_two['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $info_two['description']; ?>
                     </span>
                 </div>
@@ -176,19 +176,19 @@
                 <img src="<?php echo $info_two['image']['url']; ?>" alt="<?php echo $info_two['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $info_three['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $info_three['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $info_three['description']; ?>
                     </span>
                 </div>
             </div>
 
-            <div class="" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+            <div class=""  data-animation="animate-fadeInRight" data-duration="3s">
                 <div class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
@@ -224,7 +224,7 @@
     $content_button = get_field('content_button');
 ?>
 <div class="w-full overflow-hidden relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0"  data-animation="animate-fadeInRight" data-duration="4s">
     
     <div>
         <?php 
