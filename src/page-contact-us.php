@@ -11,11 +11,11 @@
     <div class="flex min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
             <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
-                <h1 class="text-[#1C2126] text-[5rem] font-caudex itali">
+                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali">
                     <?php echo $header_title; ?>
                 </h1>
 
-                <span class="text-[#1C2126] font-lato text-lg font-light leading-7 text-start max-w-[23.125rem]">
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light leading-7 text-start max-w-[23.125rem]">
                     <?php echo $header_description; ?>
                 </span>
             </div>
@@ -31,7 +31,7 @@
         <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
-                    <h1 class="text-white text-[5rem] font-caudex italic text-start flex flex-col">
+                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col">
                         <?php echo $header_title; ?>
                     </h1>
                 </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="px-[2.1875rem] pt-[6.25rem]">
-            <span class="text-[#1C2126] font-lato text-lg font-light leading-7 text-start max-w-[23.125rem]">
+            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light leading-7 text-start max-w-[23.125rem]">
                 <?php echo $header_description; ?>
             </span>
         </div>
@@ -67,10 +67,10 @@
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
-                            <h2 class="text-[#1C2126] font-lato text-2xl font-medium text-start">
+                            <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">
                                 <?php echo $form_title; ?>
                             </h2>
-                            <span class="text-[#1C2126] font-lato text-lg font-light text-start">
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start">
                                 <?php echo $form_description; ?>
                             </span>
                         </div>
@@ -86,7 +86,7 @@
                     </div>
                     
                     <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">
+                        <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
                             <?php echo $form_button_text; ?>
                         </span>
                         <div class="group-hover:animate-bounce">
@@ -101,7 +101,7 @@
         <div class="flex-1 max-md:px-[2.1875rem] max-md:pb-16">
             <div class="flex flex-col items-start gap-9">
                 <?php if(!empty($info_contacts)) : ?>
-                <span class="text-[#1C2126] font-lato text-lg font-medium" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
 
                 <div class="flex flex-col gap-6" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
                     <?php if(!empty($info_contacts['items'])) : ?>
@@ -109,7 +109,7 @@
                     <div class="flex flex-col gap-6" id="view-anim" data-animation="animate-fadeInLeft" data-duration="4s">
                         <div class="flex gap-6">
                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="select-none" draggable="false">  
-                            <span class="text-[#1C2126] font-lato text-lg font-light max-w-[20.625rem] text-start">
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">
                                 <?php echo $item['text']; ?>
                             </span>
                         </div>

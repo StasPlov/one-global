@@ -19,7 +19,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" style="background-image: url('<?php echo $header_image['url']; ?>')">
         <div>
-            <h1 class="text-white font-caudex italic font-normal text-[5rem] text-start">
+            <h1 class="text-white font-caudex rtl:font-droidSansArabic italic font-normal text-[5rem] text-start">
                 <?php echo $header_title; ?>
             </h1>
         </div>
@@ -40,7 +40,7 @@
                 <div class="group-hover:animate-bounce">
                     <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
                 </div>
-                <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">
+                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
                     <?php echo $button_back['text']; ?>
                 </span>
             </button>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="flex flex-col gap-8"> 
-            <h2 class="text-[#1C2126] font-caudex text-[5rem] italic font-normal text-start max-md:text-[2.5rem]"><?php the_title(); ?></h2>
+            <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[5rem] italic font-normal text-start max-md:text-[2.5rem]"><?php the_title(); ?></h2>
             <span class="text-start"><?php echo $short_title; ?></span>
         </div>
     </div>
@@ -69,7 +69,7 @@
                         <img src="<?php echo $info['schedule']['icon']['url']; ?>" alt="<?php echo $info['schedule']['icon']['alt']; ?>" class="max-h-[1rem]">
                         <?php endif; ?>
 
-                        <span class="text-[#1C2126] font-lato text-base font-medium text-start">
+                        <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-medium text-start">
                             <?php echo $info['schedule']['text'];  ?>
                             </span>
                         </div>
@@ -80,7 +80,7 @@
                             <img src="<?php echo $info['location']['icon']['url']; ?>" alt="<?php echo $info['location']['icon']['alt']; ?>" class="max-h-[1rem]">
                             <?php endif; ?>
 
-                            <span class="text-[#1C2126] font-lato text-base font-medium text-start">
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-medium text-start">
                                 <?php echo $info['location']['text']; ?>
                             </span>
                         </div>
@@ -91,7 +91,7 @@
                         <img src="<?php echo $info['time']['icon']['url']; ?>" alt="<?php echo $info['time']['icon']['alt']; ?>" class="max-h-[1rem]">
                         <?php endif; ?>
 
-                        <span class="text-[#1C2126] font-lato text-base font-medium text-start">
+                        <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-medium text-start">
                             <?php echo $info['time']['text']; ?>
                         </span>
                     </div>
@@ -100,9 +100,9 @@
         </div>
         <div class="flex-[37.7%] flex items-center">
             <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0">
-                <h2 class="text-[#1C2126] font-lato text-2xl font-medium text-start">Summary</h2>
+                <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">Summary</h2>
 
-                <span class="text-[#1C2126] font-lato font-light text-base text-start">
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic font-light text-base text-start">
                     <?php the_content(); ?>
                 </span>
             </div>
@@ -114,13 +114,13 @@
     <div class="flex border-t border-solid border-[#1c212633] max-md:flex-col max-md:pb-[8.125rem]">
         <div class="flex flex-[2]">
             <div class="flex-1 h-full flex items-center border-r border-solid border-[#1c212633] max-md:border-r-0">
-                <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0 text-[#1C2126] font-lato text-2xl font-medium text-start">
+                <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0 text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">
                     <?php echo $item['title']?>
                 </div>
             </div>
         </div>
         <div class="flex-[37.7%] flex items-center">
-            <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0 text-[#1C2126] font-lato text-base font-light text-start">
+            <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0 text-[#1C2126] font-lato rtl:font-droidSansArabic text-base font-light text-start">
                 <?php echo $item['description']?>
             </div>
         </div>
@@ -152,8 +152,8 @@
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
-                            <h2 class="text-[#1C2126] font-lato text-2xl font-medium text-start max-md:text-white"><?php echo $form_title; ?></h2>
-                            <span class="text-[#1C2126] font-lato text-lg font-light text-start max-md:text-white"><?php echo $form_description; ?></span>
+                            <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start max-md:text-white"><?php echo $form_title; ?></h2>
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start max-md:text-white"><?php echo $form_description; ?></span>
                         </div>
 
                         <div>
@@ -167,10 +167,10 @@
                     
                     <div class="flex flex-col gap-12 w-full">
                         <div class="flex justify-between">
-                            <span class="text-[#1C2126] font-lato text-[0.75rem] font-normal max-md:text-white"><?php echo $form_info; ?></span>
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal max-md:text-white"><?php echo $form_info; ?></span>
                             
                             <button type="file" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                                <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_button['text']; ?></span>
+                                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_button['text']; ?></span>
                                 <div class="group-hover:animate-bounce">
                                     <img src="<?php echo $form_button['icon']['url']; ?>" alt="<?php echo $form_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                                 </div>
@@ -179,11 +179,11 @@
 
                         <div class="flex justify-between gap-3 items-start">
                             <img :src="require('@/assets/images/Frame 244.svg')" alt="" class="">
-                            <span class="text-[#1C2126] font-lato text-[0.75rem] font-normal text-start max-md:text-white">By using this form you agree with the storage and handling of your data by this website.</span>
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal text-start max-md:text-white">By using this form you agree with the storage and handling of your data by this website.</span>
                         </div>
 
                         <button class="self-center relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                            <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_send_button_text; ?></span>
+                            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_send_button_text; ?></span>
                         </button>
                     </div>
                 </div>

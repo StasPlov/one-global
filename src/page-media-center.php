@@ -13,12 +13,12 @@
     <div class="flex flex-row-reverse min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
             <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
-                <h1 class="text-[#1C2126] text-[5rem] font-caudex itali">
-					<!-- Media <span class="font-lato not-italic font-medium">Center</span> -->
+                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali">
+					<!-- Media <span class="font-lato rtl:font-droidSansArabic not-italic font-medium">Center</span> -->
 					<?php echo $header_title; ?>
 				</h1>
 
-                <span class="text-[#1C2126] font-lato text-lg font-light leading-7 text-start max-w-[23.125rem]">
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light leading-7 text-start max-w-[23.125rem]">
                     <?php echo $header_description; ?>
 				</span>
             </div>
@@ -37,8 +37,8 @@
         <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
-                    <h1 class="text-white text-[5rem] font-caudex italic text-start flex flex-col">
-						<!-- Media <span class="font-lato not-italic font-medium">Center</span> -->
+                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col">
+						<!-- Media <span class="font-lato rtl:font-droidSansArabic not-italic font-medium">Center</span> -->
 						<?php echo $header_title; ?>
 					</h1>
                 </div>
@@ -47,7 +47,7 @@
 		<?php endif; ?>
 
         <div class="px-[2.1875rem] pt-[6.25rem]">
-			<span class="text-[#1C2126] font-lato text-lg font-light leading-7 text-start max-w-[23.125rem]">
+			<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light leading-7 text-start max-w-[23.125rem]">
 				<?php echo $header_description; ?>
 			</span>
         </div>
@@ -83,17 +83,17 @@
                         </div>
 
                         <div class="flex flex-col gap-4">
-                            <h2 class="font-lato text-[#1C2126] text-2xl font-medium leading-7 text-start"><?php the_title(); ?></h2>
-                            <p class="font-lato text-[#1C2126] text-base font-light leading-7 text-start"><?php echo the_excerpt(); ?></p>
+                            <h2 class="font-lato rtl:font-droidSansArabic text-[#1C2126] text-2xl font-medium leading-7 text-start"><?php the_title(); ?></h2>
+                            <p class="font-lato rtl:font-droidSansArabic text-[#1C2126] text-base font-light leading-7 text-start"><?php echo the_excerpt(); ?></p>
                         </div>
 
                         <div class="flex justify-between w-full items-center">
                             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                                <span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Read More</span>
+                                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Read More</span>
                                 <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                             </a>
 
-                            <span class="text-[#1C2126]/70 font-lato text-[0.625rem] font-medium text-center"><?php the_time('d/m/Y'); ?></span>
+                            <span class="text-[#1C2126]/70 font-lato rtl:font-droidSansArabic text-[0.625rem] font-medium text-center"><?php the_time('d/m/Y'); ?></span>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
 			<div class="flex-1"></div>
 			<div class="flex-[3] pl-[3.25rem]">
 				<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-					<span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300">Load More</span>
+					<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Load More</span>
 					<img :src="require('@/Assets/Icons/simple-line-icons_reload.svg')" alt="" class="transition duration-300 group-hover:animate-rotateEnd ">
 				</button>
 			</div>
@@ -129,8 +129,8 @@
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center">
             <div class="flex flex-col items-center gap-4 z-0">
-                <h2 class="text-white font-caudex font-normal text-[4rem] leading-[4rem] italic">Subscribe <span class="font-medium not-italic font-lato">to our</span> newsletter</h2>
-                <span class="text-white font-lato text-center text-lg font-light max-w-[30.625rem]">Stay informed about industry innovations and updates by subscribing to our newsletter.</span>
+                <h2 class="text-white font-caudex rtl:font-droidSansArabic font-normal text-[4rem] leading-[4rem] italic">Subscribe <span class="font-medium not-italic font-lato rtl:font-droidSansArabic">to our</span> newsletter</h2>
+                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[30.625rem]">Stay informed about industry innovations and updates by subscribing to our newsletter.</span>
             </div>
 
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
@@ -143,7 +143,7 @@
 
                 <div class="flex-1 flex justify-center items-center z-0">
                     <button class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300 text-center w-full">Subscribe</span>
+                        <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full">Subscribe</span>
                         <div class="group-hover:animate-bounce">
                             <img :src="require('@/Assets/Icons/arrow_rigth2.svg')" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
                         </div>

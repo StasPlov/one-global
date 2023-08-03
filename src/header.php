@@ -54,7 +54,7 @@
 			</nav>
 
 			<!-- menu -->
-			<div class="bg-black/80 absolute max-w-[calc(100%/2)] right-0 w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden rtl:right-auto rtl:left-0" id="main-menu">
+			<div class="bg-black/80 absolute max-w-[calc(100%/2)] right-0 w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden rtl:right-auto rtl:left-0 z-30" id="main-menu">
 				<div class="flex flex-col gap-24 py-14 px-28 w-full max-md:py-9 max-md:px-16">
 					<div class="flex justify-end max-md:hidden rtl:justify-start">
 						<span class="text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90" id="main-menu-button-close">✕</span>
@@ -98,7 +98,7 @@
 								<?php if(!empty($item['icon'])) : ?>
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-5">
 								<?php endif; ?>
-								<span class="text-sm text-white/40 font-lato font-medium uppercase rtl:text-lg"><?php echo $item['title']; ?></span>
+								<span class="text-sm text-white/40 font-lato rtl:font-droidSansArabic font-medium uppercase rtl:text-lg"><?php echo $item['title']; ?></span>
 							</button>
 							<?php if(!empty($item['url'])) : ?>
 								</a>

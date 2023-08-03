@@ -35,7 +35,7 @@
 				<a href="<?php echo $header_button['url']['url']; ?>">
 				<?php endif; ?>
             <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
-                <span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $header_button['text']; ?></span>
+                <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $header_button['text']; ?></span>
                 <?php if(!empty($header_button['icon'])) : ?>
 				<div class="group-hover:animate-bounce">
 					<img src="<?php echo $header_button['icon']['url']; ?>" alt="<?php echo $header_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
@@ -53,7 +53,7 @@
             <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
             <?php if($headerAnimTextData['isenable']) : ?>
             <div class="fixed max-w-min text-start transition-all <? echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<? echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
-                <span class="italic text-5xl font-caudex"><?php echo $headerAnimTextData['text']; ?></span> 
+                <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
             </div>
             <?php endif ?>
         </div>
@@ -63,15 +63,16 @@
 
 <!-- wee inovate -->
 <div class="relative w-full h-screen relative" id="stopAnimTrigger">
-	<div class="absolute w-full h-full flex items-center justify-center z-[1]">
+	<div class="absolute w-full h-full flex items-center justify-center z-[1] overflow-hidden">
 		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" id="stopAnimTriggerClose" class="absolute w-full h-screen scroll-animation-scale -scale-100">
 	</div>
 
 	<div class="hidden text-white max-md:flex">
 		<?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
+		
 		<?php if($headerAnimTextData['isenable']) : ?>
 		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
-			<span class="italic text-5xl font-caudex"><?php echo $headerAnimTextData['text']; ?></span> 
+			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
 		</div>
 		<?php endif ?>
 	</div>
@@ -92,7 +93,7 @@
             
 
             <div class="flex w-full h-full absolute top-0 left-0 items-center px-[11.25rem] bg-black/20">
-                <span class="text-white z-0 text-[5rem] font-lato absolute max-md:left-7 max-md:max-w-[40px]">
+                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:left-7 max-md:max-w-[40px]">
                     <?php if(!empty($headerAboutBgData['text'])) : ?>
                     <?php echo $headerAboutBgData['text']; ?>
                     <?php endif ?>
@@ -104,9 +105,9 @@
             <div class="flex flex-col gap-6 max-w-[33.125rem] max-md:px-[2.1875rem] max-md:gap-[4.375rem] text-start items-start sticky top-[var(--header-menu-height)]" id="view-anim" data-animation="animate-fadeInRight">
                 <div class="flex flex-col gap-5">
                     <?php $headerAboutInfoData = get_field('about_us_info', 'home-page'); ?>
-                    <h2 class="font-caudex text-[1.375rem] text-[#14191D]/80 leading-7"><?php echo $headerAboutInfoData['title']; ?></h2>
+                    <h2 class="font-caudex rtl:font-droidSansArabic text-[1.375rem] text-[#14191D]/80 leading-7"><?php echo $headerAboutInfoData['title']; ?></h2>
 
-                    <span class="font-lato font-light text-lg leading-7 text-[#14191D]">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#14191D]">
                         <?php echo $headerAboutInfoData['description']; ?>
                     </span>
                 </div>
@@ -116,7 +117,7 @@
 					<a href="<?php echo $about_us_button['url']['url']; ?>">
 					<?php endif; ?>
                 <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-					<span class="text-[#1C2126] text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $about_us_button['text']; ?></span>
+					<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $about_us_button['text']; ?></span>
 					
 					<?php if(!empty($about_us_button['icon'])) : ?>
 					<div class="group-hover:animate-bounce">
@@ -144,16 +145,16 @@
 	
 
     <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem]">
-        <h2 class="font-lato font-medium text-[5rem] text-start max-w-[29.375rem] w-full" id="view-anim" data-animation="animate-fadeInTop" data-duration="1.5s">
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full" id="view-anim" data-animation="animate-fadeInTop" data-duration="1.5s">
 			<?php echo $our_promise_title; ?>
 		</h2>
 
         <div class="flex max-md:flex-col justify-between gap-[8.3125rem] max-md:gap-14">
-            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
                 <?php echo $our_promise_text_one; ?>
             </span>
 
-            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
+            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg" id="view-anim" data-animation="animate-fadeInRight" data-duration="3s">
                 <?php echo $our_promise_text_two; ?>
             </span>
         </div>
@@ -171,7 +172,7 @@
 
     <div class="flex flex-col gap-[8.75rem] h-full items-center px-[11.25rem] max-md:px-[2.1875rem]">
        
-        <h2 class="font-caudex text-5xl leading-[3.5rem] italic max-w-[47.9375rem] max-md:max-w-none text-center" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+        <h2 class="font-caudex rtl:font-droidSansArabic text-5xl leading-[3.5rem] italic max-w-[47.9375rem] max-md:max-w-none text-center" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
 			<?php echo $digital_title; ?>
 		</h2>
 
@@ -185,10 +186,10 @@
                 
                 <div class="flex flex-col gap-4">
                     <?php if(!empty($item['title'])) : ?>
-                    <h3 class="font-caudex italic text-5xl text-start"><?php echo $item['title']; ?></h3>
+                    <h3 class="font-caudex rtl:font-droidSansArabic italic text-5xl text-start"><?php echo $item['title']; ?></h3>
                     <?php endif ?>
 
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start">
                         <?php if(!empty($item['description'])) : ?>
                         <?php echo $item['description']; ?>
                         <?php endif ?>
@@ -201,7 +202,7 @@
 
         <div class="flex flex-col self-start h-full py-[15.3125rem]">
             <?php $headerOurSubTitleData = get_field('our_subsidiaries_title', 'home-page'); ?>
-            <h2 class="font-lato font-medium text-[5rem] max-md:text-[3.75rem] text-start w-full" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurSubTitleData; ?></h2>
+            <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] max-md:text-[3.75rem] text-start w-full" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurSubTitleData; ?></h2>
         </div>
     </div>
 </div>
@@ -220,7 +221,7 @@
                 <div class="flex flex-col gap-8">
                     <img src="<?php echo $headerOgInnovationData['logo']['url']; ?>" alt="<?php echo $headerOgInnovationData['logo']['alt']; ?>" class="h-40 object-contain" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
 
-                    <span class="font-lato font-light text-lg leading-7 text-white text-start max-w-[27.5rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[27.5rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOgInnovationData['description']; ?>
                     </span>
                 </div>
@@ -230,7 +231,7 @@
 						<a href="<?php echo $headerOgInnovationData['button']['url']['url']; ?>">
 					<?php endif; ?>
 					<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
-						<span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $headerOgInnovationData['button']['text']; ?></span>
+						<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $headerOgInnovationData['button']['text']; ?></span>
 						<?php if(!empty($headerOgInnovationData['button']['icon'])) : ?>
 						<div class="group-hover:animate-bounce">
 							<img src="<?php echo $headerOgInnovationData['button']['icon']['url']; ?>" alt="<?php echo $headerOgInnovationData['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
@@ -263,7 +264,7 @@
             <img src="<?php echo $headerOgHubData['logo']['url']; ?>" alt="<?php echo $headerOgHubData['logo']['alt']; ?>" class="h-40 z-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2.5s">
 
             <div class="flex items-center gap-16 max-md:flex-col max-md:items-start">
-                <span class="font-lato font-light text-lg leading-7 text-white text-start max-w-[32.1875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[32.1875rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $headerOgHubData['description']; ?>
                 </span>
 
@@ -273,7 +274,7 @@
 				<a href="<?php echo $headerOgHubData['button']['url']['url']; ?>">
 				<?php endif; ?>
 				<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
-					<span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $headerOgHubData['button']['text']; ?></span>
+					<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $headerOgHubData['button']['text']; ?></span>
 					<?php if(!empty($headerOgHubData['button']['icon'])) : ?>
 					<div class="group-hover:animate-bounce">
 						<img src="<?php echo $headerOgHubData['button']['icon']['url']; ?>" alt="<?php echo $headerOgHubData['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
@@ -310,7 +311,7 @@
                 <div class="flex flex-col gap-8">
                     <img src="<?php echo $headerOgCapitalData['logo']['url']; ?>" alt="<?php echo $headerOgCapitalData['logo']['alt']; ?>" class="h-40 object-contain" id="view-anim" data-animation="animate-fadeInRight" data-duration="1s">
 
-                    <span class="font-lato font-light text-lg leading-7 text-white text-start max-w-[27.5rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[27.5rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $headerOgCapitalData['description']; ?>
                     </span>
                 </div>
@@ -321,7 +322,7 @@
 				<a href="<?php echo $headerOgCapitalData['button']['url']['url']; ?>">
 				<?php endif; ?>
 				<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
-					<span class="text-white text-sm font-medium font-lato group-hover:text-white transition duration-300"><?php echo $headerOgCapitalData['button']['text']; ?></span>
+					<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $headerOgCapitalData['button']['text']; ?></span>
 					<?php if(!empty($headerOgCapitalData['button']['icon'])) : ?>
 					<div class="group-hover:animate-bounce">
 						<img src="<?php echo $headerOgCapitalData['button']['icon']['url']; ?>" alt="<?php echo $headerOgCapitalData['button']['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
@@ -355,7 +356,7 @@
 <div class="w-full overflow-hidden relative">
     <div class="flex flex-col justify-center px-[11.25rem] pt-[15.625rem] pb-[17.5rem] max-md:px-[2.1875rem]">
         <?php if(!empty($headerOurServicesTitleData)) : ?>
-        <h2 class="font-lato font-medium text-[5rem] text-start w-full" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurServicesTitleData; ?></h2>
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurServicesTitleData; ?></h2>
         <?php endif ?>
     </div>
 	
@@ -365,13 +366,13 @@
         <div class="grid grid-cols-3 grid-rows-4 gap-0 max-md:hidden">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $headerOurServicesFirstData['num']; ?>           
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOurServicesFirstData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $headerOurServicesFirstData['description']; ?>
                     </span>
                 </div>
@@ -397,13 +398,13 @@
 
             <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $headerOurServicesTwoData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $headerOurServicesTwoData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $headerOurServicesTwoData['description']; ?>
                     </span>
                 </div>
@@ -411,13 +412,13 @@
 
             <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $headerOurServicesThreeData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOurServicesThreeData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $headerOurServicesThreeData['description']; ?>
                     </span>
                 </div>
@@ -437,13 +438,13 @@
 
             <div class="col-start-3 row-start-4 flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $headerOurServicesFourData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
                         <?php echo $headerOurServicesFourData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $headerOurServicesFourData['description']; ?>
                     </span>
                 </div>
@@ -457,13 +458,13 @@
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $headerOurServicesFirstData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOurServicesFirstData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $headerOurServicesFirstData['description']; ?>
                     </span>
                 </div>
@@ -475,13 +476,13 @@
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $headerOurServicesTwoData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $headerOurServicesTwoData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $headerOurServicesTwoData['description']; ?>
                     </span>
                 </div>
@@ -493,13 +494,13 @@
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start ax-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s">
                         <?php echo $headerOurServicesThreeData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOurServicesThreeData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInLeft" data-duration="1s">
                         <?php echo $headerOurServicesThreeData['description']; ?>
                     </span>
                 </div>
@@ -511,13 +512,13 @@
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic" id="view-anim" data-animation="animate-fadeInRight" data-duration="3.5s">
                         <?php echo $headerOurServicesFourData['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic" id="view-anim" data-animation="animate-fadeInRight" data-duration="1.5s">
                         <?php echo $headerOurServicesFourData['title']; ?>
                     </span>
-                    <span class="font-lato font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]" id="view-anim" data-animation="animate-fadeInRight" data-duration="2s">
                         <?php echo $headerOurServicesFourData['description']; ?>
                     </span>
                 </div>
@@ -543,11 +544,11 @@
 
     <div class="flex flex-col gap-14 px-[11.25rem] z-0 max-md:px-0">
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
-        <h2 class="font-lato font-medium text-[5rem] text-start w-full text-white" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full text-white" id="view-anim" data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
         <?php endif ?>
         
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
-        <span class="font-lato font-light text-lg leading-7 text-white text-start max-w-[25.5rem]" id="view-anim" data-animation="animate-fadeInBottom" data-duration="2.5s">
+        <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[25.5rem]" id="view-anim" data-animation="animate-fadeInBottom" data-duration="2.5s">
             <?php echo $headerInvestedVenturesDescriptionData['text']; ?>
         </span>
         <?php endif ?>
