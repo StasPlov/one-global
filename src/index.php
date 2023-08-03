@@ -11,7 +11,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline>
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
             <source src="<?php echo $header_background['video']['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -142,19 +142,17 @@
  	$our_promise_title = get_field('our_promise_title', 'home-page');
 ?>
 <div class="flex min-h-screen items-center w-full relative">
-	
-
     <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem]">
-        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full"  data-animation="animate-fadeInTop" data-duration="1.5s">
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full" data-animation="animate-fadeInTop" data-duration="1.5s">
 			<?php echo $our_promise_title; ?>
 		</h2>
 
         <div class="flex max-md:flex-col justify-between gap-[8.3125rem] max-md:gap-14">
-            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg"  data-animation="animate-fadeInLeft" data-duration="1s">
+            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-md:text-lg"  data-animation="animate-fadeInLeft" data-duration="1s">
                 <?php echo $our_promise_text_one; ?>
             </span>
 
-            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start last:mt-9 max-md:text-lg"  data-animation="animate-fadeInRight" data-duration="3s">
+            <span class="flex flex-col gap-6 max-w-[29.375rem] font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-md:text-lg"  data-animation="animate-fadeInRight" data-duration="3s">
                 <?php echo $our_promise_text_two; ?>
             </span>
         </div>

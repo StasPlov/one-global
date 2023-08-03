@@ -69,9 +69,9 @@
             <?php if(!empty($portfolio_items)) : ?>
             <?php foreach ($portfolio_items as $item) : ?>
             <?php if(!empty($item['url'])) : ?>
-                <a href="<?php echo $item['url']['url']; ?>" class="cursor-default	">
+                <a href="<?php echo $item['url']['url']; ?>" class="cursor-default">
             <?php endif; ?>
-            <div class="transition-all duration-500 hover:scale-105 cursor-pointer relative overflow-hidden h-[21.875rem] w-full bg-cover rounded-lg drop-shadow-[0rem_0rem_6.25rem_#057eed4d]" style="background-image: url('<?php echo $item['image']['url']; ?>')">
+            <div class="transition-all duration-500 hover:scale-105 cursor-default relative overflow-hidden h-[21.875rem] w-full bg-cover rounded-lg drop-shadow-[0rem_0rem_6.25rem_#057eed4d]" style="background-image: url('<?php echo $item['image']['url']; ?>')">
                 <div class="flex w-full h-full py-7 px-6">
                     <div class="bg-black/30 absolute w-full h-full top-0 left-0 -z-10"></div>
                     <h2 class="text-white font-caudex rtl:font-droidSansArabic italic text-[2.5rem] leading-10"><?php echo $item['title']; ?></h2>
@@ -172,7 +172,7 @@
 	</script>
 	<!-- Stay Connected from -->
 	<div id="stayFormWrapper" class="fixed top-0 left-0 w-full h-full flex justify-center items-center after:content-normal after:absolute after:bg-black after:opacity-50 after:w-full after:h-full after:top-0 after:left-0 overflow-auto py-[100vh] z-50 hidden">
-		<form id="stayForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50">
+		<form id="stayForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50" style="transform: scale(0.7);">
 			<div class="flex flex-col gap-8">
 				<h2 class="text-[#14191D] text-caudex text-[4rem] font-medium italic leading-none"><?php echo $stay_connected_from_form_title; ?></h2>
 				<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic font-light">

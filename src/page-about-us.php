@@ -155,7 +155,7 @@
         <?php if($keyItem == $key) : ?>
         <?php foreach ($item['items'] as $keyUser => $user) : ?>
         <div class="flex flex-col "  data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
-            <div class="flex-1 h-[19.75rem]">
+            <div class="h-[19.75rem]">
                 <img src="<?php echo $user['image']['url']; ?>" alt="<?php echo $user['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">
             </div>
 
@@ -166,7 +166,7 @@
                     </h3>
 
                     <div class="flex gap-2">
-                        <span class="border-r border-solid border-[#1c212633] pr-2 rtl:border-r-0 rtl:border-l rtl:border-solid rtl:border-[#1c212633] rtl:pl-2">
+                        <span class="rtl:pl-2">
                             <?php echo $user['post']; ?>
                         </span>
                         <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-sm font-light">
@@ -311,7 +311,7 @@
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
-        <div class="flex flex-col gap-12 items-center">
+        <form id="subscribeForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="flex flex-col gap-12 items-center">
             <div class="flex flex-col items-center gap-4 z-0">
                 <h2 class="text-white font-caudex rtl:font-droidSansArabic font-normal text-[4rem] leading-[4rem] italic max-md:text-start">
                     <?php echo $subscribe_title; ?>
@@ -320,15 +320,17 @@
                     <?php echo $subscribe_description; ?>
                 </span>
             </div>
+            
+            <div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
 
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
-                        <input type="text" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                        <input type="text" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="text" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="email" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
                     </div>
                 </div>
-
+                
                 <div class="flex-1 flex justify-center items-center z-0">
                     <?php if($subscribe_button['is_enable']) : ?>
                     <?php if(!empty($subscribe_button['url'])) : ?>
@@ -346,8 +348,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-        
-        </div>
+        </form>
     </div>
 </div>
 <!-- subscribe end -->

@@ -55,7 +55,7 @@
     $form_inputs = get_field('form_inputs');
     $form_button_text = get_field('form_button_text');
     $info_contacts = get_field('info_contacts');
-    $form_button_text = get_field('form_button_text');
+    $form_button = get_field('form_button');
 ?>
 <div class="w-full py-[4.375rem] max-md:pb-0">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
@@ -63,7 +63,7 @@
     <div class="flex max-md:flex-col-reverse">
         <div class="flex-1 flex items-center justify-center">
             <!-- form -->
-            <div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none"  data-animation="animate-fadeInLeft" data-duration="3s">
+            <form id="contactsForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
@@ -77,24 +77,30 @@
 
                         <div>
                             <div class="flex flex-col gap-8">
-                                <input type="text" placeholder="<?php echo $form_inputs['full_name']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" placeholder="<?php echo $form_inputs['mobile_number']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" placeholder="<?php echo $form_inputs['email']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" placeholder="<?php echo $form_inputs['message']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="full_name" placeholder="<?php echo $form_inputs['full_name']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="mobile_number" placeholder="<?php echo $form_inputs['mobile_number']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="email" name="email" placeholder="<?php echo $form_inputs['email']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="message" placeholder="<?php echo $form_inputs['message']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
                             </div>
                         </div>
                     </div>
                     
-                    <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                    <div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
+                    
+                    <?php if(!empty($form_button) && $form_button['text'] && $form_button['is_enable']) : ?>
+                    <button type="submit" id="sendFormContact" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                         <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
-                            <?php echo $form_button_text; ?>
+                            <?php echo $form_button['text']; ?>
                         </span>
+                        <?php if(!empty($form_button['icon'])) : ?>
                         <div class="group-hover:animate-bounce">
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
+                            <img src="<?php echo $form_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                         </div>
+                        <?php endif; ?>
                     </button>
+                    <?php endif; ?>
                 </div>
-            </div>
+            </form>
             <!-- form end -->
         </div>
 
@@ -103,7 +109,7 @@
                 <?php if(!empty($info_contacts)) : ?>
                 <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium"  data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
 
-                <div class="flex flex-col gap-6"  data-animation="animate-fadeInRight" data-duration="4s">
+                <div class="flex flex-col gap-6">
                     <?php if(!empty($info_contacts['items'])) : ?>
                     <?php foreach ($info_contacts['items'] as $item) : ?>
                     <div class="flex flex-col gap-6"  data-animation="animate-fadeInLeft" data-duration="4s">
