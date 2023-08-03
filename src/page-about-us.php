@@ -118,8 +118,8 @@
             <div class="flex">
                 <?php if(!empty($board_items)) : ?>
                 <?php foreach ($board_items as $key => $item) : ?>
-                <button class="flex-1 flex items-center justify-center px-[2.75rem] py-[1.375rem] bg-white transition z-10" style="<?php if($keyItem != $key) { echo 'background: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>">
-                    <span class="text-white font-lato text-sm font-medium uppercase max-phoneM:text-[0.6rem]" style="text-wrap: nowrap; <?php if($keyItem == $key) { echo 'color: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>"> 
+                <button class="flex-1 flex items-center justify-center  py-[1.375rem] bg-white transition z-10 max-lg:px-0" style="<?php if($keyItem != $key) { echo 'background: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>">
+                    <span class="text-white font-lato text-sm font-medium uppercase max-phoneM:text-[0.6rem] max-lg:text-[0.6875rem]" style="text-wrap: nowrap; <?php if($keyItem == $key) { echo 'color: #000103;'; } ?>" data-board-menu-id="<?php echo $key; ?>"> 
                         <?php echo $item['button_text']; ?>
                     </span>
                 </button>
@@ -196,9 +196,7 @@
 ?>
 <div class="w-full bg-black relative overflow-hidden">
     <img src="<?php echo $geography_background['url'];?>" alt="<?php echo $geography_background['alt'];?>" class="absolute w-full h-full top-0 left-0" id="view-anim" data-animation="animate-fadeInRight" data-duration="1s">
-    
-    
-    
+
     <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
             <div class="flex flex-col gap-6">
@@ -234,7 +232,7 @@
         </div>
         
         <?php if(!empty($geography_map)) : ?>
-        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0" draggable="false" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
+        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%]" draggable="false" id="view-anim" data-animation="animate-fadeInRight" data-duration="4s">
         <?php endif; ?>
     </div>
 </div>

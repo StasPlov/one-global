@@ -392,6 +392,9 @@ module.exports = {
 			caudex: [
 				'caudex'
 			],
+			droidSansArabic: [
+				'Droid Sans Arabic'
+			],
 			sans: [
 				'Open Sans',
 				'Open Sans',

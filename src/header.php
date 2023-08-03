@@ -15,7 +15,7 @@
 
 	<body>
 		<!-- header -->
-		<header class="sticky top-[0rem] z-20">
+		<header class="sticky top-[0rem] z-30">
 			<nav class="bg-black h-[var(--header-menu-height)] flex justify-between border-b border-solid border-[#c4c4c44d]">
 				<div class="flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 ">
 					<?php $logo = get_field('main_logo', 'general-settings'); ?>
@@ -28,7 +28,7 @@
 				<?php if(is_array($topMenuList)): ?>
 				<?php foreach($topMenuList as $item ) : ?>
 				<a href="<?php echo $item['item']['url']; ?>" target="<?php echo $item['item']['target']; ?>" title="<?php echo $item['item']['title']; ?>" class="max-md:hidden flex px-5 flex-1 items-center justify-center border-r border-solid border-[#c4c4c45e] cursor-pointer transition hover:bg-white/10 group">
-					<span class="text-sm text-white transition uppercase"><?php echo $item['item']['name']; ?></span>
+					<span class="text-sm text-white transition uppercase rtl:text-lg"><?php echo $item['item']['name']; ?></span>
 				</a>
 				<?php endforeach; ?>
 				<?php endif; ?>
@@ -40,9 +40,7 @@
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
 							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 first:rtl:border-r-0 first:rtl:border-l first:rtl:border-solid first:rtl:border-white first:rtl:pl-4">
 							<div class="flex gap-3 min-w-max items-center">
-								<span class="text-sm text-white capitalize">
-									<?php echo $item['slug'];  ?>
-								</span>
+								<span class="text-sm text-white capitalize rtl:text-lg"><?php echo $item['slug'];  ?></span>
 							</div>
 							</a>
 							<?php endforeach; ?>
@@ -84,9 +82,7 @@
 							<?php foreach(pll_the_languages(['raw' => true]) as $item ) : ?>
 							<a href="<?php echo $item['url']; ?>">
 							<div class="flex gap-3 min-w-max items-center px-6 py-5">
-								<span class="text-sm text-white">
-									<?php echo $item['name'];  ?>
-								</span>
+								<span class="text-sm text-white rtl:text-lg"><?php echo $item['name'];  ?></span>
 							</div>
 							</a>
 							<?php endforeach; ?>
@@ -102,7 +98,7 @@
 								<?php if(!empty($item['icon'])) : ?>
 								<img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="w-5">
 								<?php endif; ?>
-								<span class="text-sm text-white/40 font-lato font-medium uppercase"><?php echo $item['title']; ?></span>
+								<span class="text-sm text-white/40 font-lato font-medium uppercase rtl:text-lg"><?php echo $item['title']; ?></span>
 							</button>
 							<?php if(!empty($item['url'])) : ?>
 								</a>
@@ -115,4 +111,4 @@
 		</header>
 		<!-- header end -->
 		
-		<main>
+		<main class="overflow-hidden">

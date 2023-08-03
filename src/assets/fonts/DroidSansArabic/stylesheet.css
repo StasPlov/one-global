@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Droid Sans Arabic';
+    src: local('Droid Sans Arabic'), local('Droid-Sans-Arabic'), url('Droid_Sans_Arabic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

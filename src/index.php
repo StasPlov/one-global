@@ -6,7 +6,7 @@
 	$header_button = get_field('header_button', 'home-page');
 	$header_background = get_field('header_background', 'home-page');
 ?>
-<div class="relative w-full h-screen overflow-hidden" id="scroll-trigger2">
+<div class="relative w-full h-screen" id="scroll-trigger2">
 	
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
@@ -52,7 +52,7 @@
         <div class="text-white max-md:hidden">
             <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
             <?php if($headerAnimTextData['isenable']) : ?>
-            <div class="absolute max-w-min text-start transition-all" id="scroll-anim2" style="<? echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 29%;">
+            <div class="fixed max-w-min text-start transition-all <? echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<? echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
                 <span class="italic text-5xl font-caudex"><?php echo $headerAnimTextData['text']; ?></span> 
             </div>
             <?php endif ?>
@@ -62,15 +62,19 @@
 <!-- header end -->
 
 <!-- wee inovate -->
-<div class="relative w-full h-screen overflow-hidden" id="scroll-trigger">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen">
+<div class="relative w-full h-screen relative" id="stopAnimTrigger">
+	<div class="absolute w-full h-full flex items-center justify-center z-[1]">
+		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" id="stopAnimTriggerClose" class="absolute w-full h-screen scroll-animation-scale -scale-100">
+	</div>
 
-    <div class="absolute max-w-min text-start transition-all" id="scroll-anim" style="top: 45%; left: 45%;">
-        <?php $headerWeInnovatetData = get_field('we_innovate_animation_text', 'home-page'); ?>
-        <?php if($headerWeInnovatetData['isenable']) : ?>
-        <span class="italic text-5xl font-caudex"><?php echo $headerWeInnovatetData['text']; ?></span>
-        <?php endif ?>
-    </div>
+	<div class="hidden text-white max-md:flex">
+		<?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
+		<?php if($headerAnimTextData['isenable']) : ?>
+		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
+			<span class="italic text-5xl font-caudex"><?php echo $headerAnimTextData['text']; ?></span> 
+		</div>
+		<?php endif ?>
+	</div>
 </div>
 <!-- wee inovate end -->
 
@@ -79,8 +83,6 @@
 	$about_us_button = get_field('about_us_button', 'home-page');
 ?>
 <div class="w-full bg-white relative overflow-hidden">
-    
-
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col">
         <div class="flex-1 relative" id="view-anim" data-animation="animate-fadeInLeft" data-duration="2s">
             <?php $headerAboutBgData = get_field('about_us_background', 'home-page'); ?>
