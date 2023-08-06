@@ -106,7 +106,7 @@
 	
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
-            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2" style="z-index: 1;">
+            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2 z-10">
                 <?php if(!empty($what_does_items)) : ?>
                 <?php foreach ($what_does_items as $item) : ?>
                 <div class="flex flex-col gap-[1.375rem] flex-1">

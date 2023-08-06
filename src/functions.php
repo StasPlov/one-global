@@ -210,3 +210,17 @@ function handle_subscribe_form_submission() {
 }
 add_action('wp_ajax_submit_subscribe_form', 'handle_subscribe_form_submission');
 add_action('wp_ajax_nopriv_submit_subscribe_form', 'handle_subscribe_form_submission');
+
+function devstages_video_embed( $attr, $content='' )
+	{
+	  if ( ! isset( $attr['poster'] ) && has_post_thumbnail() ) {
+	    $poster = wp_get_attachment_image_src(
+	      get_post_thumbnail_id(),
+	      'poster'
+	    );
+	    $attr['poster'] = $poster['0'];
+	  }
+	  return wp_video_shortcode( $attr, $content );
+	}
+	
+	add_shortcode( 'video', 'devstages_video_embed' );

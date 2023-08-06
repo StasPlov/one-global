@@ -52,7 +52,7 @@
         <div class="text-white max-md:hidden">
             <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
             <?php if($headerAnimTextData['isenable']) : ?>
-            <div class="fixed max-w-min text-start transition-all <? echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<? echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
+            <div class="fixed max-w-min text-start transition-all <?php echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<?php echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
                 <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
             </div>
             <?php endif ?>

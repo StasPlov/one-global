@@ -52,9 +52,9 @@
                         <?php foreach ($item['menu'] as $itemMenu) : ?>
 
 						<?php if(!empty($itemMenu['url'])) : ?>
-							<a href="<?php echo $itemMenu['url']['url']; ?>" target="<?php echo $itemMenu['url']['target']; ?>" class="text-white/40 text-sm font-lato rtl:font-droidSansArabic font-medium leading-7 rtl:text-lg"><?php echo  (!empty($itemMenu['title'])) ? $itemMenu['title'] : $itemMenu['url']['name']; ?></a>
+							<a href="<?php echo $itemMenu['url']['url']; ?>" target="<?php echo $itemMenu['url']['target']; ?>" class="text-white/40 text-sm font-lato rtl:font-droidSansArabic font-medium leading-7 rtl:text-base"><?php echo  (!empty($itemMenu['title'])) ? $itemMenu['title'] : $itemMenu['url']['name']; ?></a>
 						<?php elseif(!empty($itemMenu['title'])) : ?>
-							<span class="text-sm text-white/40 font-lato rtl:font-droidSansArabic font-normal rtl:text-lg"><?php echo $itemMenu['title']; ?></span>
+							<span class="text-sm text-white/40 font-lato rtl:font-droidSansArabic font-normal rtl:text-base cursor-pointer"><?php echo $itemMenu['title']; ?></span>
 						<?php endif; ?>
 
                         <?php endforeach; ?>
@@ -189,7 +189,7 @@
 	</script>
 	<!-- Stay Connected from -->
 	<div id="stayFormWrapper" class="fixed top-0 left-0 w-full h-full flex justify-center items-center after:content-normal after:absolute after:bg-black after:opacity-50 after:w-full after:h-full after:top-0 after:left-0 overflow-auto py-[100vh] z-50 hidden">
-		<form id="stayForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50" style="transform: scale(0.7);">
+		<form method="POST" action="<?php echo admin_url('admin-ajax.php'); ?>?action=submit_stayconnected_form" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50 scale-[0.7]">
 			<div class="flex flex-col gap-8">
 				<h2 class="text-[#14191D] text-caudex text-[4rem] font-medium italic leading-none"><?php echo $stay_connected_from_form_title; ?></h2>
 				<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic font-light">
@@ -221,8 +221,10 @@
 					<?php endforeach; ?>
 					<?php endif; ?>
 				</div>
-				
-    			<div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
+                
+				<?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+    			<div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
+                
 				<div class="flex flex-col gap-4 items-start">
 					<?php if(!empty($stay_connected_from_button) && $stay_connected_from_button['is_enable'] && $stay_connected_from_button['text']) : ?>
 					<button type="submit" class="relative flex gap-2 justify-between items-center px-[2.625rem] py-[0.875rem] border border-solid border-[#057EED] rounded-3xl transition duration-300 group hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">

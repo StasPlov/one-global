@@ -1,12 +1,12 @@
 import MainMenu from "./MainMenu";
 import UserBoard from "./UserBoard";
-import Send from "./Send";
+/* import Send from "./Send"; */
 
 addEventListener("DOMContentLoaded", () => {
 
 	const mainMenu = new MainMenu();
 	const userBoard = new UserBoard();
-	const send = new Send();
+	/* const send = new Send(); */
 
 	window.addEventListener('scroll', () => {
 		let { scrollY } = window;
