@@ -272,7 +272,8 @@
 					<?php endif; ?>
 				</div>
 				
-				<div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
+				<?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+                <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
 				
 				<div class="flex flex-col gap-4 items-start">
 					<?php if(!empty($stay_connected_from_button) && $stay_connected_from_button['is_enable'] && $stay_connected_from_button['text']) : ?>

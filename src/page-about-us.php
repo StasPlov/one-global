@@ -56,7 +56,7 @@
     <div class="flex flex-col gap-[9.375rem] px-[11.25rem] py-[9.375rem] max-md:px-[2.1875rem] ">
         <?php if(!empty($history_items)) : ?>
         <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
-        <div class="flex flex-col gap-7"  data-animation="animate-fadeInLeft" data-duration="2s" style="<? echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
+        <div class="flex flex-col gap-7"  data-animation="animate-fadeInLeft" data-duration="2s" style="<?php echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
             <div class="flex flex-col gap-4">
                 <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>
@@ -329,7 +329,8 @@
                     </div>
                 </div>
                 
-                <div class="g-recaptcha" data-sitekey="6Le6-HonAAAAAK4Tq-9YX52DS7sFTktDbEbXekon"></div>
+                <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+                <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
 
                 <div class="flex-1 flex justify-center items-center z-0">
                     <?php if($subscribe_button['is_enable']) : ?>

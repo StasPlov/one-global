@@ -298,7 +298,7 @@
 <?php 
 	$headerOgCapitalData = get_field('og_capital', 'home-page'); 
 ?>
-<div class="w-full h-screen bg-black py-[6.25rem] pt-[10.625rem] relative overflow-hidden max-md:pt-0 max-md:px-0 <? echo ((pll_current_language() == 'ar') ? 'pr-0 pl-[11.25rem]' : 'pr-[11.25rem]' ); ?>">
+<div class="w-full h-screen bg-black py-[6.25rem] pt-[10.625rem] relative overflow-hidden max-md:pt-0 max-md:px-0 <?php echo ((pll_current_language() == 'ar') ? 'pr-0 pl-[11.25rem]' : 'pr-[11.25rem]' ); ?>">
     <img src="<?php echo $headerOgCapitalData['background_image']['url']; ?>" alt="<?php echo $headerOgCapitalData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInLeft" data-duration="3s">
 
 	

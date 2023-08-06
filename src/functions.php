@@ -89,8 +89,12 @@ function get_menu_items_by_registered_slug($menu_slug)
 
 
 
-function handle_stayconnected_form_submission()
-{
+function handle_stayconnected_form_submission() {
+	$recaptcha = $_POST['g-recaptcha-response'];
+	if(empty($recaptcha)) {
+		wp_send_json(false);
+	}
+
 	$last_name = sanitize_text_field($_POST['last_name']);
 	$first_name = sanitize_text_field($_POST['first_name']);
 	$email = sanitize_email($_POST['email']);
@@ -126,42 +130,12 @@ add_action('wp_ajax_nopriv_submit_stayconnected_form', 'handle_stayconnected_for
 
 
 
-function handle_feedback_form_submission() {
-	$last_name = sanitize_text_field($_POST['last_name']);
-	$first_name = sanitize_text_field($_POST['first_name']);
-	$email = sanitize_email($_POST['email']);
-	$phone = sanitize_text_field($_POST['phone']);
-	$company = sanitize_text_field($_POST['company']);
-	$preferences = sanitize_text_field($_POST['preferences']);
-	$message = sanitize_textarea_field($_POST['message']);
-
-	// Создание записи с полученными данными формы
-	$post_data = array(
-		'post_title' => 'Connected',
-		'post_type' => 'feedback', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
-		'post_status' => 'publish',
-		/* 'meta_input'  => [
-			'first_name' => $last_name,
-			'last_name' => $first_name,
-			'email_address' => $email,
-			'phone_number' => $phone,
-			'company_name' => $company,
-			'investment_preferences' => $preferences,
-			'additional_comments' => $message,
-		] */
-	);
-
-	$post_id = wp_insert_post($post_data);
-
-	// Отправка ответа обратно клиентской части
-	wp_send_json(true);
-}
-add_action('wp_ajax_submit_feedback_form', 'handle_feedback_form_submission');
-add_action('wp_ajax_nopriv_submit_feedback_form', 'handle_feedback_form_submission');
-
-
-
 function handle_contacts_form_submission() {
+	$recaptcha = $_POST['g-recaptcha-response'];
+	if(empty($recaptcha)) {
+		wp_send_json(false);
+	}
+
 	$full_name = sanitize_text_field($_POST['full_name']);
 	$mobile_number = sanitize_text_field($_POST['mobile_number']);
 	$email = sanitize_email($_POST['email']);
@@ -189,6 +163,11 @@ add_action('wp_ajax_submit_contacts_form', 'handle_contacts_form_submission');
 add_action('wp_ajax_nopriv_submit_contacts_form', 'handle_contacts_form_submission');
 
 function handle_subscribe_form_submission() {
+	$recaptcha = $_POST['g-recaptcha-response'];
+	if(empty($recaptcha)) {
+		wp_send_json(false);
+	}
+
 	$full_name = sanitize_text_field($_POST['full_name']);
 	$email = sanitize_email($_POST['email']);
 
@@ -211,16 +190,68 @@ function handle_subscribe_form_submission() {
 add_action('wp_ajax_submit_subscribe_form', 'handle_subscribe_form_submission');
 add_action('wp_ajax_nopriv_submit_subscribe_form', 'handle_subscribe_form_submission');
 
-function devstages_video_embed( $attr, $content='' )
-	{
-	  if ( ! isset( $attr['poster'] ) && has_post_thumbnail() ) {
-	    $poster = wp_get_attachment_image_src(
-	      get_post_thumbnail_id(),
-	      'poster'
-	    );
-	    $attr['poster'] = $poster['0'];
-	  }
-	  return wp_video_shortcode( $attr, $content );
+
+function handle_get_careers() {
+
+	$carrers_category = trim($_POST['carrers_category']);
+	$carrers_job_type = trim($_POST['carrers_job_type']);
+	$carrers_location = trim($_POST['carrers_location']);
+	$post_id = trim($_POST['post_id']);
+
+	$taxList = [];
+
+	if(!empty($carrers_category)) {
+		array_push($taxList, [
+			'taxonomy' => 'carrers-category',
+			'field' => 'slug',
+			'terms' => $carrers_category
+		]);
 	}
-	
-	add_shortcode( 'video', 'devstages_video_embed' );
+
+	if(!empty($carrers_job_type)) {
+		array_push($taxList, [
+			'taxonomy' => 'carrers-job-type',
+			'field' => 'slug',
+			'terms' => $carrers_job_type
+		]);
+	}
+
+	if(!empty($carrers_location)) {
+		array_push($taxList, [
+			'taxonomy' => 'carrers-location',
+			'field' => 'slug',
+			'terms' => $carrers_location
+		]);
+	}
+
+	$args = [
+		'post_type' => 'careers',
+		'posts_per_page' => 10
+	];
+
+	if(!empty($taxList)) {
+		$args = [
+			'post_type' => 'careers',
+			'posts_per_page' => 10,
+			'tax_query' => $taxList
+		];
+	}
+
+	$posts = (new WP_Query($args))->get_posts();
+	$result = [];
+
+	foreach($posts as $post ) {
+		array_push($result, [
+			'title' => get_the_title($post),
+			'excerpt' => get_the_excerpt($post),
+			'link' => get_permalink($post),
+			'info' => get_field('info', $post),
+			'content_button' => get_field('content_button', $post_id)
+		]);
+	}
+
+	$json = json_decode( json_encode( $result ), true );
+	wp_send_json($json);
+}
+add_action('wp_ajax_get_careers', 'handle_get_careers');
+add_action('wp_ajax_nopriv_get_careers', 'handle_get_careers');

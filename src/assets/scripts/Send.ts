@@ -21,73 +21,95 @@ export default class Send {
 		
 
 		if (this.formStay !== null) {
-			this.formStay.addEventListener('submit', (event) => {
+			this.formStay.addEventListener('submit', async (event) => {
+				event.preventDefault();
 				if (this.isSendingForm) {
 					return;
 				}
 
-				const b = (event.target as HTMLElement).querySelector('button[type="submit"]') as HTMLElement;
-				b.style.opacity = '0.5';
-
-				event.preventDefault();
+				const b = (event.target as HTMLElement).querySelector('button[type="button"]') as HTMLElement;
 				const url = this.formStay?.getAttribute('data-endpoint');
 
 				if (url) {
 					this.isSendingForm = true;
 					var formData = new FormData(this.formStay as HTMLFormElement);
-					this.sendSubscribe(`${url}?action=submit_stayconnected_form`, formData);
+
+					const result: boolean = await this.send(`${url}?action=submit_subscribe_form`, formData);
+					this.isSendingForm = false;
+					
+					if(!result) {
+						alert("recapthca validation false");
+						return;
+					}
+
+					location.reload();
 				}
 			});
 		}
 
 		if (this.contactsForm !== null) {
-			this.contactsForm.addEventListener('submit', (event) => {
+			this.contactsForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
 				if (this.isSendingForm) {
 					return;
 				}
 
 				const b = (event.target as HTMLElement).querySelector('button[type="submit"]') as HTMLElement;
-				b.style.opacity = '0.5';
-
-				event.preventDefault();
 				const url = this.contactsForm?.getAttribute('data-endpoint');
 
 				if (url) {
 					this.isSendingForm = true;
 					var formData = new FormData(this.contactsForm as HTMLFormElement);
-					this.sendSubscribe(`${url}?action=submit_contacts_form`, formData);
+
+					const result: boolean = await this.send(`${url}?action=submit_subscribe_form`, formData);
+					this.isSendingForm = false;
+					
+					if(!result) {
+						alert("recapthca validation false");
+						return;
+					}
+
+					location.reload();
 				}
 			});
 		}
 
 		if (this.subscribeForm !== null) {
-			this.subscribeForm.addEventListener('submit', (event) => {
+			this.subscribeForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
 				if (this.isSendingForm) {
 					return;
 				}
 
 				const b = (event.target as HTMLElement).querySelector('button[type="submit"]') as HTMLElement;
-				b.style.opacity = '0.5';
-
-				event.preventDefault();
 				const url = this.subscribeForm?.getAttribute('data-endpoint');
 
 				if (url) {
 					this.isSendingForm = true;
 					var formData = new FormData(this.subscribeForm as HTMLFormElement);
-					this.sendSubscribe(`${url}?action=submit_subscribe_form`, formData);
+					
+					const result: boolean = await this.send(`${url}?action=submit_subscribe_form`, formData);
+					this.isSendingForm = false;
+					
+					if(!result) {
+						alert("recapthca validation false");
+						return;
+					}
+
+					location.reload();
+					
 				}
 			});
 		}
 	}
 
-	sendSubscribe(url: string, formData: any) {
-		axios.post(url, formData)
-			.then((response: any) => {
-				console.error(response);
-			})
-			.catch((error: any) => {
-				console.error(error);
-			});
+	async send(url: string, formData: any): Promise<boolean> {
+		const result = await axios.post(url, formData);
+		
+		if(result.data) {
+			return true;
+		} 
+
+		return false;
 	}
 }

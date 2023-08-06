@@ -189,7 +189,7 @@
 	</script>
 	<!-- Stay Connected from -->
 	<div id="stayFormWrapper" class="fixed top-0 left-0 w-full h-full flex justify-center items-center after:content-normal after:absolute after:bg-black after:opacity-50 after:w-full after:h-full after:top-0 after:left-0 overflow-auto py-[100vh] z-50 hidden">
-		<form method="POST" action="<?php echo admin_url('admin-ajax.php'); ?>?action=submit_stayconnected_form" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50 scale-[0.7]">
+		<form id="stayForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50 scale-[0.7]">
 			<div class="flex flex-col gap-8">
 				<h2 class="text-[#14191D] text-caudex text-[4rem] font-medium italic leading-none"><?php echo $stay_connected_from_form_title; ?></h2>
 				<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic font-light">
@@ -201,13 +201,13 @@
 
 				<?php if(!empty($stay_connected_from_inputs)) : ?>
 				<div class="flex flex-col gap-[1.0625rem]">
-					<input type="text" name="first_name" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['first_name']; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<input type="text" name="last_name" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['last_name'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<input type="email" name="email" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['email_address'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<input type="text" name="phone" maxlength="13" placeholder="<?php echo $stay_connected_from_inputs['phone_number'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<input type="text" name="company" maxlength="500" placeholder="<?php echo $stay_connected_from_inputs['company_name'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<input type="text" name="preferences" maxlength="2500" placeholder="<?php echo $stay_connected_from_inputs['investment_preferences']; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
-					<textarea name="message" maxlength="2500" placeholder="<?php echo $stay_connected_from_inputs['additional_comments'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium"></textarea>
+					<input type="text" name="first_name" required="required" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['first_name']; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<input type="text" name="last_name" required="required" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['last_name'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<input type="email" name="email" required="required" maxlength="255" placeholder="<?php echo $stay_connected_from_inputs['email_address'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<input type="text" name="phone" required="required" maxlength="13" placeholder="<?php echo $stay_connected_from_inputs['phone_number'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<input type="text" name="company" required="required" maxlength="500" placeholder="<?php echo $stay_connected_from_inputs['company_name'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<input type="text" name="preferences" required="required" maxlength="2500" placeholder="<?php echo $stay_connected_from_inputs['investment_preferences']; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium">
+					<textarea name="message" maxlength="2500" required="required" placeholder="<?php echo $stay_connected_from_inputs['additional_comments'] ?? ''; ?>" class="border border-solid border-[#c4c4c480] bg-[#c4c4c41a] py-[0.9375rem] px-[1.875rem] outline-0 rounded-xl font-medium"></textarea>
 				</div>
 				<?php endif; ?>
 
@@ -221,10 +221,10 @@
 					<?php endforeach; ?>
 					<?php endif; ?>
 				</div>
-                
-				<?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
-    			<div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
-                
+				
+    			<?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+                <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
+
 				<div class="flex flex-col gap-4 items-start">
 					<?php if(!empty($stay_connected_from_button) && $stay_connected_from_button['is_enable'] && $stay_connected_from_button['text']) : ?>
 					<button type="submit" class="relative flex gap-2 justify-between items-center px-[2.625rem] py-[0.875rem] border border-solid border-[#057EED] rounded-3xl transition duration-300 group hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">

@@ -56,7 +56,6 @@
     $form_button_text = get_field('form_button_text');
     $info_contacts = get_field('info_contacts');
     $form_button = get_field('form_button');
-    $captcha_key = get_field('captcha_key', 'general-settings');
 ?>
 <div class="w-full py-[4.375rem] max-md:pb-0">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
@@ -64,7 +63,7 @@
     <div class="flex max-md:flex-col-reverse">
         <div class="flex-1 flex items-center justify-center">
             <!-- form -->
-            <form class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none" method="POST" action="<?php echo admin_url('admin-ajax.php'); ?>?action=submit_contacts_form">
+            <form class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none" id="contactsForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
@@ -78,18 +77,19 @@
 
                         <div>
                             <div class="flex flex-col gap-8">
-                                <input type="text" name="full_name" placeholder="<?php echo $form_inputs['full_name']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" name="mobile_number" placeholder="<?php echo $form_inputs['mobile_number']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="email" name="email" placeholder="<?php echo $form_inputs['email']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" name="message" placeholder="<?php echo $form_inputs['message']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="full_name" required="required" placeholder="<?php echo $form_inputs['full_name']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="mobile_number" required="required" placeholder="<?php echo $form_inputs['mobile_number']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="email" name="email" required="required" placeholder="<?php echo $form_inputs['email']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                                <input type="text" name="message" required="required" placeholder="<?php echo $form_inputs['message']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
                             </div>
                         </div>
                     </div>
                     
+                    <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
                     <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
                     
                     <?php if(!empty($form_button) && $form_button['text'] && $form_button['is_enable']) : ?>
-                    <button type="submit" id="sendFormContact" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                    <button type="submit" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                         <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
                             <?php echo $form_button['text']; ?>
                         </span>
@@ -143,7 +143,7 @@
 ?>
 <div class="w-full flex items-center justify-center max-md:h-[34.5625rem] object-cover overflow-hidden px-[11.25rem] h-[43.75rem] pb-[8.125rem] max-md:px-0 max-md:pb-0 max-md:max-h-screen">
     <?php if(!empty($map_link)) : ?>
-		<iframe src="<?php echo $map_link['url']; ?>" class="rounded-xl max-md:rounded-none	border-0" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="<?php echo $map_link['url']; ?>" class="rounded-xl max-md:rounded-none	" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <?php endif; ?>
 </div>
 <!-- map end -->

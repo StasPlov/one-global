@@ -111,30 +111,63 @@
                 </div>
             </div>
 
-            <div class="col-span-2 row-start-3 max-h-[26.875rem]"  data-animation="animate-fadeInRight" data-duration="3s">
-                <div class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]">
+            <div class="col-span-2 row-start-3 max-h-[26.875rem]">
+                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
+                        <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
+
                         <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">
-                            <input type="text" placeholder="All Categories" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                            <input type="text" placeholder="All Job Types" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                            <input type="text" placeholder="All Locations" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                            <?php
+                                $carrers_category = get_terms('carrers-category');
+                                $carrers_job_type = get_terms('carrers-job-type');
+                                $carrers_location = get_terms('carrers-location');
+                            ?>
+                            
+                            <select name="carrers_category" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                                <option value="" selected>All Categories</option>
+                                <?php foreach ($carrers_category as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
+
+                            <select name="carrers_job_type" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                                <option value="" selected>All Job Types</option>
+                                <?php foreach ($carrers_job_type as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
+
+                            <select name="carrers_location" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                                <option value="" selected>All Locations</option>
+                                <?php foreach ($carrers_location as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
                         </div>
                     </div>
 
                     <div class="flex gap-5">
-                        <button class="flex-[3] relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="flex-[3] relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Clear filter</span>
                             <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
-                        </button>
+                        </a>
 
-                        <button class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <button type="submit" class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                            <div class="scale-[0.2] absolute grayscale contrast-200 left-0 hidden" id="loader">
+                                <div class="loader">
+                                    <svg class="circular" viewBox="25 25 50 50">
+                                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                                    </svg>
+                                </div>
+                            </div>
+
                             <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Search for Job</span>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
@@ -187,8 +220,7 @@
                     </span>
                 </div>
             </div>
-
-            <div class=""  data-animation="animate-fadeInRight" data-duration="3s">
+            <div class="">
                 <div class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
@@ -226,19 +258,12 @@
 <div class="w-full overflow-hidden relative">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0"  data-animation="animate-fadeInRight" data-duration="4s">
     
-    <div>
+    <div id="careers-list">
         <?php 
-            /* $category = get_queried_object()->name; */
             $args = [
                 'post_type' => 'careers',
                 'posts_per_page' => 10
             ];
-            /* 
-            if(!empty($category)) {
-                $args = [
-                    ...$args,
-                ];
-            } */
             
             $query = new WP_Query($args);
         ?>
@@ -289,13 +314,16 @@
                         </div>
                     </div>
                 </div>
-                <?php if($content_button['is_enable']) : ?>
+                <?php if(!empty($content_button) && $content_button['is_enable']) : ?>
                 <div class="flex-1 flex items-center justify-center">
                     <div class="px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:pt-[1.5625rem]">
                         <a href="<?php the_permalink(); ?>">
                         <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $content_button['text']; ?></span>
-                            <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
+                            
+                            <?php if(!empty($content_button['icon'])) : ?>
+                                <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
+                            <?php endif; ?>
                         </button>
                         </a>
                     </div>
