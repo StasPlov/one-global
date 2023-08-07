@@ -196,6 +196,7 @@ function handle_get_careers() {
 	$carrers_category = trim($_POST['carrers_category']);
 	$carrers_job_type = trim($_POST['carrers_job_type']);
 	$carrers_location = trim($_POST['carrers_location']);
+	$search = trim($_POST['search']);
 	$post_id = trim($_POST['post_id']);
 
 	$taxList = [];
@@ -224,10 +225,18 @@ function handle_get_careers() {
 		]);
 	}
 
+
 	$args = [
 		'post_type' => 'careers',
 		'posts_per_page' => 10
 	];
+
+	if(!empty($search)) {
+		$args = [
+			'post_type' => 'careers',
+			's' => $search
+		];
+	}
 
 	if(!empty($taxList)) {
 		$args = [
@@ -235,6 +244,15 @@ function handle_get_careers() {
 			'posts_per_page' => 10,
 			'tax_query' => $taxList
 		];
+
+		if(!empty($search)) {
+			$args = [
+				'post_type' => 'careers',
+				'posts_per_page' => 10,
+				'tax_query' => $taxList,
+				's' => $search
+			];
+		}
 	}
 
 	$posts = (new WP_Query($args))->get_posts();
@@ -255,3 +273,52 @@ function handle_get_careers() {
 }
 add_action('wp_ajax_get_careers', 'handle_get_careers');
 add_action('wp_ajax_nopriv_get_careers', 'handle_get_careers');
+
+
+function handle_search_blog() {
+	$search = trim($_POST['search-input']);
+	$post_id = trim($_POST['post-id']);
+
+	$args = [
+		'post_type' => 'blog',
+		'posts_per_page' => 10,
+		's' => $search
+	];
+
+	if(!empty($search)) {
+		$args = [
+			'post_type' => 'blog',
+			'posts_per_page' => 10,
+			's' => $search,
+		];
+	}
+
+	$posts = (new WP_Query($args))->get_posts();
+	$result = [];
+
+	foreach($posts as $post ) {
+		$terms = wp_get_post_terms($post->ID, 'blog-category');
+		$categoryList = [];
+
+		foreach ($terms as $term) {
+			array_push($categoryList, [
+				'name' => $term->name,
+				'link' => get_term_link($term)
+			]);
+		}
+
+		array_push($result, [
+			'title' => get_the_title($post),
+			'excerpt' => get_the_excerpt($post),
+			'link' => get_permalink($post),
+			'blog-category' => $categoryList,
+			'image' => get_field('image', $post->ID),
+			'content_button' => get_field('content_button', 102)
+		]);
+	}
+
+	$json = json_decode( json_encode( $result ), true );
+	wp_send_json($json);
+}
+add_action('wp_ajax_search_blog', 'handle_search_blog');
+add_action('wp_ajax_nopriv_search_blog', 'handle_search_blog');

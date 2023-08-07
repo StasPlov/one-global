@@ -108,7 +108,7 @@
         <div class="flex-1 max-md:px-[2.1875rem] max-md:pb-16">
             <div class="flex flex-col items-start gap-9">
                 <?php if(!empty($info_contacts)) : ?>
-                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium"  data-animation="animate-fadeInRight" data-duration="3s"><?php echo $info_contacts['title']; ?></span>
+                <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-medium"><?php echo $info_contacts['title']; ?></span>
 
                 <div class="flex flex-col gap-6">
                     <?php if(!empty($info_contacts['items'])) : ?>

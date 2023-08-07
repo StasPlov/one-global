@@ -8,7 +8,6 @@
     $footer_menu = get_field('footer_menu', 'general-settings');
     $menu_login_items = get_field('menu_login_items', 'general-settings');
 	$footer_menu_icon_title = get_field('footer_menu_icon_title', 'general-settings');
-
 ?>
 <footer class="flex flex-col bg-black border-t border-solid border-[#c4c4c44d] relative z-20" >
     <img src="<?php echo $footer_background['url'] ?>" alt="<?php echo $footer_background['alt'] ?>" class="absolute w-full h-full top-0 left-0 select-none" draggable="false">
@@ -118,7 +117,6 @@
 
         <div class="flex max-w-[20%] flex-1 max-md:max-w-none rtl:border-r rtl:border-solid rtl:border-[#c4c4c44d]">
             <div class="flex flex-col w-full">
-
                 <?php if(!empty($menu_login_items)) : ?>
                 <?php foreach ($menu_login_items as $item) : ?>
 					<?php if(!empty($item['url'])) : ?>

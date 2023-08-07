@@ -11,8 +11,7 @@
     <div class="flex flex-row-reverse min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
             <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
-                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali">
-					<!-- Media <span class="font-lato rtl:font-droidSansArabic not-italic font-medium">Center</span> -->
+                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali leading-none">
 					<?php echo $header_title; ?>
 				</h1>
 
@@ -73,7 +72,7 @@
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
-                    <div class="flex flex-col pl-[3.25rem] py-10 items-start justify-between h-full max-w-[46.125rem] max-md:gap-8">
+                    <div class="flex flex-col pl-[3.25rem] py-10 items-start justify-between h-full max-w-[46.125rem] max-md:gap-8 max-md:px-[2.1875rem]">
                         <div class="flex gap-2">
                             
                         </div>

@@ -2,6 +2,7 @@ import MainMenu from "./MainMenu";
 import UserBoard from "./UserBoard";
 import Send from "./Send";
 import CareersFilter from "./CareersFilter";
+import BlogSearch from "./BlogSearch";
 
 addEventListener("DOMContentLoaded", () => {
 
@@ -9,6 +10,7 @@ addEventListener("DOMContentLoaded", () => {
 	const userBoard = new UserBoard();
 	const send = new Send();
 	const careersFilter = new CareersFilter();
+	const blogSearch = new BlogSearch();
 
 	window.addEventListener('scroll', () => {
 		let { scrollY } = window;

@@ -19,7 +19,7 @@
 
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" style="background-image: url('<?php echo $header_image['url']; ?>')">
         <div>
-            <h1 class="text-white font-caudex rtl:font-droidSansArabic italic font-normal text-[5rem] text-start">
+            <h1 class="text-white font-caudex rtl:font-droidSansArabic italic font-normal text-[5rem] text-start max-md:text-[4rem]">
                 <?php echo $header_title; ?>
             </h1>
         </div>

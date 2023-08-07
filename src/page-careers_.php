@@ -10,7 +10,7 @@
 <div class="w-full min-h-screen">
     <div class="flex min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
-            <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
+            <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)] max-md:px-[2.1875rem]">
                 <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali">
                     <?php echo $header_title; ?>
                 </h1>
@@ -53,6 +53,9 @@
     $info_first = get_field('info_first');
     $info_two = get_field('info_two'); 
     $info_three = get_field('info_three'); 
+
+    $search_button = get_field('search_button');
+    $clear_button = get_field('clear_button'); 
 ?>
 <div class="w-full overflow-hidden">
     <div>
@@ -116,7 +119,7 @@
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
 
-                        <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                        <input type="text" name="search" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">
                             <?php
@@ -149,11 +152,31 @@
                     </div>
 
                     <div class="flex gap-5">
-                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="flex-[3] relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Clear filter</span>
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
-                        </a>
+                        <?php if(!empty($clear_button) && $clear_button['is_enable']) : ?>
+                            <?php if(!empty($clear_button['url'])) : ?>
+                                <a href="<?php echo $clear_button['url']['url']; ?>" class="flex-[3]">
+                            <?php endif; ?>
+                        <button class="flex-[3] w-full relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                            
+                            <?php if(!empty($clear_button['text'])) :?>
+                            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+                                <?php echo $clear_button['text']; ?>
+                            </span>
+                            <?php endif; ?>
 
+                            <?php if(!empty($clear_button['icon'])) :?>
+                            <div class="group-hover:animate-bounce">
+                                <img src="<?php echo $clear_button['icon']['url']; ?>" alt="<?php echo $clear_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                            </div>
+                            <?php endif; ?>
+
+                        </button>
+                            <?php if(!empty($clear_button['url'])) : ?>
+                                </a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($search_button) && !empty($search_button['is_enable'])) : ?>
                         <button type="submit" class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <div class="scale-[0.2] absolute grayscale contrast-200 left-0 hidden" id="loader">
                                 <div class="loader">
@@ -163,9 +186,20 @@
                                 </div>
                             </div>
 
-                            <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
-                            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Search for Job</span>
+                            <?php if(!empty($search_button['icon'])) :?>
+                            <div class="group-hover:animate-bounce">
+                                <img src="<?php echo $search_button['icon']['url']; ?>" alt="<?php echo $search_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                            </div>
+                            <?php endif; ?>
+                           
+                            <?php if(!empty($search_button['text'])) :?>
+                            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+                                <?php echo $search_button['text']; ?>
+                            </span>
+                            <?php endif; ?>
                         </button>
+                        <?php endif; ?>
+
                     </div>
                 </form>
             </div>
@@ -173,7 +207,7 @@
 
         <!-- mobile -->
         <div class="hidden flex-col max-md:flex">
-            <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
+            <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col-reverse max-md:max-h-full">
                 <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -189,7 +223,7 @@
                 </div>
             </div>
 
-            <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
+            <div class="col-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col-reverse max-md:max-h-full">
                 <img src="<?php echo $info_first['image_two']['url']; ?>" alt="<?php echo $info_first['image_two']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -205,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
+            <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col-reverse max-md:max-h-full">
                 <img src="<?php echo $info_two['image']['url']; ?>" alt="<?php echo $info_two['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -220,11 +254,11 @@
                     </span>
                 </div>
             </div>
-            <div class="">
+            <div class="max-md:py-[2.1875rem]">
                 <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilterMob" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
-                        <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                        <input type="text" name="search" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">
                             <select name="carrers_category" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
@@ -249,18 +283,57 @@
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
                                 <? endforeach; ?>
                             </select>
-                           
-                            <a href="<?php echo get_permalink(get_the_ID()); ?>" class="flex-1 relative flex gap-2 justify-center items-center pl-4 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Clear filter</span>
-                                <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
-                            </a>
+
+                            <?php if(!empty($clear_button) && $clear_button['is_enable']) : ?>
+                                <?php if(!empty($clear_button['url'])) : ?>
+                                    <a href="<?php echo $clear_button['url']['url']; ?>" class="flex-1">
+                                <?php endif; ?>
+                            <button class="flex-1 w-full relative flex gap-2 justify-center items-center pl-4 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                                
+                                <?php if(!empty($clear_button['text'])) :?>
+                                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+                                    <?php echo $clear_button['text']; ?>
+                                </span>
+                                <?php endif; ?>
+
+                                <?php if(!empty($clear_button['icon'])) :?>
+                                <div class="group-hover:animate-bounce">
+                                    <img src="<?php echo $clear_button['icon']['url']; ?>" alt="<?php echo $clear_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                                </div>
+                                <?php endif; ?>
+
+                            </button>
+                                <?php if(!empty($clear_button['url'])) : ?>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
 
+
+                    <?php if (!empty($search_button) && !empty($search_button['is_enable'])) : ?>
                     <button type="submit" class="relative flex gap-4 justify-center  items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
-                        <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Search for Job</span>
+                        <div class="scale-[0.2] absolute grayscale contrast-200 left-0 hidden" id="loader">
+                            <div class="loader">
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <?php if(!empty($search_button['icon'])) :?>
+                        <div class="group-hover:animate-bounce">
+                            <img src="<?php echo $search_button['icon']['url']; ?>" alt="<?php echo $search_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php if(!empty($search_button['text'])) :?>
+                        <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+                            <?php echo $search_button['text']; ?>
+                        </span>
+                        <?php endif; ?>
                     </button>
+                    <?php endif; ?>
                 </form>
             </div>
         </div>
@@ -299,7 +372,7 @@
         <?php 
             $info = get_field('info');
         ?>
-        <div class="flex border border-solid border-[#1c212633] max-md:flex-[100%] max-md:flex-wrap max-md:border-x-0 max-md:border-t-0">
+        <div class="flex border border-solid border-[#1c212633] max-md:flex-col max-md:border-x-0 max-md:border-t-0">
             <div class="flex-[37.7%] flex items-center border-r border-solid border-[#1c212633]">
                 <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0">
                     <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">
