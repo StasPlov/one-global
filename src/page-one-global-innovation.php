@@ -167,7 +167,7 @@
 <div class="w-full min-h-screen bg-white">
     <div class="flex flex-col gap-[5rem] pt-[12.6875rem] pb-[9.375rem]">
         <div class="flex flex-col gap-[2.125rem] px-[11.25rem] max-md:px-[2.1875rem]">
-            <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5rem]"><?php echo $venture_building_title; ?></h2>
+            <h2 class="text-[4rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-none"><?php echo $venture_building_title; ?></h2>
         </div>
 
         <div class="flex items-center justify-center max-md:px-[35px] px-[11.25rem]">

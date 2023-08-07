@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="max-md:text-[12px]">
+<html <?php language_attributes(); ?> class="max-md:text-[12px] max-lg:text-[13px] max-xl:text-[14px]">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
