@@ -59,13 +59,13 @@
         <div class="grid grid-cols-3 grid-rows-3 gap-0 max-md:hidden">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"   >
                         <?php echo $info_first['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"   >
                         <?php echo $info_first['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  >
                         <?php echo $info_first['description']; ?>
                     </span>
                 </div>
@@ -79,7 +79,7 @@
                 <img src="<?php echo $info_first['image_two']['url']; ?>" alt="<?php echo $info_first['image_two']['alt']; ?>" class="h-full w-full object-cover">
             </div>
 
-            <div class="max-h-[26.875rem]"  data-animation="animate-fadeInLeft" data-duration="3.5s">
+            <div class="max-h-[26.875rem]"   data-duration="3.5s">
                 <img src="<?php echo $info_two['image']['url']; ?>" alt="<?php echo $info_two['image']['alt']; ?>" class="h-full w-full object-cover">
             </div>
 
@@ -91,7 +91,7 @@
                     <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $info_two['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" >
                         <?php echo $info_two['description']; ?>
                     </span>
                 </div>
@@ -99,20 +99,20 @@
 
             <div class="row-start-3 flex items-center justify-center bg-white max-h-[26.875rem] border-r border-solid border-[#1c212633]">
                 <div class="flex flex-col gap-6 items-start">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"   >
                         <?php echo $info_three['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"   >
                         <?php echo $info_three['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  >
                         <?php echo $info_three['description']; ?>
                     </span>
                 </div>
             </div>
 
             <div class="col-span-2 row-start-3 max-h-[26.875rem]">
-                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
+                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
 
@@ -177,13 +177,13 @@
                 <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"   >
                         <?php echo $info_first['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"   >
                         <?php echo $info_first['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  >
                         <?php echo $info_first['description']; ?>
                     </span>
                 </div>
@@ -199,7 +199,7 @@
                     <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInRight" data-duration="2.5s">
                         <?php echo $info_two['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" data-duration="2s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInRight" >
                         <?php echo $info_two['description']; ?>
                     </span>
                 </div>
@@ -209,41 +209,59 @@
                 <img src="<?php echo $info_two['image']['url']; ?>" alt="<?php echo $info_two['image']['alt']; ?>" class="h-[34.1875rem] w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"  data-animation="animate-fadeInLeft" data-duration="3s">
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic">
                         <?php echo $info_three['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"  data-animation="animate-fadeInLeft" data-duration="2s">
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic">
                         <?php echo $info_three['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]">
                         <?php echo $info_three['description']; ?>
                     </span>
                 </div>
             </div>
             <div class="">
-                <div class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem]">
+                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilterMob" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
+                        <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
                         <input type="text" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">
-                            <input type="text" placeholder="All Categories" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                            <input type="text" placeholder="All Job Types" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                            <select name="carrers_category" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                                <option value="" selected>All Categories</option>
+                                <?php foreach ($carrers_category as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
+
+                            <select name="carrers_job_type" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
+                                <option value="" selected>All Job Types</option>
+                                <?php foreach ($carrers_job_type as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
                         </div>
                         
                         <div class="flex gap-5">
-                            <input type="text" placeholder="All Locations" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 flex-1">
-                            <button class="flex-1 relative flex gap-2 justify-center items-center pl-4 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                            <select name="carrers_location" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 flex-1">
+                                <option value="" selected>All Locations</option>
+                                <?php foreach ($carrers_location as $key => $item) : ?>
+                                    <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                                <? endforeach; ?>
+                            </select>
+                           
+                            <a href="<?php echo get_permalink(get_the_ID()); ?>" class="flex-1 relative flex gap-2 justify-center items-center pl-4 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                                 <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Clear filter</span>
                                 <img src="<?php echo get_template_directory_uri().'/assets/Icons/arrow_rigth2_black.svg'?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
-                            </button>
+                            </a>
                         </div>
                     </div>
 
-                    <button class="relative flex gap-4 justify-center  items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                    <button type="submit" class="relative flex gap-4 justify-center  items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                         <img src="<?php echo get_template_directory_uri().'/assets/Icons/codicon_search (1).svg'?>" alt="" class="transition duration-300 group-hover:-translate-x-3 ">
                         <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Search for Job</span>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
         <!-- mobile end -->
@@ -258,6 +276,16 @@
 <div class="w-full overflow-hidden relative">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0"  data-animation="animate-fadeInRight" data-duration="4s">
     
+    <div class="flex absolute top-0 left-0 w-full h-full blur-[100vh] z-10 transition-all hidden items-center justify-center bg-black/20" id="placeholderLoader">
+        <div class="grayscale contrast-200">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
     <div id="careers-list">
         <?php 
             $args = [

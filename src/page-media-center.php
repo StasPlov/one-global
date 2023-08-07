@@ -8,8 +8,6 @@
     $header_description = get_field('header_description');
 ?>
 <div class="w-full min-h-screen relative">
-    
-
     <div class="flex flex-row-reverse min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
             <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
@@ -58,8 +56,6 @@
 
 <!-- Content -->
 <div class="w-full min-h-screen relative">
-    
-
     <div class="flex flex-col items-start gap-16 pl-[11.25rem] py-[11.25rem] max-md:pl-0">
 		<div class="flex flex-col w-full">
             <?php 
@@ -117,43 +113,62 @@
 </div>
 <!-- Content end -->
 
-<!-- Subscribe -->
-<div class="min-h-screen w-full relative bg-black">
-    <img :src="require('@/assets/images/Home2 5 (4).png')" alt="" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
-        
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
+<!-- subscribe -->
+<?php 
+    $subscribe_background = get_field('subscribe_background', 'media-center-single');
+    $subscribe_title = get_field('subscribe_title', 'media-center-single');
+    $subscribe_description = get_field('subscribe_description', 'media-center-single');
+    $subscribe_input_one_placeholder = get_field('subscribe_input_one_placeholder', 'media-center-single');
+    $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder', 'media-center-single');
+    $subscribe_button = get_field('subscribe_button', 'media-center-single');
+?>
+<div class="min-h-screen w-full relative bg-black overflow-hidden">
+    <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
-        <div class="flex flex-col gap-12 items-center">
+        <form id="subscribeForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="flex flex-col gap-12 items-center">
             <div class="flex flex-col items-center gap-4 z-0">
-                <h2 class="text-white font-caudex rtl:font-droidSansArabic font-normal text-[4rem] leading-[4rem] italic">Subscribe <span class="font-medium not-italic font-lato rtl:font-droidSansArabic">to our</span> newsletter</h2>
-                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[30.625rem]">Stay informed about industry innovations and updates by subscribing to our newsletter.</span>
+                <h2 class="text-white font-caudex rtl:font-droidSansArabic font-normal text-[4rem] leading-[4rem] italic max-md:text-start">
+                    <?php echo $subscribe_title; ?>
+                </h2>
+                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[30.625rem] max-md:text-start">
+                    <?php echo $subscribe_description; ?>
+                </span>
             </div>
 
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
-                        <input type="text" placeholder="Full Name" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                        <input type="text" placeholder="Full Name" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="text" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="email" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
                     </div>
                 </div>
+                
+                <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+                <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
 
                 <div class="flex-1 flex justify-center items-center z-0">
-                    <button class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full">Subscribe</span>
+                    <?php if($subscribe_button['is_enable']) : ?>
+                    <?php if(!empty($subscribe_button['url'])) : ?>
+                    <a href="<?php echo $subscribe_button['url']['url']; ?>">
+                    <?php endif; ?>
+                    <button type="submit" class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_button['text']; ?></span>
+                        <?php if(!empty($subscribe_button['icon'])) : ?>
                         <div class="group-hover:animate-bounce">
-                            <img :src="require('@/Assets/Icons/arrow_rigth2.svg')" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
+                            <img src="<?php echo $subscribe_button['icon']['url']; ?>" alt="<?php echo $subscribe_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
                         </div>
+                        <?php endif; ?>
                     </button>
+                    <?php if(!empty($subscribe_button['url'])) : ?>
+                    </a>
+                    <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
-        
-        </div>
+        </form>
     </div>
 </div>
-<!-- Subscribe end -->
+<!-- subscribe end -->
 
 <?php get_footer(); ?>

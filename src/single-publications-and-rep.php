@@ -3,9 +3,9 @@
 <!-- header -->
 
 <?php 
-    $header_image = get_field('header_image', 'blog-single');
-    $header_button = get_field('header_button', 'blog-single');
-    $see_post_tag= get_field('see_post_tag', 'blog-single');
+    $header_image = get_field('header_image', 'publications-and-reports-single');
+    $header_button = get_field('header_button', 'publications-and-reports-single');
+    $see_post_tag= get_field('see_post_tag', 'publications-and-reports-single');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
@@ -22,7 +22,7 @@
 
 <!-- content -->
 <div class="w-full min-h-screen relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none -z-0 animate-flicker" draggable="false">
     
     <div class="flex flex-col gap-10 pl-[11.25rem] pr-[25rem] pt-[8.125rem] pb-[10.375rem] max-md:px-[2.1875rem]">
         <div class="flex justify-between">
@@ -71,12 +71,12 @@
 
 <!-- next -->
 <?php 
-    $footer_button = get_field('footer_button', 'blog-single');
-    $footer_share = get_field('footer_share', 'blog-single');
+    $footer_button = get_field('footer_button', 'publications-and-reports-single');
+    $footer_share = get_field('footer_share', 'publications-and-reports-single');
     $next_post = get_adjacent_post(false, '', false);
 ?>
 <div class="flex justify-between pl-[11.25rem] pr-[4.375rem] pt-[8.125rem] pb-[10.375rem] relative max-md:px-[2.1875rem]">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 5 (1).svg'?>" alt="" class="absolute bottom-[0%] left-0 select-none z-0 animate-flicker" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 5 (1).svg'?>" alt="" class="absolute bottom-[0%] left-0 select-none -z-0 animate-flicker" draggable="false">
     
     <?php if(!empty($footer_button) && !empty($footer_button['text'])) :?>
         <?php if(!empty($next_post)) :?>
@@ -117,5 +117,4 @@
     </div>
 </div>
 <!-- next end -->
-
 <?php get_footer(); ?>
