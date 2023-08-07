@@ -210,9 +210,11 @@
             <?php endif; ?>
         </div>
         
+        <?php if(!empty($view_image)) : ?>
         <div class="flex-1 z-0">
-            <img src="<?php echo get_template_directory_uri().'/assets/Images/Group 662.png'?>" alt="image" class="h-full w-full object-cover max-h-[46.5625rem] text-white">
+            <img src="<?php echo $view_image['url']; ?>" alt="<?php echo $view_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem] text-white">
         </div>
+        <?php endif; ?>
     </div>
 </div>
 <!-- view end -->
