@@ -33,16 +33,20 @@
 
     <div class="flex flex-col gap-10 pl-[11.25rem] pr-[25rem] pt-[8.125rem] pb-[10.375rem] max-md:px-[2.1875rem]">
         <div class="flex justify-between">
-            <?php if (!empty($button_back['url'])) : ?>
+            <?php if (!empty($button_back) && !empty($button_back['text'])) : ?>
             <a href="<?php echo $button_back['url']['url']; ?>">
             <?php endif; ?>
             <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                <?php if(!empty($button_back['icon'])) :?>
                 <div class="group-hover:animate-bounce">
                     <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
                 </div>
+                <?php endif; ?>
+                <?php if(!empty($button_back['text'])) :?>
                 <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
                     <?php echo $button_back['text']; ?>
                 </span>
+                <?php endif; ?>
             </button>
             <?php if (!empty($button_back['url'])) : ?>
             </a>
