@@ -135,7 +135,6 @@
 <!-- Descriptino end -->
 
 <!-- Apply -->
-
 <?php 
     $form_title = get_field('form_title', 'careers-single');
     $form_description = get_field('form_description', 'careers-single');
@@ -152,46 +151,57 @@
     <div class="flex items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center">
 
-            <div class="shadow-2xl px-[8.125rem] py-[10.625rem] max-md:rounded-none z-10 bg-white max-md:bg-transparent max-md:px-[2.1875rem]">
+            <form id="careersForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="shadow-2xl px-[8.125rem] py-[10.625rem] max-md:rounded-none z-10 bg-white max-md:bg-transparent max-md:px-[2.1875rem]">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-14">
-                            <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start max-md:text-white"><?php echo $form_title; ?></h2>
-                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start max-md:text-white"><?php echo $form_description; ?></span>
+                            <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start max-md:text-white"><?php echo $form_title ?? ''; ?></h2>
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start max-md:text-white"><?php echo $form_description ?? ''; ?></span>
                         </div>
 
                         <div>
                             <div class="flex flex-col gap-8">
-                                <input type="text" placeholder="<?php echo $form_inputs['full_name_placeholder']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
-                                <input type="text" placeholder="+965 XXX-XX-XX" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
-                                <input type="text" placeholder="<?php echo $form_inputs['email_placeholder']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
+                                <input type="text" name="full_name" required="true" placeholder="<?php echo $form_inputs['full_name_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
+                                <input type="tel" name="phone" required="true" placeholder="<?php echo $form_inputs['phone_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
+                                <input type="email" name="email" required="true" placeholder="<?php echo $form_inputs['email_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 max-md:text-white">
                             </div>
                         </div>
                     </div>
                     
                     <div class="flex flex-col gap-12 w-full">
                         <div class="flex justify-between">
-                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal max-md:text-white"><?php echo $form_info; ?></span>
+                            <span class="flex items-center justify-center text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal max-md:text-white"><?php echo $form_info; ?></span>
                             
-                            <button type="file" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                            <?php if(!empty($form_button) && !empty($form_button['text'])) : ?>
+                            <input type="file" name="file" id="file" class="hidden" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                            <label for="file" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                                 <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_button['text']; ?></span>
+                                
+                                <?php if(!empty($form_button['icon'])) : ?>
                                 <div class="group-hover:animate-bounce">
                                     <img src="<?php echo $form_button['icon']['url']; ?>" alt="<?php echo $form_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                                 </div>
-                            </button>
+                                <?php endif; ?>
+                            </label>
+                            <?php endif; ?>
                         </div>
 
                         <div class="flex justify-between gap-3 items-start">
-                            <img :src="require('@/assets/images/Frame 244.svg')" alt="" class="">
-                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal text-start max-md:text-white">By using this form you agree with the storage and handling of your data by this website.</span>
+						    <input type="checkbox" name="chekbox_rules" checked="<?php echo $item['checkbox'] ?? false; ?>" class="checked:invert checked:grayscale opacity-[0.4] contrast-[0.99] w-[1.5625rem] h-[1.5625rem]">
+                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal text-start max-md:text-white"><?php echo $form_check; ?></span>
                         </div>
+                        
+                        <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+                        <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
 
-                        <button class="self-center relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <?php if(!empty($form_send_button_text)) : ?>
+                        <button type="submit" class="self-center relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 max-md:text-white"><?php echo $form_send_button_text; ?></span>
                         </button>
+                        <?php endif; ?>
                     </div>
                 </div>
-            </div>
+            </form>
         
         </div>
     </div>

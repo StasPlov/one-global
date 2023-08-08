@@ -322,3 +322,44 @@ function handle_search_blog() {
 }
 add_action('wp_ajax_search_blog', 'handle_search_blog');
 add_action('wp_ajax_nopriv_search_blog', 'handle_search_blog');
+
+
+function handle_submit_resume_form() {
+	$recaptcha = $_POST['g-recaptcha-response'];
+
+	if(empty($recaptcha)) {
+		wp_send_json(false);
+	}
+
+	$full_name = (string)sanitize_text_field($_POST['full_name']);
+	$phone = (string)sanitize_text_field($_POST['phone']);
+	$email = (string)sanitize_email($_POST['email']);
+	$chekbox_rules = (bool)$_POST['chekbox_rules']; // chekbox_rules
+
+	// Создание записи с полученными данными формы
+	$post_data = array(
+		'post_title' => 'Resume',
+		'post_type' => 'resume-from', // Замените 'feedback' на тип записи, который вы хотите использовать для хранения обратной связи
+		'post_status' => 'publish',
+		'meta_input'  => [
+			'full_name' => $full_name,
+			'phone' => $phone,
+			'email' => $email,
+			'agree' => $chekbox_rules
+		]
+	);
+
+	$post_id = wp_insert_post($post_data);
+
+	if(!empty($post_id)) {
+		$attachment_id = media_handle_upload('file', $_POST['post_id'] ); //multipart/form-data
+		if(!is_wp_error($attachment_id)) {
+			update_field('resume', $attachment_id, $post_id);
+		} 
+	}
+
+	// Отправка ответа обратно клиентской части
+	wp_send_json(true);
+}
+add_action('wp_ajax_submit_resume_form', 'handle_submit_resume_form');
+add_action('wp_ajax_nopriv_submit_resume_form', 'handle_submit_resume_form');

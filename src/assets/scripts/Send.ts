@@ -8,6 +8,7 @@ export default class Send {
 	formStay: HTMLElement | null = null;
 	contactsForm: HTMLElement | null = null;
 	subscribeForm: HTMLElement | null = null;
+	careersForm: HTMLElement | null = null;
 	isSendingForm: boolean = false;
 
 	constructor() {
@@ -18,7 +19,7 @@ export default class Send {
 		this.formStay = document.getElementById('stayForm');
 		this.contactsForm = document.getElementById('contactsForm');
 		this.subscribeForm = document.getElementById('subscribeForm');
-		
+		this.careersForm = document.getElementById('careersForm');
 
 		if (this.formStay !== null) {
 			this.formStay.addEventListener('submit', async (event) => {
@@ -89,6 +90,34 @@ export default class Send {
 					var formData = new FormData(this.subscribeForm as HTMLFormElement);
 					
 					const result: boolean = await this.send(`${url}?action=submit_subscribe_form`, formData);
+					this.isSendingForm = false;
+					
+					if(!result) {
+						alert("recapthca validation false");
+						return;
+					}
+
+					location.reload();
+					
+				}
+			});
+		}
+
+		if (this.careersForm !== null) {
+			this.careersForm.addEventListener('submit', async (event) => {
+				event.preventDefault();
+				if (this.isSendingForm) {
+					return;
+				}
+
+				const b = (event.target as HTMLElement).querySelector('button[type="submit"]') as HTMLElement;
+				const url = this.careersForm?.getAttribute('data-endpoint');
+
+				if (url) {
+					this.isSendingForm = true;
+					var formData = new FormData(this.careersForm as HTMLFormElement);
+					
+					const result: boolean = await this.send(`${url}?action=submit_resume_form`, formData);
 					this.isSendingForm = false;
 					
 					if(!result) {
