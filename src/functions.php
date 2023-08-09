@@ -363,3 +363,36 @@ function handle_submit_resume_form() {
 }
 add_action('wp_ajax_submit_resume_form', 'handle_submit_resume_form');
 add_action('wp_ajax_nopriv_submit_resume_form', 'handle_submit_resume_form');
+
+
+
+
+function handle_load_more() {
+	$post_type = trim($_POST['post_type']);
+	$post_id = trim($_POST['post_id']);
+	$page = (int)trim($_POST['page']);
+
+	$args = [
+		'post_type' => $post_type,
+		'posts_per_page' => 5,
+		'paged' => $page
+	];
+
+	$posts = (new WP_Query($args))->get_posts();
+	$result = [];
+
+	foreach($posts as $post ) {
+		array_push($result, [
+			'title' => get_the_title($post),
+			'excerpt' => get_the_excerpt($post),
+			'link' => get_permalink($post),
+			'image' => get_field('image', $post),
+			/* 'content_button' => get_field('content_button', $post_id) */
+		]);
+	}
+
+	$json = json_decode( json_encode( $result ), true );
+	wp_send_json($json);
+}
+add_action('wp_ajax_load_more', 'handle_load_more');
+add_action('wp_ajax_nopriv_load_more', 'handle_load_more');

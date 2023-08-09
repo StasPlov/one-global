@@ -55,8 +55,8 @@
 
 <!-- Content -->
 <div class="w-full min-h-screen relative">
-    <div class="flex flex-col items-start gap-16 pl-[11.25rem] py-[11.25rem] max-md:pl-0">
-		<div class="flex flex-col w-full">
+    <div class="flex flex-col items-start pl-[11.25rem] py-[11.25rem] max-md:pl-0">
+		<div class="flex flex-col w-full" id="loadMoreList">
             <?php 
                 $args = [
                     'post_type' => 'media-content',
@@ -96,12 +96,40 @@
             <?php endwhile; ?>
             <?php endif; wp_reset_query(); ?>
         </div>
+<?php
+    $content_load_button = get_field('content_load_button');
+    $content_load_image = get_field('content_load_image');
+?>		
+		<?php if(!empty($content_load_button) && !empty($content_load_button['text'])) :?>
+		<div class="flex max-h-[18.75rem] h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
+			<?php if(!empty($content_load_image)) :?>
+			<div class="flex-1">
+				<img src="<?php echo $content_load_image['url'] ?? ''; ?>" alt="<?php echo $content_load_image['alt'] ?? ''; ?>" class="h-full w-full object-cover opacity-50">
+			</div>
+			<?php endif; ?>
+
+			<div class="flex-[3] border-b border-solid border-[#1c212633]">
+				<div class="flex flex-col pl-[3.25rem] py-10 items-start justify-between h-full max-w-[46.125rem] max-md:gap-8 max-md:px-[2.1875rem]">
+					<div class="flex gap-2"></div>
+					<div class="flex flex-col gap-4"></div>
+					<div class="flex justify-between w-full items-center">
+						<button id="loadMore" data-load-type="media-content" data-post-id="<?php echo get_the_ID(); ?>" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+							<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $content_load_button['text'] ?? ''; ?></span>
+							<?php if(!empty($content_load_button['icon'])) :?>
+							<img src="<?php echo $content_load_button['icon']['url'] ?? '';?>" alt="<?php echo $content_load_button['icon']['url'] ?? ''; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
+							<?php endif; ?>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endif; ?>
 
 		<!-- mobile -->
 		<div class="hidden w-full pb-16 max-md:flex">
 			<div class="flex-1"></div>
 			<div class="flex-[3] pl-[3.25rem]">
-				<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+				<button id="loadMore" data-load-type="media-content" data-post-id="<?php echo get_the_ID(); ?>" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
 					<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">Load More</span>
 					<img :src="require('@/Assets/Icons/simple-line-icons_reload.svg')" alt="" class="transition duration-300 group-hover:animate-rotateEnd ">
 				</button>

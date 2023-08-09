@@ -3,6 +3,7 @@ import UserBoard from "./UserBoard";
 import Send from "./Send";
 import CareersFilter from "./CareersFilter";
 import BlogSearch from "./BlogSearch";
+import LoadMore from "./LoadMore";
 
 addEventListener("DOMContentLoaded", () => {
 
@@ -11,6 +12,7 @@ addEventListener("DOMContentLoaded", () => {
 	const send = new Send();
 	const careersFilter = new CareersFilter();
 	const blogSearch = new BlogSearch();
+	const loadMore = new LoadMore();
 
 	window.addEventListener('scroll', () => {
 		let { scrollY } = window;

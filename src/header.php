@@ -46,6 +46,7 @@
 				</div>
 
 				<div class="flex flex-1 justify-center">
+					<span class=" hidden text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90" id="main-menu-button-close">✕</span>
 					<img src="<?php echo get_template_directory_uri() . '/assets/Icons/menu_burger.svg'; ?>" alt="menu icon" class="min-w-[1.875rem]" id="main-menu-button">
 				</div>
 			</div>
