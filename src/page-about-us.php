@@ -219,10 +219,19 @@
                 <?php foreach ($geography_contacts['items'] as $item) : ?>
                 <div class="flex flex-col gap-6"  data-animation="animate-fadeInLeft" data-duration="4s">
                     <div class="flex gap-6">
+						<?php if(!empty($item['icon'])) : ?>
                         <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="select-none" draggable="false">  
-                        <span class="text-white font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">
-                            <?php echo $item['text']; ?>
-                        </span>
+						<?php endif; ?>
+
+						<?php if($item['options'] == 'text') :?>
+						<span class="text-white font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">
+							<?php echo $item['text']; ?>
+						</span>
+						<?php elseif($item['options'] == 'email') : ?>
+							<a href="mailto:<?php echo $item['text']; ?>" class="text-white font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start"><?php echo $item['text']; ?></a>
+						<?php elseif($item['options'] == 'phone') : ?>
+							<a href="tel::<?php echo $item['text']; ?>" class="text-white font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start"><?php echo $item['text']; ?></a>
+						<?php endif; ?>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -284,9 +293,11 @@
                 <?php endif; ?>
                 <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                     <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $media_center_button['text']; ?></span>
-                    <div class="group-hover:animate-bounce">
+                    <?php if($media_center_button['icon']) : ?>
+					<div class="group-hover:animate-bounce">
                         <img src="<?php echo $media_center_button['icon']['url']; ?>" alt="<?php echo $media_center_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
                     </div>
+					<?php endif; ?>
                 </button>
                 <?php if(!empty($media_center_button['url'])) : ?>
                 </a>
@@ -306,6 +317,7 @@
     $subscribe_input_one_placeholder = get_field('subscribe_input_one_placeholder');
     $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder');
     $subscribe_button = get_field('subscribe_button');
+	$subscribe_complite = get_field('subscribe_complite');
 ?>
 <div class="min-h-screen w-full relative bg-black overflow-hidden">
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
@@ -324,8 +336,8 @@
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
-                        <input type="text" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                        <input type="email" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="text" required="true" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="email" required="true" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
                     </div>
                 </div>
                 
@@ -352,6 +364,28 @@
                 </div>
             </div>
         </form>
+
+		<div class="flex flex-col gap-12 items-center hidden z-0" id="subscribeFormComplite">
+			<img src="<?php echo $subscribe_complite['logo']['url']; ?>" alt="<?php echo $subscribe_complite['logo']['alt']; ?>" class="max-w-[12.5rem] w-full h-full"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+
+			<div class="flex flex-col items-center gap-4">
+                <h2 class="text-white font-lato rtl:font-droidSansArabic font-bold text-[2.5rem] leading-[4rem]">
+                    <?php echo $subscribe_complite['title']; ?>
+                </h2>
+
+                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[20rem] max-md:text-start">
+                    <?php echo $subscribe_complite['description']; ?>
+                </span>
+            </div>
+			
+			<div class="flex-1 flex justify-center items-center">
+				<?php if($subscribe_complite['button'] && $subscribe_complite['button']['text']) : ?>
+				<button type="submit" class="w-full relative flex gap-2 justify-between items-center px-11 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+					<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_complite['button']['text']; ?></span>
+				</button>
+				<?php endif; ?>
+			</div>
+		</div>
     </div>
 </div>
 <!-- subscribe end -->

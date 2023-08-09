@@ -114,15 +114,18 @@
 
 <!-- subscribe -->
 <?php 
-    $subscribe_background = get_field('subscribe_background', 'media-center-single');
-    $subscribe_title = get_field('subscribe_title', 'media-center-single');
-    $subscribe_description = get_field('subscribe_description', 'media-center-single');
-    $subscribe_input_one_placeholder = get_field('subscribe_input_one_placeholder', 'media-center-single');
-    $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder', 'media-center-single');
-    $subscribe_button = get_field('subscribe_button', 'media-center-single');
+    $subscribe_background = get_field('subscribe_background');
+    $subscribe_title = get_field('subscribe_title');
+    $subscribe_description = get_field('subscribe_description');
+    $subscribe_input_one_placeholder = get_field('subscribe_input_one_placeholder');
+    $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder');
+    $subscribe_button = get_field('subscribe_button');
+	$subscribe_complite = get_field('subscribe_complite');
 ?>
 <div class="min-h-screen w-full relative bg-black overflow-hidden">
+	<?php if(!empty($subscribe_background)) : ?>
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+	<?php endif; ?>
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
         <form id="subscribeForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="flex flex-col gap-12 items-center">
@@ -138,8 +141,8 @@
             <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
                 <div class="w-full">
                     <div class="flex flex-col gap-8">
-                        <input type="text" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                        <input type="email" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="text" required="true" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
+                        <input type="email" required="true" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
                     </div>
                 </div>
                 
@@ -166,6 +169,34 @@
                 </div>
             </div>
         </form>
+
+		<div class="flex flex-col gap-12 items-center hidden z-0" id="subscribeFormComplite">
+			<?php if(!empty($subscribe_complite['logo'])) : ?>
+			<img src="<?php echo $subscribe_complite['logo']['url']; ?>" alt="<?php echo $subscribe_complite['logo']['alt']; ?>" class="max-w-[12.5rem] w-full h-full"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+			<?php endif; ?>
+
+			<div class="flex flex-col items-center gap-4">
+				<?php if(!empty($subscribe_complite['title'])) : ?>
+                <h2 class="text-white font-lato rtl:font-droidSansArabic font-bold text-[2.5rem] leading-[4rem]">
+                    <?php echo $subscribe_complite['title']; ?>
+                </h2>
+				<?php endif; ?>
+				
+				<?php if(!empty($subscribe_complite['description'])) : ?>
+                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[20rem] max-md:text-start">
+                    <?php echo $subscribe_complite['description']; ?>
+                </span>
+				<?php endif; ?>
+            </div>
+			
+			<div class="flex-1 flex justify-center items-center">
+				<?php if($subscribe_complite['button'] && $subscribe_complite['button']['text']) : ?>
+				<button type="submit" class="w-full relative flex gap-2 justify-between items-center px-11 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+					<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_complite['button']['text']; ?></span>
+				</button>
+				<?php endif; ?>
+			</div>
+		</div>
     </div>
 </div>
 <!-- subscribe end -->

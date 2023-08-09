@@ -96,9 +96,13 @@ export default class Send {
 						alert("recapthca validation false");
 						return;
 					}
-
-					location.reload();
 					
+					const subscribeFormComplite = document.getElementById('subscribeFormComplite') as HTMLElement;
+
+					if(subscribeFormComplite !== null) {
+						this.subscribeForm?.classList.add('hidden');
+						subscribeFormComplite.classList.remove('hidden');
+					}
 				}
 			});
 		}

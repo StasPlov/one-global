@@ -66,8 +66,8 @@
         </div>
 
         <!-- mobile -->
-        <div class="hidden grid-cols-2 grid-rows-2 gap-0 max-md:grid">
-            <div class="col-span-2 border-b border-solid border-[#c4c4c44d]">
+        <div class="hidden gap-0 max-md:flex flex-col">
+            <div class="border-b border-solid border-[#c4c4c44d]">
                 <div class="flex flex-col gap-0 items-start px-6 py-5">
                     <h3 class="text-sm text-white/40 font-lato rtl:font-droidSansArabic font-normal uppercase rtl:text-lg"><?php echo $footer_menu_icon_title; ?></h3>
 
@@ -91,7 +91,7 @@
 
             <?php if(!empty($footer_menu)) : ?>
             <?php foreach ($footer_menu as $item) : ?>
-            <div class="row-start-2 border-r border-solid border-[#c4c4c44d]">
+            <div class="border-r border-solid border-[#c4c4c44d] flex">
                 <div class="flex-1">
                     <div class="flex flex-col gap-6 items-start px-6 py-5">
                         <h3 class="text-sm text-white/40 font-lato rtl:font-droidSansArabic font-normal uppercase"><?php echo $item['title']; ?></h3>

@@ -452,7 +452,7 @@
         <div class="hidden flex-col max-md:flex">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFirstData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
+                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover max-md:max-h-screen">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -537,8 +537,6 @@
     <?php if($headerInvestedVenturesBgData['is_enable']) : ?>
     <img src="<?php echo $headerInvestedVenturesBgData['image']['url'] ?>" alt="<?php echo $headerInvestedVenturesBgData['image']['alt'] ?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInLeft" data-duration="5s">
     <?php endif ?>
-	
-	
 
     <div class="flex flex-col gap-14 px-[11.25rem] z-0 max-md:px-0">
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
@@ -552,10 +550,10 @@
         <?php endif ?>
         
         <?php if(!empty($headerInvestedVenturesItemsListData)) : ?>
-        <div class="flex flex-col gap-32 max-md:flex-row max-md:pt-[6.25rem] max-md:gap-14"  data-animation="animate-fadeInRight" data-duration="4s">
-            <div class="flex gap-20 justify-between max-md:flex-col max-md:gap-10">
+        <div class="flex flex-col gap-32 max-md:flex-row-reverse max-md:pt-[6.25rem] max-md:gap-14 max-md:items-start "  data-animation="animate-fadeInRight" data-duration="4s">
+            <div class="flex gap-20 justify-around max-md:flex-col max-md:gap-10 max-md:flex-1" style="justify-content: space-around;">
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
-                <?php if($key < 4) : ?>
+                <?php if($key < 3) : ?>
                 <div class="flex items-center justify-center">
                     <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
                 </div>
@@ -563,9 +561,9 @@
                 <?php endforeach ?>
             </div>
 
-            <div class="flex gap-[18.125rem] self-center max-md:flex-col max-md:gap-10 max-md:self-start">
+            <div class="flex self-center max-md:flex-col max-md:gap-10 max-md:self-start w-full justify-between max-md:flex-1">
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
-                <?php if($key > 3) : ?>
+                <?php if($key > 2) : ?>
                 <div class="flex items-center justify-center">
                     <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
                 </div>

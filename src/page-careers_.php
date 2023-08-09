@@ -346,7 +346,7 @@
 <?php
     $content_button = get_field('content_button');
 ?>
-<div class="w-full overflow-hidden relative">
+<div class="w-full overflow-hidden relative flex flex-col">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (3).svg'?>" alt="" class="absolute bottom-[5%] right-0"  data-animation="animate-fadeInRight" data-duration="4s">
     
     <div class="flex absolute top-0 left-0 w-full h-full blur-[100vh] z-10 transition-all hidden items-center justify-center bg-black/20" id="placeholderLoader">
@@ -359,7 +359,7 @@
         </div>
     </div>
 
-    <div id="careers-list">
+    <div id="careers-list" class="flex flex-col">
         <?php 
             $args = [
                 'post_type' => 'careers',
@@ -435,6 +435,69 @@
         <?php endwhile; ?>
         <?php endif; wp_reset_query(); ?>
     </div>
+
+
+<?php 
+    $form_title = get_field('form_title', 'careers-single');
+    $form_description = get_field('form_description', 'careers-single');
+    $form_inputs = get_field('form_inputs', 'careers-single');
+    $form_info = get_field('form_info', 'careers-single');
+    $form_button = get_field('form_button', 'careers-single');
+    $form_check = get_field('form_check', 'careers-single');
+    $form_send_button_text = get_field('form_send_button_text', 'careers-single');
+?>
+		
+	<form id="careersForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="self-center hidden shadow-2xl px-[8.125rem] py-[10.625rem] max-md:rounded-none z-10 bg-white max-md:px-[2.1875rem]">
+		<div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
+			<div class="flex flex-col gap-8">
+				<div class="flex flex-col gap-14">
+					<h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start "><?php echo $form_title ?? ''; ?></h2>
+					<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start"><?php echo $form_description ?? ''; ?></span>
+				</div>
+
+				<div>
+					<div class="flex flex-col gap-8">
+						<input type="text" name="full_name" required="true" placeholder="<?php echo $form_inputs['full_name_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+						<input type="tel" name="phone" required="true" placeholder="<?php echo $form_inputs['phone_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+						<input type="email" name="email" required="true" placeholder="<?php echo $form_inputs['email_placeholder'] ?? ''; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+					</div>
+				</div>
+			</div>
+			
+			<div class="flex flex-col gap-12 w-full">
+				<div class="flex justify-between">
+					<span class="flex items-center justify-center text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal"><?php echo $form_info; ?></span>
+					
+					<?php if(!empty($form_button) && !empty($form_button['text'])) : ?>
+					<input type="file" name="file" id="file" class="hidden" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+					<label for="file" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+						<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $form_button['text']; ?></span>
+						
+						<?php if(!empty($form_button['icon'])) : ?>
+						<div class="group-hover:animate-bounce">
+							<img src="<?php echo $form_button['icon']['url']; ?>" alt="<?php echo $form_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
+						</div>
+						<?php endif; ?>
+					</label>
+					<?php endif; ?>
+				</div>
+
+				<div class="flex justify-between gap-3 items-start">
+					<input type="checkbox" name="chekbox_rules" checked="<?php echo $item['checkbox'] ?? false; ?>" class="checked:invert checked:grayscale opacity-[0.4] contrast-[0.99] w-[1.5625rem] h-[1.5625rem]">
+					<span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-[0.75rem] font-normal text-start"><?php echo $form_check; ?></span>
+				</div>
+				
+				<?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
+				<div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
+
+				<?php if(!empty($form_send_button_text)) : ?>
+				<button type="submit" class="self-center relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+					<span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $form_send_button_text; ?></span>
+				</button>
+				<?php endif; ?>
+			</div>
+		</div>
+	</form>
 </div>
 <!-- Careers list -->
 <?php get_footer(); ?>

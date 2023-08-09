@@ -115,8 +115,11 @@
                     <?php foreach ($info_contacts['items'] as $item) : ?>
                     <div class="flex flex-col gap-6"  data-animation="animate-fadeInLeft" data-duration="4s">
                         <div class="flex gap-6 items-center">
+							<?php if(!empty($item['icon'])) : ?>
                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>" class="select-none" draggable="false">
-                            <?php if($item['options'] == 'text') :?>
+                            <?php endif; ?>
+
+							<?php if($item['options'] == 'text') :?>
                             <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light max-w-[20.625rem] text-start">
                                 <?php echo $item['text']; ?>
                             </span>
