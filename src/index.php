@@ -70,7 +70,7 @@
 		
 		<?php if($headerAnimTextData['isenable']) : ?>
 		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
-			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
+			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span>
 		</div>
 		<?php endif ?>
 	</div>
@@ -560,7 +560,7 @@
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
                 <?php if($key > 2) : ?>
                 <div class="flex items-center justify-center">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-40 h-40 object-contain">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="w-[11rem] h-[11rem] object-contain">
                 </div>
                 <?php endif ?>
                 <?php endforeach ?>
