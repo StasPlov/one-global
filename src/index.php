@@ -7,8 +7,6 @@
 	$header_background = get_field('header_background', 'home-page');
 ?>
 <div class="relative w-full h-screen" id="scroll-trigger2">
-	
-
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
@@ -22,7 +20,7 @@
 
             <?php $headerLogoData = get_field('header_logo', 'home-page'); ?>
             <?php if($headerLogoData['isenable'] && !empty($headerLogoData['Image'])) : ?>
-            <img src="<?php echo $headerLogoData['Image']['url']; ?>" alt="<?php echo $headerLogoData['Image']['alt']; ?>" class="h-40  z-0 object-contain"  data-animation="animate-fadeInTop" data-duration="3s">
+            <img src="<?php echo $headerLogoData['Image']['url']; ?>" alt="<?php echo $headerLogoData['Image']['alt']; ?>" class="h-[11rem]  z-0 object-contain"  data-animation="animate-fadeInTop" data-duration="3s">
             <?php endif ?>
             
             <?php $headerTitleData = get_field('header_title', 'home-page'); ?>
@@ -84,14 +82,13 @@
 	$about_us_button = get_field('about_us_button', 'home-page');
 ?>
 <div class="w-full bg-white relative overflow-hidden">
-    <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col">
+    <div class="flex gap-28 h-full max-md:flex-col max-md:gap-[3.125rem]">
         <div class="flex-1 relative"  data-animation="animate-fadeInLeft" data-duration="2s">
             <?php $headerAboutBgData = get_field('about_us_background', 'home-page'); ?>
             <?php if(!empty($headerAboutBgData['image'])) : ?>
-            <img src="<?php echo $headerAboutBgData['image']['url']; ?>" alt="<?php echo $headerAboutBgData['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">  
+            <img src="<?php echo $headerAboutBgData['image']['url']; ?>" alt="<?php echo $headerAboutBgData['image']['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-[50vh]" draggable="false">  
             <?php endif ?>
             
-
             <div class="flex w-full h-full absolute top-0 left-0 items-center bg-black/20 items-center justify-center">
                 <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:left-7">
                     <?php if(!empty($headerAboutBgData['text'])) : ?>
@@ -142,8 +139,8 @@
  	$our_promise_title = get_field('our_promise_title', 'home-page');
 ?>
 <div class="flex min-h-screen items-center w-full relative">
-    <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem]">
-        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full" data-animation="animate-fadeInTop" data-duration="1.5s">
+    <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem] max-md:gap-[3.125rem] max-md:items-center">
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full max-md:leading-none" data-animation="animate-fadeInTop" data-duration="1.5s">
 			<?php echo $our_promise_title; ?>
 		</h2>
 
@@ -168,7 +165,7 @@
 <div class="w-full min-h-screen relative">
 	
 
-    <div class="flex flex-col gap-[8.75rem] h-full items-center px-[11.25rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col gap-[8.75rem] h-full items-center px-[11.25rem] max-md:px-[2.1875rem] max-md:gap-[2.1875rem]">
        
         <h2 class="font-caudex rtl:font-droidSansArabic text-5xl leading-[3.5rem] italic max-w-[47.9375rem] max-md:max-w-none text-center"  data-animation="animate-fadeInLeft" data-duration="2s">
 			<?php echo $digital_title; ?>
@@ -198,9 +195,9 @@
             <?php endif; ?>
         </div>
 
-        <div class="flex flex-col self-start h-full py-[15.3125rem]">
+        <div class="flex flex-col self-start h-full py-[15.3125rem] max-md:py-[3.125rem]">
             <?php $headerOurSubTitleData = get_field('our_subsidiaries_title', 'home-page'); ?>
-            <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] max-md:text-[3.75rem] text-start w-full"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurSubTitleData; ?></h2>
+            <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] max-md:text-[3.75rem] text-start w-full max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurSubTitleData; ?></h2>
         </div>
     </div>
 </div>
@@ -243,7 +240,7 @@
             </div>
         </div>
 
-        <div class="flex-1 h-full z-0 max-md:h-[31.25rem]"  data-animation="animate-fadeInRight" data-duration="2.5s">
+        <div class="flex-1 h-full z-0 max-md:h-[31.25rem] max-md:w-full">
             <img src="<?php echo $headerOgInnovationData['image']['url']; ?>" alt="<?php echo $headerOgInnovationData['image']['alt']; ?>" class="h-full w-full object-cover">
         </div>
     </div>
@@ -257,7 +254,7 @@
 	
 	
 	
-    <div class="flex flex-col items-center h-full py-[6.375rem] pb-[9.375rem] gap-28 max-md:flex-col-reverse">
+    <div class="flex flex-col items-center h-full py-[6.375rem] pb-[9.375rem] gap-28 max-md:flex-col-reverse max-md:pt-0">
         <div class="flex flex-col items-start gap-16 ml-80 z-0 max-md:m-0 max-md:px-[35px]">
             <img src="<?php echo $headerOgHubData['logo']['url']; ?>" alt="<?php echo $headerOgHubData['logo']['alt']; ?>" class="h-40 z-0"  data-animation="animate-fadeInLeft" data-duration="2.5s">
 
@@ -352,13 +349,11 @@
 <?php $headerOurServicesFourData = get_field('our_service_four', 'home-page'); ?>
 
 <div class="w-full overflow-hidden relative">
-    <div class="flex flex-col justify-center px-[11.25rem] pt-[15.625rem] pb-[17.5rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col justify-center px-[11.25rem] pt-[15.625rem] pb-[17.5rem] max-md:px-[2.1875rem] max-md:py-[6.25rem]">
         <?php if(!empty($headerOurServicesTitleData)) : ?>
-        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurServicesTitleData; ?></h2>
-        <?php endif ?>
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurServicesTitleData; ?></h2>
+        <?php endif; ?>
     </div>
-	
-	
 
     <div>
         <div class="grid grid-cols-3 grid-rows-4 gap-0 max-md:hidden">
@@ -452,7 +447,7 @@
         <div class="hidden flex-col max-md:flex">
             <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col max-md:max-h-full">
                 <?php if(!empty($headerOurServicesFirstData['image'])) : ?>
-                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover max-md:max-h-screen">
+                <img src="<?php echo $headerOurServicesFirstData['image']['url']; ?>" alt="<?php echo $headerOurServicesFirstData['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover max-md:max-h-[50vh]">
                 <?php endif ?>
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
@@ -533,14 +528,14 @@
 <?php $headerInvestedVenturesDescriptionData = get_field('invested_ventures_description', 'home-page'); ?>
 <?php $headerInvestedVenturesItemsListData = get_field('invested_ventures_items', 'home-page'); ?>
 
-<div class="flex flex-col gap-36 py-[10.75rem] pb-[11.875rem] bg-black after:contents relative overflow-hidden max-md:px-[35px]">
+<div class="flex flex-col py-[10.625rem] bg-black after:contents relative overflow-hidden max-md:px-[2.1875rem] max-md:pн-[6.25rem]">
     <?php if($headerInvestedVenturesBgData['is_enable']) : ?>
-    <img src="<?php echo $headerInvestedVenturesBgData['image']['url'] ?>" alt="<?php echo $headerInvestedVenturesBgData['image']['alt'] ?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInLeft" data-duration="5s">
+    <img src="<?php echo $headerInvestedVenturesBgData['image']['url'] ?>" alt="<?php echo $headerInvestedVenturesBgData['image']['alt'] ?>" class="absolute w-full h-full top-0 left-0">
     <?php endif ?>
 
     <div class="flex flex-col gap-14 px-[11.25rem] z-0 max-md:px-0">
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
-        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full text-white"  data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full text-white max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
         <?php endif ?>
         
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
@@ -550,7 +545,7 @@
         <?php endif ?>
         
         <?php if(!empty($headerInvestedVenturesItemsListData)) : ?>
-        <div class="flex flex-col gap-32 max-md:flex-row-reverse max-md:pt-[6.25rem] max-md:gap-14 max-md:items-start "  data-animation="animate-fadeInRight" data-duration="4s">
+        <div class="flex flex-col gap-[3rem] max-md:flex-row-reverse max-md:gap-14 max-md:items-start max-md:pt-0"  data-animation="animate-fadeInRight" data-duration="4s">
             <div class="flex gap-20 justify-around max-md:flex-col max-md:gap-10 max-md:flex-1" style="justify-content: space-around;">
                 <?php foreach ($headerInvestedVenturesItemsListData as $key => $item) : ?>
                 <?php if($key < 3) : ?>

@@ -81,21 +81,21 @@
     $elevating_desription_two = get_field('elevating_desription_two');
 ?>
 <div class="flex min-h-screen w-full bg-fixed max-md:bg-scroll bg-cover bg-center overflow-hidden" id="paralax" style="background-image: url('<?php echo $elevating_background['url']; ?>')">
-    <div class="flex flex-1 flex-col items-start gap-[9.375rem] px-[11.25rem] py-[11.25rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-1 flex-col items-start gap-[9.375rem] px-[11.25rem] py-[11.25rem] max-md:px-[2.1875rem] max-md:py-[6.25rem]">
         <div class="flex flex-col gap-8">
-            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
+            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start">
                 <?php echo $elevating_title; ?>
             </span>
-            <h2 class="text-[4rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic"  data-animation="animate-fadeInLeft" data-duration="3s">
+            <h2 class="text-[4rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic max-md:leading-none">
                 <?php echo $elevating_description; ?>
             </h2>  
         </div>
 
         <div class="flex flex-col gap-8 self-end">
-            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start"  data-animation="animate-fadeInRight" data-duration="2s">
+            <span class="text-white font-lato rtl:font-droidSansArabic text-base font-medium text-start">
                 <?php echo $elevating_title_two; ?>
             </span>
-            <h2 class="text-[2.5rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic max-w-[47.5rem]"  data-animation="animate-fadeInRight" data-duration="3s">
+            <h2 class="text-[2.5rem] font-caudex rtl:font-droidSansArabic font-medium text-white text-start italic max-w-[47.5rem]">
                 <?php echo $elevating_desription_two; ?>
             </h2>  
         </div>
@@ -155,7 +155,7 @@
         <?php if($keyItem == $key) : ?>
         <?php foreach ($item['items'] as $keyUser => $user) : ?>
         <div class="flex flex-col "  data-animation="animate-fadeInLeft" data-duration="<?php echo ($keyUser + 1) / 2; ?>s">
-            <div class="h-[19.75rem]">
+            <div class="h-[19.75rem] max-lg:h-auto">
                 <img src="<?php echo $user['image']['url']; ?>" alt="<?php echo $user['image']['alt']; ?>" class="w-full h-full object-cover select-none" draggable="false">
             </div>
 
@@ -258,18 +258,18 @@
 <div class="w-full bg-white relative overflow-hidden">
     
 
-    <div class="flex py-[11.25rem] gap-14 h-full max-md:flex-col max-md:pt-[5rem]">
+    <div class="flex py-[11.25rem] gap-14 h-full max-md:flex-col max-md:py-[6.25rem]">
         <div class="flex-1 relative"  data-animation="animate-fadeInLeft" data-duration="2s">
             <!-- mobile -->
-            <div class="w-full h-full top-0 left-0 items-center px-[11.25rem] hidden max-md:flex max-md:px-[2.1875rem] max-md:pb-16">
-                <span class="text-[#14191D] z-0 text-[5rem] font-lato rtl:font-droidSansArabic text-start"><?php echo $media_center_image_title; ?></span>
+            <div class="w-full h-full top-0 left-0 items-center px-[11.25rem] hidden max-md:flex max-md:px-[2.1875rem] max-md:pb-[6.25rem]">
+                <span class="text-[#14191D] z-0 text-[5rem] font-lato rtl:font-droidSansArabic text-start max-md:leading-none"><?php echo $media_center_image_title; ?></span>
             </div>
             <!-- end mobile -->
 
             <img src="<?php echo $media_center_image['url']; ?>" alt="<?php echo $media_center_image['alt']; ?>" class="w-full h-[34.1875rem] object-cover select-none" draggable="false">  
             
-            <div class="flex w-full h-full absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:hidden">
-                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute">
+            <div class="flex w-full h-full absolute top-0 left-0 items-center justify-center px-[2.1875rem] bg-black/20 max-md:hidden ">
+                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:leading-none">
                     <?php echo $media_center_image_title; ?>
                 </span>
             </div>
@@ -312,79 +312,21 @@
 <!-- subscribe -->
 <?php 
     $subscribe_background = get_field('subscribe_background');
-    $subscribe_title = get_field('subscribe_title');
-    $subscribe_description = get_field('subscribe_description');
-    $subscribe_input_one_placeholder = get_field('subscribe_input_one_placeholder');
-    $subscribe_input_two_placeholder = get_field('subscribe_input_two_placeholder');
-    $subscribe_button = get_field('subscribe_button');
-	$subscribe_complite = get_field('subscribe_complite');
 ?>
 <div class="min-h-screen w-full relative bg-black overflow-hidden">
-    <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0 sele"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
+	<?php if(!empty($subscribe_background)) : ?>
+    <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0"  draggable="false">
+	<?php endif; ?>
 
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
-        <form id="subscribeForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>" class="flex flex-col gap-12 items-center">
-            <div class="flex flex-col items-center gap-4 z-0">
-                <h2 class="text-white font-caudex rtl:font-droidSansArabic font-normal text-[4rem] leading-[4rem] italic max-md:text-start">
-                    <?php echo $subscribe_title; ?>
-                </h2>
-                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[30.625rem] max-md:text-start">
-                    <?php echo $subscribe_description; ?>
-                </span>
-            </div>
-
-            <div class="flex flex-col gap-12 w-[25.3125rem] z-0">
-                <div class="w-full">
-                    <div class="flex flex-col gap-8">
-                        <input type="text" required="true" name="full_name" placeholder="<?php echo $subscribe_input_one_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                        <input type="email" required="true" name="email" placeholder="<?php echo $subscribe_input_two_placeholder; ?>" class="border-0 border-b border-solid border-white bg-transparent py-3 text-white outline-0">
-                    </div>
-                </div>
-                
-                <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
-                <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
-
-                <div class="flex-1 flex justify-center items-center z-0">
-                    <?php if($subscribe_button['is_enable']) : ?>
-                    <?php if(!empty($subscribe_button['url'])) : ?>
-                    <a href="<?php echo $subscribe_button['url']['url']; ?>">
-                    <?php endif; ?>
-                    <button type="submit" class="w-full relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_button['text']; ?></span>
-                        <?php if(!empty($subscribe_button['icon'])) : ?>
-                        <div class="group-hover:animate-bounce"> 
-                            <img src="<?php echo $subscribe_button['icon']['url']; ?>" alt="<?php echo $subscribe_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
-                        </div>
-                        <?php endif; ?>
-                    </button>
-                    <?php if(!empty($subscribe_button['url'])) : ?>
-                    </a>
-                    <?php endif; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </form>
-
-		<div class="flex flex-col gap-12 items-center hidden z-0" id="subscribeFormComplite">
-			<img src="<?php echo $subscribe_complite['logo']['url']; ?>" alt="<?php echo $subscribe_complite['logo']['alt']; ?>" class="max-w-[12.5rem] w-full h-full"  draggable="false" data-animation="animate-fadeInLeft" data-duration="1s">
-
-			<div class="flex flex-col items-center gap-4">
-                <h2 class="text-white font-lato rtl:font-droidSansArabic font-bold text-[2.5rem] leading-[4rem]">
-                    <?php echo $subscribe_complite['title']; ?>
-                </h2>
-
-                <span class="text-white font-lato rtl:font-droidSansArabic text-center text-lg font-light max-w-[20rem] max-md:text-start">
-                    <?php echo $subscribe_complite['description']; ?>
-                </span>
-            </div>
-			
-			<div class="flex-1 flex justify-center items-center">
-				<?php if($subscribe_complite['button'] && $subscribe_complite['button']['text']) : ?>
-				<button type="submit" class="w-full relative flex gap-2 justify-between items-center px-11 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-					<span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300 text-center w-full"><?php echo $subscribe_complite['button']['text']; ?></span>
-				</button>
-				<?php endif; ?>
-			</div>
+        <div class="flex flex-col gap-12 items-center z-10">
+			<?php 
+				$num = 6;
+				if(pll_current_language() == 'ar') {
+					$num = 7;
+				}
+				echo do_shortcode("[ninja_form id=$num]");
+			?>            
 		</div>
     </div>
 </div>

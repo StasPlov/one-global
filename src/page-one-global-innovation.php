@@ -59,11 +59,9 @@
     $about_image = get_field('about_image');
 ?>
 <div class="w-full min-h-screen bg-white relative">
-	
-
-    <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse">
+    <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse max-md:py-[6.25rem]">
         <!-- mobile -->
-        <div class="hidden flex-col gap-7 max-md:px-[2.1875rem] max-md:flex">
+        <div class="hidden flex-col gap-7 max-md:px-[2.1875rem] max-md:flex max-lg:items-center">
             <?php if($about_description) :?>
             <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[33.875rem]">
                 <?php echo $about_description; ?>
@@ -108,8 +106,8 @@
     $what_does_info = get_field('what_does_info');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-    <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem]">
-        <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem] max-md:py-[6.25rem]">
+        <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem] max-md:gap-[3.125rem]">
             <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
@@ -165,7 +163,7 @@
     $venture_building_image = get_field('venture_building_image');
 ?>
 <div class="w-full min-h-screen bg-white">
-    <div class="flex flex-col gap-[5rem] pt-[12.6875rem] pb-[9.375rem]">
+    <div class="flex flex-col gap-[5rem] pt-[12.6875rem] pb-[9.375rem] max-md:py-[6.25rem]">
         <div class="flex flex-col gap-[2.125rem] px-[11.25rem] max-md:px-[2.1875rem]">
             <h2 class="text-[4rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-none"><?php echo $venture_building_title; ?></h2>
         </div>

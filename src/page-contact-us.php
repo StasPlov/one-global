@@ -31,7 +31,7 @@
         <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
-                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col">
+                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col max-md:leading-none">
                         <?php echo $header_title; ?>
                     </h1>
                 </div>
@@ -61,47 +61,19 @@
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
 
     <div class="flex max-md:flex-col-reverse">
-        <div class="flex-1 flex items-center justify-center">
+        <div class="flex-1 flex items-center justify-center max-lg:w-full">
             <!-- form -->
-            <form class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none" id="contactsForm" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
+			<div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
-                    <div class="flex flex-col gap-8">
-                        <div class="flex flex-col gap-14">
-                            <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">
-                                <?php echo $form_title; ?>
-                            </h2>
-                            <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light text-start">
-                                <?php echo $form_description; ?>
-                            </span>
-                        </div>
-
-                        <div>
-                            <div class="flex flex-col gap-8">
-                                <input type="text" name="full_name" required="required" placeholder="<?php echo $form_inputs['full_name']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" name="mobile_number" required="required" placeholder="<?php echo $form_inputs['mobile_number']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="email" name="email" required="required" placeholder="<?php echo $form_inputs['email']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                                <input type="text" name="message" required="required" placeholder="<?php echo $form_inputs['message']; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <?php $captcha_key = get_field('captcha_key', 'general-settings'); ?>
-                    <div class="g-recaptcha" data-sitekey="<?php echo $captcha_key; ?>"></div>
-                    
-                    <?php if(!empty($form_button) && $form_button['text'] && $form_button['is_enable']) : ?>
-                    <button type="submit" class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                        <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
-                            <?php echo $form_button['text']; ?>
-                        </span>
-                        <?php if(!empty($form_button['icon'])) : ?>
-                        <div class="group-hover:animate-bounce">
-                            <img src="<?php echo $form_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3 ">
-                        </div>
-                        <?php endif; ?>
-                    </button>
-                    <?php endif; ?>
+					<?php
+						$num = 1;
+						if(pll_current_language() == 'ar') {
+							$num = 3;
+						}
+						echo do_shortcode("[ninja_form id=$num]"); 
+					?>
                 </div>
-            </form>
+			</div>
             <!-- form end -->
         </div>
 

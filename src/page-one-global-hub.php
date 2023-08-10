@@ -54,8 +54,8 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-    <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
+<div class="w-full min-h-screen bg-white py-[10.625rem] relative max-md:py-[3.125rem]">
+    <div class="flex gap-28 justify-start items-center h-full max-md:flex-col max-md:gap-[3.125rem]">
         <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem] rtl:pr-[11.25rem] rtl:pl-0">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-14">
@@ -104,7 +104,7 @@
     
 	
 	
-    <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0">
+    <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0 max-md:py-[6.25rem] max-md:gap-[9.375rem]">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
             <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2 z-10">
                 <?php if(!empty($what_does_items)) : ?>
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-[7.3125rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
+        <div class="flex flex-col gap-[7.3125rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:gap-[3.125rem]">
             <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
@@ -149,20 +149,18 @@
     $business_accelerator_map = get_field('business_accelerator_map');
     $business_accelerator_map_mobile = get_field('business_accelerator_map_mobile');
 ?>
-<div class="w-full min-h-screen bg-white pt-[20rem] pb-[15.125rem] relative overflow-hidden">
+<div class="w-full min-h-screen bg-white pt-[20rem] pb-[15.125rem] relative overflow-hidden max-md:py-[6.25rem]">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
 
-	
-
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
-            <div class="flex flex-col gap-[8.125rem] px-[11.25rem] max-md:px-[2.1875rem]">
+            <div class="flex flex-col gap-[6.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
                 <div class="flex flex-col">
-                    <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"><?php echo $business_incubation_title; ?></h2>
+                    <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem] max-md:leading-none max-md:text-[4rem]"><?php echo $business_incubation_title; ?></h2>
                 </div>
 
-                <div class="flex gap-[10.9375rem] max-md:flex-col">
+                <div class="flex gap-[10.9375rem] max-md:flex-col max-md:gap-[3.125rem]">
                     <?php if(!empty($business_incubation_items)) : ?>
                     <?php foreach ($business_incubation_items as $item) : ?>
                     <div class="flex gap-11 shadow-[0.625rem_0.625rem_1.25rem_0rem_#ff850033] py-[2.625rem] px-[2.375rem] rounded-lg bg-white max-md:flex-col">
@@ -182,8 +180,8 @@
         </div>
 
         <div class="flex flex-col gap-[10.625rem] z-0">
-            <div class="flex flex-col gap-[6.5625rem] px-[11.25rem] items-start">
-                <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"><?php echo $business_accelerator_title; ?></h2>
+            <div class="flex flex-col gap-[6.25rem] px-[11.25rem] items-start max-md:px-[2.1875rem]">
+                <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem] max-md:text-[4rem]"><?php echo $business_accelerator_title; ?></h2>
                 
                 <?php if(!empty($business_accelerator_items)) : ?>
                 <?php foreach ($business_accelerator_items as $item) : ?>

@@ -33,6 +33,142 @@ Text Domain: one global
 	--header-menu-height: 90px;
 }
 
+.hidde {
+	display: none!important;
+}
+
+/* ninja form */
+.nf-form-fields-required {
+	display: none;
+}
+.contac-form-input {
+	border: 0!important;
+	border-bottom: 1px solid #1C2126!important;
+	background: transparent!important;
+	padding-top: 0.5rem!important;
+	color: #1C2126!important;
+	outline: 0!important;
+}
+.contac-form-submit {
+	display: flex!important;
+	padding-left: 2.625rem!important;
+	padding-right: 2.625rem!important;
+	border: 1px solid #1c2126!important;
+	border-radius: 2.125rem!important;
+	transition-duration: 150ms!important;
+	background: transparent!important;
+    color: #1c2126!important;
+	cursor: pointer!important;
+}
+.contac-form-submit:hover {
+	background: #1C2126!important;
+	color: white!important;
+	border: 1px solid transparent!important;
+}
+
+.stayconnected-form-input {
+	border: 1 solid #c4c4c480!important;
+	padding: 1.875rem!important;
+	padding-top: 0.9375rem!important;
+	padding-bottom: 0.9375rem!important;
+	outline: 0!important;
+	font-weight: 500!important;
+	border-radius: 0.75rem!important;
+}
+.stayconnected-form-checkbox {
+	font-family: 'Lato';
+	font-size: 1rem;
+    line-height: 1.5rem;
+	font-weight: 300;
+	color: #1c212680;
+	text-align: start;
+}
+html[dir="rtl"] .stayconnected-form-checkbox {
+	font-family: 'Droid Sans Arabic';
+}
+
+.stayconnected-form-submit {
+	background: transparent!important;
+	display: flex!important; 
+	position: relative!important; 
+	gap: 0.5rem!important; 
+	justify-content: space-between!important; 
+	align-items: center!important; 
+	border-radius: 1.5rem!important; 
+	border-width: 1px!important; 
+	border-style: solid!important; 
+	padding-left: 2.625rem!important;
+    padding-right: 2.625rem!important;
+	padding-top: 0.875rem!important;
+    padding-bottom: 0.875rem!important;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform!important;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)!important;
+	transition-duration: 300ms!important; 
+	transition-duration: 300ms!important; 
+	cursor: pointer!important; 
+	border-color: #057EED!important;
+
+	font-size: 0.875rem!important;
+	line-height: 1.25rem!important; 
+	font-weight: 800!important; 
+	color: #004C92!important;
+}
+.stayconnected-form-submit:hover::after {
+	opacity: 1;
+}
+
+.stayconnected-form-submit::after {
+	content: "";
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0; 
+	place-content: center; 
+	width: 100%; 
+	height: 100%; 
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms; 
+	transition-duration: 500ms; 
+	pointer-events: none; 
+	opacity: 0; 
+	background: #057eed;
+}
+
+.subscribe-form-input {
+	border: 0!important;
+	border-bottom: 1px solid white!important;
+	background: transparent!important;
+	padding-top: 0.5rem!important;
+	color: white!important;
+	outline: 0!important;
+	max-width: 25rem!important;
+	width: 100%!important;
+}
+
+.subscribe-form-submit {
+	display: flex!important;
+	padding-left: 2.625rem!important;
+	padding-right: 2.625rem!important;
+	border: 1px solid white!important;
+	border-radius: 2.125rem!important;
+	transition-duration: 150ms!important;
+	background: transparent!important;
+    color: white!important;
+	cursor: pointer!important;
+}
+.subscribe-form-submit:hover {
+	background: #1C2126!important;
+	color: white!important;
+	border: 1px solid transparent!important;
+}
+.subscribe-container {
+	max-width: 25rem!important;
+	margin-left: auto!important;
+	margin-right: auto!important;
+}
+
 @keyframes flicker {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {
 		opacity: 1;
@@ -102,12 +238,6 @@ Text Domain: one global
 		transform: rotate(360deg);
 	}
 }
-
-
-.hidde {
-	display: none!important;
-}
-
 
 @keyframes scrollAnimationMove {
 	0% {
