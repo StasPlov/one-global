@@ -321,9 +321,9 @@
     <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
         <div class="flex flex-col gap-12 items-center z-10">
 			<?php 
-				$num = 6;
+				$num = 10; // 6
 				if(pll_current_language() == 'ar') {
-					$num = 7;
+					$num = 8; // 7
 				}
 				echo do_shortcode("[ninja_form id=$num]");
 			?>            
