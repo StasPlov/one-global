@@ -9,9 +9,7 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	
-
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-phoneX:px-[2.1875rem] max-md:px-[7.1875rem]">
         <?php if(!empty($header_background)) :?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
@@ -58,7 +56,7 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white relative">
+<div class="w-full bg-white relative">
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse max-md:py-[6.25rem]">
         <!-- mobile -->
         <div class="hidden flex-col gap-7 max-md:px-[2.1875rem] max-md:flex max-lg:items-center">
@@ -105,9 +103,9 @@
     $what_does_description_two = get_field('what_does_description_two');
     $what_does_info = get_field('what_does_info');
 ?>
-<div class="w-full min-h-screen bg-black relative">
+<div class="w-full bg-black relative">
     <div class="flex flex-col gap-[20.625rem] py-[11.25rem] max-md:gap-[6.25rem] max-md:py-[6.25rem]">
-        <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-md:px-[2.1875rem] max-md:gap-[3.125rem]">
+        <div class="flex flex-col gap-[9.25rem] px-[11.25rem] max-phoneX:px-[2.1875rem] max-md:px-[7.1875rem] max-md:gap-[3.125rem]">
             <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
@@ -162,9 +160,9 @@
     $venture_building_title = get_field('venture_building_title');
     $venture_building_image = get_field('venture_building_image');
 ?>
-<div class="w-full min-h-screen bg-white">
+<div class="w-full bg-white">
     <div class="flex flex-col gap-[5rem] pt-[12.6875rem] pb-[9.375rem] max-md:py-[6.25rem]">
-        <div class="flex flex-col gap-[2.125rem] px-[11.25rem] max-md:px-[2.1875rem]">
+        <div class="flex flex-col gap-[2.125rem] px-[11.25rem] max-phoneX:px-[2.1875rem] max-md:px-[7.1875rem]">
             <h2 class="text-[4rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-none"><?php echo $venture_building_title; ?></h2>
         </div>
 

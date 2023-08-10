@@ -54,9 +54,9 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative max-md:py-[3.125rem]">
+<div class="w-full bg-white py-[10.625rem] relative max-md:py-[3.125rem]">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col max-md:gap-[3.125rem]">
-        <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem] rtl:pr-[11.25rem] rtl:pl-0">
+        <div class="flex flex-1 w-[57%] z-0 pl-[11.25rem] max-md:w-full max-md:px-[2.1875rem] rtl:pr-[11.25rem] rtl:pl-0 max-lg:justify-center">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-14">
                     <?php if($about_title) :?>
@@ -98,15 +98,13 @@
     $what_does_description_first = get_field('what_does_description_first');
     $what_does_description_two = get_field('what_does_description_two');
 ?>
-<div class="w-full min-h-screen bg-black relative">
+<div class="w-full bg-black relative">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
     
-	
-	
-    <div class="flex flex-col gap-[18.75rem] py-[12.5rem] pb-[24.375rem] z-0 max-md:py-[6.25rem] max-md:gap-[9.375rem]">
+    <div class="flex flex-col gap-[18.75rem] py-[12.5rem] z-0 max-md:py-[6.25rem] max-md:gap-[9.375rem]">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
-            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2 z-10">
+            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2 z-10 max-lg:self-center">
                 <?php if(!empty($what_does_items)) : ?>
                 <?php foreach ($what_does_items as $item) : ?>
                 <div class="flex flex-col gap-[1.375rem] flex-1">
@@ -121,7 +119,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-[7.3125rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:gap-[3.125rem]">
+        <div class="flex flex-col gap-[7.3125rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:gap-[3.125rem] max-lg:self-center">
             <h2 class="text-[5rem] text-white font-medium font-caudex rtl:font-droidSansArabic italic text-start leading-[5.625rem]"><?php echo $what_does_title; ?></h2>
 
             <div class="flex gap-[9.5rem] max-md:flex-col max-md:gap-7">
@@ -156,11 +154,11 @@
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
             <div class="flex flex-col gap-[6.25rem] px-[11.25rem] max-md:px-[2.1875rem]">
-                <div class="flex flex-col">
+                <div class="flex flex-col max-lg:self-center">
                     <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem] max-md:leading-none max-md:text-[4rem]"><?php echo $business_incubation_title; ?></h2>
                 </div>
 
-                <div class="flex gap-[10.9375rem] max-md:flex-col max-md:gap-[3.125rem]">
+                <div class="flex gap-[10.9375rem] max-md:flex-col max-md:gap-[3.125rem] max-lg:self-center">
                     <?php if(!empty($business_incubation_items)) : ?>
                     <?php foreach ($business_incubation_items as $item) : ?>
                     <div class="flex gap-11 shadow-[0.625rem_0.625rem_1.25rem_0rem_#ff850033] py-[2.625rem] px-[2.375rem] rounded-lg bg-white max-md:flex-col">
@@ -180,7 +178,7 @@
         </div>
 
         <div class="flex flex-col gap-[10.625rem] z-0">
-            <div class="flex flex-col gap-[6.25rem] px-[11.25rem] items-start max-md:px-[2.1875rem]">
+            <div class="flex flex-col gap-[6.25rem] px-[11.25rem] items-start max-phoneX:px-[2.1875rem] max-lg:items-center max-md:px-[9.375rem]">
                 <h2 class="text-[5rem] text-[#14191D] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem] max-md:text-[4rem]"><?php echo $business_accelerator_title; ?></h2>
                 
                 <?php if(!empty($business_accelerator_items)) : ?>
@@ -211,8 +209,6 @@
 ?>
 <div class="w-full min-h-screen bg-black relative">
     <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
-    
-	
 
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
@@ -220,14 +216,14 @@
 
             <div class="flex gap-[9.5rem]">
                 <div class="flex-1 flex flex-col gap-7">
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[35.3125rem]">
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[35.3125rem] max-md:text-xl">
                         <?php echo $success_stories_description; ?>
                     </span>
                 </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
+        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-phoneX:flex max-phoneX:flex-col max-lg:grid-cols-2">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
@@ -237,9 +233,9 @@
 
                 <div class="flex flex-col gap-10 items-start">
                     <div class="flex flex-col gap-5">
-                        <h3 class="font-lato rtl:font-droidSansArabic text-white text-2xl font-medium leading-[1.875rem] text-start max-w-[11.75rem]"><?php echo $item['title']; ?></h3>
+                        <h3 class="font-lato rtl:font-droidSansArabic text-white text-2xl font-medium leading-[1.875rem] text-start max-w-[11.75rem] max-md:text-3xl"><?php echo $item['title']; ?></h3>
 
-                        <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[19.375rem]">
+                        <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[19.375rem] max-md:text-xl">
                             <?php echo $item['description']; ?>
                         </span>
                     </div>
@@ -274,30 +270,28 @@
     $ready_description = get_field('ready_description');
     $ready_image = get_field('ready_image');
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	
-
+<div class="w-full bg-white py-[10.625rem] relative">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
-        <div class="flex flex-col gap-[4.1875rem] flex-1 w-[57%] z-0 pl-[11.25rem] items-start max-md:px-[35px] max-md:w-full rtl:pr-[11.25rem] rtl:pl-0">
-            <h2 class="text-5xl font-normal text-[#1C2126] font-caudex rtl:font-droidSansArabic italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
+        <div class="flex items-centerflex-1 w-[57%] z-0 pl-[11.25rem] max-md:px-[35px] max-md:w-full rtl:pr-[11.25rem] rtl:pl-0">
+            <div class="flex flex-col gap-[4.1875rem] items-start ">
+                <h2 class="text-5xl font-normal text-[#1C2126] font-caudex rtl:font-droidSansArabic italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
 
-            <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse">
+                <div class="flex flex-col gap-7 items-start max-md:flex-col-reverse">
+                    <?php if($ready_button['is_enable']) : ?>
+                    <a href="<?php echo $ready_button['url']['url'] ?? ''; ?>">
+                    <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
+                        <span class="text-[#1c2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $ready_button['text']; ?></span>
+                        <div class="group-hover:animate-bounce">
+                            <img src="<?php echo $ready_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
+                        </div>
+                    </button>
+                    </a>
+                    <?php endif; ?>
 
-			
-                <?php if($ready_button['is_enable']) : ?>
-                <a href="<?php echo $ready_button['url']['url'] ?? ''; ?>">
-                <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#5850E9] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0" >
-                    <span class="text-[#1c2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $ready_button['text']; ?></span>
-                    <div class="group-hover:animate-bounce">
-                        <img src="<?php echo $ready_button['icon']['url']; ?>" alt="" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
-                    </div>
-                </button>
-                </a>
-                <?php endif; ?>
-
-                <span class="text-start font-lato rtl:font-droidSansArabic text-lg text-[#1C2126] font-normal leading-7">
-                    <?php echo $ready_description; ?>
-                </span>
+                    <span class="text-start font-lato rtl:font-droidSansArabic text-lg text-[#1C2126] font-normal leading-7">
+                        <?php echo $ready_description; ?>
+                    </span>
+                </div>
             </div>
         </div>
 

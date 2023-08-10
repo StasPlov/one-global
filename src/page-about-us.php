@@ -9,14 +9,12 @@
     $about_image_title = get_field('about_image_title');
 ?>
 <div class="w-full bg-white h-full relative overflow-hidden">
-    
-
     <div class="flex gap-28 h-full max-md:flex-col max-md:min-h-screen">
         <div class="flex-1 relative"  data-animation="animate-fadeInLeft" data-duration="2s">
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-screen" draggable="false">  
             
             <div class="flex w-full h-full max-md:flex-col max-md:gap-20 absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:px-[2.1875rem] max-md:justify-center max-md:items-start"  data-animation="animate-fadeInLeft" data-duration="2.5s">
-                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-sm:relative max-md:text-start">
+                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:relative max-md:text-start">
                     <?php echo $about_image_title; ?>
                 </span>
 
@@ -131,7 +129,7 @@
                 <?php if(!empty($board_items)) : ?>
                 <?php foreach ($board_items as $key => $item) : ?>
                 <?php if($keyItem == $key) : ?>
-                <div class="flex flex-col gap-5 max-md:pt-[2.1875rem]">
+                <div class="flex flex-col gap-5 max-md:pt-[2.1875rem] max-lg:px-[1.25rem]">
                     <h3 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $item['title']?>
                     </h3>
@@ -197,7 +195,7 @@
 <div class="w-full bg-black relative overflow-hidden">
     <img src="<?php echo $geography_background['url'];?>" alt="<?php echo $geography_background['alt'];?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInRight" data-duration="1s">
 
-    <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
+    <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-phoneX:px-[2.1875rem] max-lg:px-[3.125rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
             <div class="flex flex-col gap-6">
                 <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-[4rem] font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">

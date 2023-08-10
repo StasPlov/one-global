@@ -47,7 +47,7 @@
 			
         </div>
 
-        <div class="text-white max-md:hidden">
+        <div class="text-white max-lg:hidden">
             <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
             <?php if($headerAnimTextData['isenable']) : ?>
             <div class="fixed max-w-min text-start transition-all <?php echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<?php echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
@@ -65,7 +65,7 @@
 		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" id="stopAnimTriggerClose" class="absolute w-full h-screen scroll-animation-scale -scale-100">
 	</div>
 
-	<div class="hidden text-white max-md:flex">
+	<div class="hidden text-white max-lg:flex">
 		<?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
 		
 		<?php if($headerAnimTextData['isenable']) : ?>
@@ -102,7 +102,7 @@
             <div class="flex flex-col gap-6 max-w-[33.125rem] max-md:px-[2.1875rem] max-md:gap-[4.375rem] text-start items-start sticky top-[var(--header-menu-height)]"  data-animation="animate-fadeInRight">
                 <div class="flex flex-col gap-5">
                     <?php $headerAboutInfoData = get_field('about_us_info', 'home-page'); ?>
-                    <h2 class="font-caudex rtl:font-droidSansArabic text-[1.375rem] text-[#14191D]/80 leading-7"><?php echo $headerAboutInfoData['title']; ?></h2>
+                    <h2 class="font-caudex rtl:font-droidSansArabic text-[1.375rem] text-[#14191D]/80 leading-7 max-md:leading-non"><?php echo $headerAboutInfoData['title']; ?></h2>
 
                     <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#14191D]">
                         <?php echo $headerAboutInfoData['description']; ?>
@@ -138,7 +138,7 @@
 	$our_promise_text_two = get_field('our_promise_text_two', 'home-page');
  	$our_promise_title = get_field('our_promise_title', 'home-page');
 ?>
-<div class="flex min-h-screen items-center w-full relative">
+<div class="flex items-center w-full relative py-[100px]">
     <div class="flex flex-col px-[11.25rem] max-md:px-[2.1875rem] max-md:pb-14 w-full h-full justify-center gap-[6.25rem] max-md:gap-[3.125rem] max-md:items-center">
         <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start max-w-[29.375rem] w-full max-md:leading-none" data-animation="animate-fadeInTop" data-duration="1.5s">
 			<?php echo $our_promise_title; ?>
@@ -162,9 +162,7 @@
 	$digital_title = get_field('digital_title', 'home-page'); 
 	$digital_info_block = get_field('digital_info_block', 'home-page'); 
 ?> 
-<div class="w-full min-h-screen relative">
-	
-
+<div class="w-full relative">
     <div class="flex flex-col gap-[8.75rem] h-full items-center px-[11.25rem] max-md:px-[2.1875rem] max-md:gap-[2.1875rem]">
        
         <h2 class="font-caudex rtl:font-droidSansArabic text-5xl leading-[3.5rem] italic max-w-[47.9375rem] max-md:max-w-none text-center"  data-animation="animate-fadeInLeft" data-duration="2s">
@@ -195,7 +193,7 @@
             <?php endif; ?>
         </div>
 
-        <div class="flex flex-col self-start h-full py-[15.3125rem] max-md:py-[3.125rem]">
+        <div class="flex flex-col self-start h-full pt-[2.375rem] pb-[9.125rem] max-md:py-[3.125rem]">
             <?php $headerOurSubTitleData = get_field('our_subsidiaries_title', 'home-page'); ?>
             <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] max-md:text-[3.75rem] text-start w-full max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurSubTitleData; ?></h2>
         </div>
@@ -205,16 +203,14 @@
 
 <!-- og innovation -->
 <?php $headerOgInnovationData = get_field('og_innovation', 'home-page'); ?>
-<div class="w-full h-screen bg-black py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0 <?php echo ((pll_current_language() == 'ar') ? "pl-0 pr-[11.25rem]" : "pl-[11.25rem]" ); ?>">
+<div class="w-full min-md:h-screen bg-black py-[8.125rem] relative overflow-hidden max-md:px-0 max-md:pt-0 <?php echo ((pll_current_language() == 'ar') ? "pl-0 pr-[11.25rem]" : "pl-[11.25rem]" ); ?>">
     <img src="<?php echo $headerOgInnovationData['background_image']['url']; ?>" alt="<?php echo $headerOgInnovationData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInRight" data-duration="3s">
 	
-	
-
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
         <div class="flex flex-1 z-0 max-md:px-[2.1875rem]">
             <div class="flex flex-col items-start gap-28">
                 <div class="flex flex-col gap-8">
-                    <img src="<?php echo $headerOgInnovationData['logo']['url']; ?>" alt="<?php echo $headerOgInnovationData['logo']['alt']; ?>" class="h-40 object-contain"  data-animation="animate-fadeInLeft" data-duration="1s">
+                    <img src="<?php echo $headerOgInnovationData['logo']['url']; ?>" alt="<?php echo $headerOgInnovationData['logo']['alt']; ?>" class="h-40 object-contain max-md:max-h-[25rem]"  data-animation="animate-fadeInLeft" data-duration="1s">
 
                     <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-white text-start max-w-[27.5rem]"  data-animation="animate-fadeInLeft" data-duration="2s">
                         <?php echo $headerOgInnovationData['description']; ?>
@@ -249,13 +245,11 @@
 
 <!-- og hub -->
 <?php $headerOgHubData = get_field('og_hub', 'home-page'); ?>
-<div class="w-full min-h-screen bg-black relative overflow-hidden">
+<div class="w-full bg-black relative overflow-hidden">
     <img src="<?php echo $headerOgHubData['background_image']['url']; ?>" alt="<?php echo $headerOgHubData['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0"  data-animation="animate-fadeInLeft" data-duration="3s">
-	
-	
-	
+
     <div class="flex flex-col items-center h-full py-[6.375rem] pb-[9.375rem] gap-28 max-md:flex-col-reverse max-md:pt-0">
-        <div class="flex flex-col items-start gap-16 ml-80 z-0 max-md:m-0 max-md:px-[35px]">
+        <div class="flex flex-col items-start gap-16 ml-80 z-0 max-md:m-0 max-lg:ml-[10rem] max-md:px-[2.1875rem]">
             <img src="<?php echo $headerOgHubData['logo']['url']; ?>" alt="<?php echo $headerOgHubData['logo']['alt']; ?>" class="h-40 z-0"  data-animation="animate-fadeInLeft" data-duration="2.5s">
 
             <div class="flex items-center gap-16 max-md:flex-col max-md:items-start">
@@ -535,7 +529,7 @@
 
     <div class="flex flex-col gap-14 px-[11.25rem] z-0 max-md:px-0">
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>
-        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full text-white max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="3s"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
+        <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full text-white max-md:leading-none"><?php echo $headerInvestedVenturesTitleData['text']; ?></h2>
         <?php endif ?>
         
         <?php if($headerInvestedVenturesTitleData['isenable']) : ?>

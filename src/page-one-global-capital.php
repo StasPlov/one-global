@@ -9,9 +9,7 @@
     $header_title = get_field('header_title');
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-	
-
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-phoneX:px-[2.1875rem] max-md:px-[7.1875rem]">
         <?php if(!empty($header_background)) :?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">

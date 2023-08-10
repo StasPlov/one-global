@@ -60,7 +60,7 @@
 <div class="w-full py-[4.375rem] max-md:pb-0">
     <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (2).svg'?>" alt="" class="absolute right-0 max-md:hidden">
 
-    <div class="flex max-md:flex-col-reverse">
+    <div class="flex max-lg:flex-col-reverse max-lg:items-center max-lg:gap-10">
         <div class="flex-1 flex items-center justify-center max-lg:w-full">
             <!-- form -->
 			<div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none">
