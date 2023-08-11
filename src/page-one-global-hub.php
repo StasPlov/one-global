@@ -271,8 +271,8 @@
     $ready_image = get_field('ready_image');
 ?>
 <div class="w-full bg-white py-[10.625rem] relative">
-    <div class="flex gap-28 justify-start items-center h-full max-md:flex-col-reverse">
-        <div class="flex items-centerflex-1 w-[57%] z-0 pl-[11.25rem] max-md:px-[35px] max-md:w-full rtl:pr-[11.25rem] rtl:pl-0">
+    <div class="flex gap-28 justify-start items-center h-full max-lg:flex-col-reverse">
+        <div class="flex items-center flex-1 w-[57%] z-0 pl-[11.25rem] max-phoneX:px-[2.1875rem] max-lg:w-full rtl:pr-[11.25rem] max-lg:pl-0 rtl:pl-0 justify-center">
             <div class="flex flex-col gap-[4.1875rem] items-start ">
                 <h2 class="text-5xl font-normal text-[#1C2126] font-caudex rtl:font-droidSansArabic italic text-start leading-[3.5rem] max-w-[34.6875rem]"><?php echo $ready_title; ?></h2>
 
