@@ -5,6 +5,7 @@
 <?php
 	$header_button = get_field('header_button', 'home-page');
 	$header_background = get_field('header_background', 'home-page');
+	$headerAnimTextData = get_field('header_animation_text', 'home-page');
 ?>
 <div class="relative w-full h-screen" id="scroll-trigger2">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
@@ -47,10 +48,9 @@
 			
         </div>
 
-        <div class="text-white max-lg:hidden">
-            <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
+        <div class="text-white max-lg:hidden fixed right-[20%] top-[41%]" id="anim-element">
             <?php if($headerAnimTextData['isenable']) : ?>
-            <div class="fixed max-w-min text-start transition-all <?php echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<?php echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
+            <div class="max-w-min text-start transition-all">
                 <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
             </div>
             <?php endif ?>
@@ -60,14 +60,15 @@
 <!-- header end -->
 
 <!-- wee inovate -->
-<div class="relative w-full h-screen relative" id="stopAnimTrigger">
+<?php 
+	$headerAnimTextData = get_field('header_animation_text', 'home-page'); 
+?>
+<div class="relative w-full h-[500vh]" id="anim-trigger">
 	<div class="absolute w-full h-full flex items-center justify-center z-[1] overflow-hidden">
-		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" id="stopAnimTriggerClose" class="absolute w-full h-screen scroll-animation-scale -scale-100">
+		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen scroll-animation-scale -scale-100">
 	</div>
 
 	<div class="hidden text-white max-lg:flex">
-		<?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
-		
 		<?php if($headerAnimTextData['isenable']) : ?>
 		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
 			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span>
