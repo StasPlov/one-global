@@ -11,7 +11,7 @@
     <div class="flex min-h-screen max-md:hidden">
         <div class="flex-1 flex items-center justify-center">
             <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)]">
-                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic itali">
+                <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic italic leading-none">
                     <?php echo $header_title; ?>
                 </h1>
 
@@ -28,7 +28,7 @@
 
     <!-- mobile -->
     <div class="hidden max-md:flex flex-col">
-        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
+        <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']; ?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
                     <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col max-md:leading-none">

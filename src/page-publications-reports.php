@@ -34,7 +34,7 @@
         <div class="flex items-center min-h-screen bg-fixed max-md:bg-scroll bg-cover bg-center" id="paralax" style="background-image: url('<?php echo $header_image['url']?>')">
             <div class="flex items-center justify-center">
                 <div class="px-[2.1875rem]">
-                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col">
+                    <h1 class="text-white text-[5rem] font-caudex rtl:font-droidSansArabic italic text-start flex flex-col max-phoneX:text-5xl">
 						<!-- Media <span class="font-lato rtl:font-droidSansArabic not-italic font-medium">Center</span> -->
 						<?php echo $header_title; ?>
 					</h1>

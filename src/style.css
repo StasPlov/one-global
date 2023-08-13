@@ -169,6 +169,11 @@ html[dir="rtl"] .stayconnected-form-checkbox {
 	margin-right: auto!important;
 }
 
+html[dir="rtl"] select.ninja-forms-field {
+	direction: ltr;
+}
+
+
 @keyframes flicker {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {
 		opacity: 1;

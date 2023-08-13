@@ -55,7 +55,7 @@
 <?php 
 	$headerAnimTextData = get_field('header_animation_text', 'home-page'); 
 ?>
-<div class="relative w-full h-[300vh] flex items-center justify-center top-[41%]" id="anim-trigger">
+<div class="relative w-full h-[300vh] flex items-center justify-center top-[41%] bg-white" id="anim-trigger">
 	<div class="absolute flex items-center justify-center top-[10%] z-[1] overflow-hidden w-[20rem] h-[20rem]" id="anim-element-two">
 		<img src="<?php echo get_template_directory_uri().'/assets/icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
@@ -68,7 +68,7 @@
         <?php endif ?>
     </div>
 
-    <div class="hidden text-white fixed max-lg:flex" style="top: 100%;" id="anim-elemen-mob">
+    <div class="hidden text-white fixed max-lg:flex mix-blend-difference" style="top: 100%;" id="anim-elemen-mob" >
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
@@ -90,7 +90,7 @@
             <img src="<?php echo $headerAboutBgData['image']['url']; ?>" alt="<?php echo $headerAboutBgData['image']['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-[50vh]" draggable="false">  
             <?php endif ?>
             
-            <div class="flex w-full h-full absolute top-0 left-0 items-center bg-black/20 items-center justify-center">
+            <div class="flex w-full h-full absolute top-0 left-0 items-center bg-black/20 justify-center">
                 <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:left-7">
                     <?php if(!empty($headerAboutBgData['text'])) : ?>
                     <?php echo $headerAboutBgData['text']; ?>

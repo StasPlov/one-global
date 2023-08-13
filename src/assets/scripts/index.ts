@@ -45,13 +45,12 @@ addEventListener("DOMContentLoaded", () => {
 			trigger: triggerElement,
 			start: "top 50%", // Анимация начнется, когда верхняя граница элемента будет на верху окна
 			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
-			scrub: true, // Плавный скроллинг
+			scrub: 1, // Плавный скроллинг
 		},
 		ease: "power2",
 		x: textDir, // Сдвиг блока на 50% высоты окна
 		y: "-50%", // Сдвиг блока на 50% высоты окна
 		scale: 2, // Увеличение блока в 2 раза
-		color: 'black'
 	});
 	gsap.to(animTarget, {
 		scrollTrigger: {
@@ -64,20 +63,29 @@ addEventListener("DOMContentLoaded", () => {
 		position: 'absolute',
 	});
 
+	// text-mixed
+	gsap.to(animTarget, {
+		scrollTrigger: {
+			trigger: triggerElement,
+			start: "top 90%", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре окна
+			scrub: 1, // Плавный скроллинг
+		},
+		'mix-blend-mode': 'difference'
+	});
+
 	// text mobile
 	gsap.to(animTargetMob, {
 		scrollTrigger: {
 			trigger: triggerElement,
-			start: "top top", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			start: "top 50%", // Анимация начнется, когда верхняя граница элемента будет на верху окна
 			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
-			scrub: true, // Плавный скроллинг
+			scrub: 1, // Плавный скроллинг
 		},
 		ease: "power2",
 		y: "-50%", // Сдвиг блока на 50% высоты окна
 		scale: 2, // Увеличение блока в 2 раза
-		color: 'black',
-		top: '50%'
-	});
+	}); 
 	gsap.to(animTargetMob, {
 		scrollTrigger: {
 			trigger: triggerElement,
@@ -96,7 +104,7 @@ addEventListener("DOMContentLoaded", () => {
 			trigger: triggerElement,
 			start: "100vh", // Анимация начнется, когда верхняя граница элемента будет на верху окна
 			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
-			scrub: true, // Плавный скроллинг
+			scrub: 1, // Плавный скроллинг
 		},
 		ease: "power2",
 		y: bloomDir, // Сдвиг блока на 50% высоты окна

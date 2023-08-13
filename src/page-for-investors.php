@@ -28,7 +28,7 @@
     $portfolio_items = get_field('portfolio_items'); 
     $portfolio_load_button = get_field('portfolio_load_button'); 
 ?>
-<div class="min-h-screen w-full">
+<div class="w-full">
     <div class="flex flex-col items-center gap-[8.125rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
         <!-- title -->
         <div class="w-full flex flex-col gap-11 max-md:gap-24">
@@ -65,7 +65,7 @@
         </nav>
 
         <!-- galery -->
-        <div class="grid grid-cols-3 gap-8 w-full max-md:flex max-md:flex-col">
+        <div class="grid grid-cols-3 gap-8 w-full max-phoneX:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2">
             <?php if(!empty($portfolio_items)) : ?>
             <?php foreach ($portfolio_items as $item) : ?>
             <?php if(!empty($item['url'])) : ?>
@@ -104,7 +104,7 @@
     $for_investors_button = get_field('for_investors_button'); 
 
 ?>
-<div class="flex items-center min-h-screen w-full relative bg-fixed max-md:bg-scroll bg-cover bg-center max-md:min-h-auto" id="paralax" style="background-image: url('<?php echo $for_investors_background['url']; ?>')">
+<div class="flex items-center w-full relative bg-fixed max-md:bg-scroll bg-cover bg-center max-md:min-h-auto" id="paralax" style="background-image: url('<?php echo $for_investors_background['url']; ?>')">
     <div class="flex-1 flex flex-col gap-[6.875rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
         <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]"><?php echo $for_investors_title; ?></h1>  
 
