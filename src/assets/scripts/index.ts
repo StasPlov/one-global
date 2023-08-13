@@ -16,8 +16,22 @@ addEventListener("DOMContentLoaded", () => {
 	const loadMore = new LoadMore();
 
 	const animTarget = document.getElementById("anim-element");
+	const animTargetTwo = document.getElementById("anim-element-two");
+	const animTargetMob = document.getElementById("anim-elemen-mob");
 
-	if(animTarget === null || animTarget === undefined) {
+	const html = document.querySelector('html');
+
+	if(html === null) {
+		return;
+	}
+
+	const htmlDir = html.getAttribute('dir');
+	const isHtmlDirRtl = htmlDir ? htmlDir == 'rtl' : false;
+	let textDir = (isHtmlDirRtl) ? "24vw" : "-24vw";
+	let bloomDir = (isHtmlDirRtl) ? "50%" : "-50%";
+
+
+	if(animTarget === null || animTarget === undefined || animTargetMob === null) {
 		return;
 	}
 
@@ -25,26 +39,89 @@ addEventListener("DOMContentLoaded", () => {
 
 	gsap.registerPlugin(ScrollTrigger);
 
+	// text
 	gsap.to(animTarget, {
 		scrollTrigger: {
 			trigger: triggerElement,
 			start: "top 50%", // Анимация начнется, когда верхняя граница элемента будет на верху окна
-			end: "center center", // Анимация закончится, когда центр элемента будет на центре окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
 			scrub: true, // Плавный скроллинг
-			markers: true
 		},
-		x: "-24vw", // Сдвиг блока на 50% высоты окна
+		ease: "power2",
+		x: textDir, // Сдвиг блока на 50% высоты окна
 		y: "-50%", // Сдвиг блока на 50% высоты окна
 		scale: 2, // Увеличение блока в 2 раза
 		color: 'black'
 	});
-
-	/* gsap.to(animTarget, {
+	gsap.to(animTarget, {
 		scrollTrigger: {
 			trigger: triggerElement,
-			start: "end 50%", // Начало анимации, когда triggerElement находится в центре окна
-			scrub: true,
+			start: "bottom bottom", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре окна
+			scrub: true, // Плавный скроллинг
 		},
-		y: "50%", // Сдвиг элемента на 50% ширины окна
-	}); */
+		top: '240vh',
+		position: 'absolute',
+	});
+
+
+	// text mobile
+	gsap.to(animTargetMob, {
+		scrollTrigger: {
+			trigger: animTargetMob,
+			start: "bottom bottom", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "top top", // Анимация закончится, когда центр элемента будет на центре 1окна
+			scrub: true, // Плавный скроллинг
+		},
+		top: '100%'
+	});
+	// text mobile
+	gsap.to(animTargetMob, {
+		scrollTrigger: {
+			trigger: triggerElement,
+			start: "top top", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
+			scrub: true, // Плавный скроллинг
+		},
+		ease: "power2",
+		y: "-50%", // Сдвиг блока на 50% высоты окна
+		scale: 2, // Увеличение блока в 2 раза
+		color: 'black',
+		top: '50%'
+	});
+	gsap.to(animTargetMob, {
+		scrollTrigger: {
+			trigger: triggerElement,
+			start: "bottom bottom", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре окна
+			scrub: true, // Плавный скроллинг
+		},
+		top: '240vh',
+		position: 'absolute',
+	});
+
+
+	// bloom
+	gsap.to(animTargetTwo, {
+		scrollTrigger: {
+			trigger: triggerElement,
+			start: "100vh", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре 1окна
+			scrub: true, // Плавный скроллинг
+		},
+		ease: "power2",
+		y: bloomDir, // Сдвиг блока на 50% высоты окна
+		scale: 3, // Увеличение блока в 3 раза
+		position: 'fixed'
+	});
+	gsap.to(animTargetTwo, {
+		scrollTrigger: {
+			trigger: triggerElement,
+			start: "bottom bottom", // Анимация начнется, когда верхняя граница элемента будет на верху окна
+			end: "bottom bottom", // Анимация закончится, когда центр элемента будет на центре окна
+			scrub: true, // Плавный скроллинг
+		},
+		top: '240vh',
+		position: 'absolute',
+	});
 });

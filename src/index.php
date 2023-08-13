@@ -47,14 +47,6 @@
 			<?php endif; ?>
 			
         </div>
-
-        <div class="text-white max-lg:hidden fixed right-[20%] top-[41%]" id="anim-element">
-            <?php if($headerAnimTextData['isenable']) : ?>
-            <div class="max-w-min text-start transition-all">
-                <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
-            </div>
-            <?php endif ?>
-        </div>
     </div>
 </div>
 <!-- header end -->
@@ -63,18 +55,26 @@
 <?php 
 	$headerAnimTextData = get_field('header_animation_text', 'home-page'); 
 ?>
-<div class="relative w-full h-[500vh]" id="anim-trigger">
-	<div class="absolute w-full h-full flex items-center justify-center z-[1] overflow-hidden">
-		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" class="absolute w-full h-screen scroll-animation-scale -scale-100">
+<div class="relative w-full h-[300vh] flex items-center justify-center top-[41%]" id="anim-trigger">
+	<div class="absolute flex items-center justify-center top-[10%] z-[1] overflow-hidden w-[20rem] h-[20rem]" id="anim-element-two">
+		<img src="<?php echo get_template_directory_uri().'/assets/icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
 
-	<div class="hidden text-white max-lg:flex">
-		<?php if($headerAnimTextData['isenable']) : ?>
-		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
-			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span>
-		</div>
-		<?php endif ?>
-	</div>
+    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden" id="anim-element">
+        <?php if($headerAnimTextData['isenable']) : ?>
+        <div class="max-w-min text-start transition-all">
+            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
+        </div>
+        <?php endif ?>
+    </div>
+
+    <div class="hidden text-white fixed max-lg:flex top-![200vh]" id="anim-elemen-mob">
+        <?php if($headerAnimTextData['isenable']) : ?>
+        <div class="max-w-min text-start transition-all">
+            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
+        </div>
+        <?php endif ?>
+    </div>
 </div>
 <!-- wee inovate end -->
 
