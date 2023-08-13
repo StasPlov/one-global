@@ -64,17 +64,6 @@ addEventListener("DOMContentLoaded", () => {
 		position: 'absolute',
 	});
 
-
-	// text mobile
-	gsap.to(animTargetMob, {
-		scrollTrigger: {
-			trigger: animTargetMob,
-			start: "bottom bottom", // Анимация начнется, когда верхняя граница элемента будет на верху окна
-			end: "top top", // Анимация закончится, когда центр элемента будет на центре 1окна
-			scrub: true, // Плавный скроллинг
-		},
-		top: '100%'
-	});
 	// text mobile
 	gsap.to(animTargetMob, {
 		scrollTrigger: {

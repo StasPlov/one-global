@@ -68,10 +68,10 @@
         <?php endif ?>
     </div>
 
-    <div class="hidden text-white fixed max-lg:flex top-![200vh]" id="anim-elemen-mob">
+    <div class="hidden text-white fixed max-lg:flex" style="top: 100%;" id="anim-elemen-mob">
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
-            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
+            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
         </div>
         <?php endif ?>
     </div>
