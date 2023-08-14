@@ -124,7 +124,7 @@ $search = get_field('search', 102);
 
                 <div class="flex max-h-[18.75rem] h-full max-md:flex-col max-md:max-h-max">
                     <div class="flex-1">
-                        <img src="http://og-holding.loc/wp-content/uploads/2023/08/3.jpg" alt="image" class="h-full w-full object-cover">
+                        <img src="http://og-holding.loc/wp-content/uploads/2023/08/3.jpg" alt="image" class="h-full w-full object-cover opacity-50">
                     </div>
 
                     <div class="flex-[3] border-b border-solid border-[#1c212633]">
