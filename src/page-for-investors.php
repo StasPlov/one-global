@@ -8,7 +8,7 @@
     $header_description = get_field('header_description'); 
 ?>
 <div class="relative w-full h-screen overflow-hidden">
-    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" id="paralax" style="background-image: url('<?php echo $header_background_image['url']; ?>')">
+    <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem] max-xl:px-[7.5rem]" id="paralax" style="background-image: url('<?php echo $header_background_image['url']; ?>')">
         <div class="bg-black/30 absolute w-full h-full top-0 left-0"></div>
         
         <div class="flex flex-col items-start gap-12 z-0">
@@ -29,7 +29,7 @@
     $portfolio_load_button = get_field('portfolio_load_button'); 
 ?>
 <div class="w-full">
-    <div class="flex flex-col items-center gap-[8.125rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col items-center gap-[8.125rem] px-[11.25rem] py-[8.125rem] max-phoneX:px-[2.1875rem] max-md:px-[3.125rem] max-lg:px-[5rem] max-xl:px-[7.5rem]">
         <!-- title -->
         <div class="w-full flex flex-col gap-11 max-md:gap-24">
             <h1 class="font-caudex rtl:font-droidSansArabic text-[#1C2126] text-[5rem] italic text-start max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $portfolio_title; ?></h1>
@@ -47,7 +47,7 @@
 
         <!-- menu -->
         <nav class="w-full">
-            <ul class="flex justify-between max-md:grid max-md:grid-cols-2 max-md:text-start max-md:gap-4">
+            <ul class="flex justify-between max-md:grid max-md:grid-cols-2 max-md:text-start max-md:gap-4 max-lg:gap-[1.5625rem] max-lg:justify-between max-lg:flex-wrap max-phoneX:gap-1">
                 <?php if(!empty($portfolio_menu)) : ?>
                 <?php foreach ($portfolio_menu as $item) : ?>
 				<?php if(!empty($item['url'])) : ?>
@@ -71,9 +71,10 @@
             <?php if(!empty($item['url'])) : ?>
                 <a href="<?php echo $item['url']['url']; ?>" class="cursor-default">
             <?php endif; ?>
-            <div class="transition-all duration-500 hover:scale-105 cursor-default relative overflow-hidden h-[21.875rem] w-full bg-cover rounded-lg drop-shadow-[0rem_0rem_6.25rem_#057eed4d]" style="background-image: url('<?php echo $item['image']['url']; ?>')">
-                <div class="flex w-full h-full py-7 px-6">
-                    <div class="bg-black/30 absolute w-full h-full top-0 left-0 -z-10"></div>
+            <div class="transition-all duration-500 hover:scale-105 cursor-default relative overflow-hidden h-[21.875rem] w-full bg-cover rounded-lg drop-shadow-[0rem_0rem_6.25rem_#057eed4d]">
+                <img src="<?php echo $item['image']['url']; ?>" alt="" class="w-full h-full object-cover">
+
+                <div class="flex w-full h-full py-7 px-6 absolute top-0 left-0 bg-black/30">
                     <h2 class="text-white font-caudex rtl:font-droidSansArabic italic text-[2.5rem] leading-10"><?php echo $item['title']; ?></h2>
                 </div>
             </div>
@@ -105,7 +106,7 @@
 
 ?>
 <div class="flex items-center w-full relative bg-fixed max-md:bg-scroll bg-cover bg-center max-md:min-h-auto" id="paralax" style="background-image: url('<?php echo $for_investors_background['url']; ?>')">
-    <div class="flex-1 flex flex-col gap-[6.875rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem]">
+    <div class="flex-1 flex flex-col gap-[6.875rem] px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem] max-xl:px-[7.5rem]">
         <h1 class="text-[5rem] font-lato rtl:font-droidSansArabic font-medium text-white text-start leading-[5.625rem]"><?php echo $for_investors_title; ?></h1>  
 
         <div class="flex max-md:flex-col max-md:items-start max-md:gap-20">

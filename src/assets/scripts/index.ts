@@ -85,6 +85,7 @@ addEventListener("DOMContentLoaded", () => {
 		ease: "power2",
 		y: "-50%", // Сдвиг блока на 50% высоты окна
 		scale: 2, // Увеличение блока в 2 раза
+		top: '50%'
 	}); 
 	gsap.to(animTargetMob, {
 		scrollTrigger: {
