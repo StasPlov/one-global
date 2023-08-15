@@ -99,8 +99,8 @@
     $what_does_description_two = get_field('what_does_description_two');
 ?>
 <div class="w-full bg-black relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
     
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] z-0 max-md:py-[6.25rem] max-md:gap-[9.375rem]">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
@@ -148,8 +148,8 @@
     $business_accelerator_map_mobile = get_field('business_accelerator_map_mobile');
 ?>
 <div class="w-full min-h-screen bg-white pt-[20rem] pb-[15.125rem] relative overflow-hidden max-md:py-[6.25rem]">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
 
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
@@ -208,7 +208,7 @@
     $success_stories_items = get_field('success_stories_items');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
 
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
