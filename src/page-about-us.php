@@ -14,12 +14,12 @@
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-screen" draggable="false">  
             
             <div class="flex w-full h-full max-md:flex-col max-md:gap-20 absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:px-[2.1875rem] max-md:justify-center max-md:items-start"  data-animation="animate-fadeInLeft" data-duration="2.5s">
-                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:relative max-md:text-start">
+                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:relative max-md:text-start leading-none">
                     <?php echo $about_image_title; ?>
                 </span>
 
-                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start max-lg:"  data-animation="animate-fadeInRight" data-duration="2.5s">
-                    <?php echo $about_description; ?>
+                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden text-start max-md:flex"  data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <?php echo $about_title; ?>
                 </h2>
             </div>
         </div>

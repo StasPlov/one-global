@@ -57,7 +57,7 @@
 ?>
 <div class="relative w-full h-[300vh] flex items-center justify-center top-[41%] bg-white" id="anim-trigger">
 	<div class="absolute flex items-center justify-center top-[10%] z-[1] overflow-hidden w-[20rem] h-[20rem]" id="anim-element-two">
-		<img src="<?php echo get_template_directory_uri().'/assets/icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
+		<img src="<?php echo get_template_directory_uri().'/assets/Icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
 
     <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%]" id="anim-element">
@@ -68,7 +68,7 @@
         <?php endif ?>
     </div>
 
-    <div class="hidden text-white fixed max-lg:flex mix-blend-difference" style="top: 100%;" id="anim-elemen-mob" >
+    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference" style="top: 100%;" id="anim-elemen-mob" >
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
