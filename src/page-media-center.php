@@ -55,7 +55,7 @@
 
 <!-- Content -->
 <div class="w-full min-h-screen relative">
-    <div class="flex flex-col items-start pl-[11.25rem] py-[11.25rem] max-md:pl-0">
+    <div class="flex flex-col items-start pl-[11.25rem] py-[11.25rem] max-md:pl-0 max-md:py-[6.25rem] max-lg:pl-[2.1875rem]">
 		<div class="flex flex-col w-full" id="loadMoreList">
             <?php 
                 $args = [
@@ -72,10 +72,8 @@
                 </div>
 
                 <div class="flex-[3] border-b border-solid border-[#1c212633]">
-                    <div class="flex flex-col pl-[3.25rem] py-10 items-start justify-between h-full max-w-[46.125rem] max-md:gap-8 max-md:px-[2.1875rem]">
-                        <div class="flex gap-2">
-                            
-                        </div>
+                    <div class="flex flex-col px-[3.25rem] py-10 items-start justify-between h-full max-w-[46.125rem] max-md:gap-8 max-md:px-[2.1875rem]">
+                        <div class="flex gap-2"></div>
 
                         <div class="flex flex-col gap-4">
                             <h2 class="font-lato rtl:font-droidSansArabic text-[#1C2126] text-2xl font-medium leading-7 text-start"><?php the_title(); ?></h2>

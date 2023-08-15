@@ -18,7 +18,7 @@
                     <?php echo $about_image_title; ?>
                 </span>
 
-                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start"  data-animation="animate-fadeInRight" data-duration="2.5s">
+                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start max-lg:"  data-animation="animate-fadeInRight" data-duration="2.5s">
                     <?php echo $about_description; ?>
                 </h2>
             </div>
@@ -56,7 +56,7 @@
         <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
         <div class="flex flex-col gap-7"  data-animation="animate-fadeInLeft" data-duration="2s" style="<?php echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
             <div class="flex flex-col gap-4">
-                <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
+                <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start leading-none"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>
             </div>
 
@@ -239,7 +239,7 @@
         </div>
         
         <?php if(!empty($geography_map)) : ?>
-        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%]" draggable="false"  data-animation="animate-fadeInRight" data-duration="4s">
+        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%] max-xl:h-[22rem]" draggable="false"  data-animation="animate-fadeInRight" data-duration="4s">
         <?php endif; ?>
     </div>
 </div>

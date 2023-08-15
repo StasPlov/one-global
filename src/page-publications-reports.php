@@ -55,7 +55,7 @@
 
 <!-- Content -->
 <div class="w-full min-h-screen relative">
-    <div class="flex flex-col items-start gap-16 pl-[11.25rem] py-[11.25rem] max-md:pl-0">
+    <div class="flex flex-col items-start gap-16 pl-[11.25rem] py-[11.25rem] max-md:pl-0 max-md:py-[6.25rem] max-lg:pl-[2.1875rem]">
 		<div class="flex flex-col w-full">
             <?php 
                 $args = [
