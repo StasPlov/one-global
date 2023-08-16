@@ -60,7 +60,7 @@
 		<img src="<?php echo get_template_directory_uri().'/assets/Icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
 
-    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%]" id="anim-element">
+    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%] select-none" id="anim-element">
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 

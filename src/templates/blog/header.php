@@ -17,7 +17,7 @@
         </div>
         <!-- end mobile -->
 
-        <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)] max-md:px-[2.1875rem] max-md:absolute max-md:top-[18.75rem]">
+        <div class="flex flex-col flex-1 items-start gap-7 pl-[11.25rem] pr-[7.5rem] sticky top-[var(--header-menu-height)] max-md:px-[2.1875rem] max-md:absolute max-md:top-[18.75rem] py-[6.25rem]">
             <?php if(!empty($title)) : ?>
             <h1 class="text-[#1C2126] text-[5rem] font-caudex rtl:font-droidSansArabic italic max-md:text-white leading-none"><?php echo $title; ?></h1>
             <?php endif; ?>

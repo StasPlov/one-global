@@ -223,12 +223,12 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-phoneX:flex max-phoneX:flex-col max-lg:grid-cols-2">
+        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-phoneX:flex max-phoneX:flex-col max-lg:grid-cols-2 items-start">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
                 <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1 object-contain">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1">
                 </div>
 
                 <div class="flex flex-col gap-10 items-start">

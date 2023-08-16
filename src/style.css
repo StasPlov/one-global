@@ -173,6 +173,16 @@ html[dir="rtl"] select.ninja-forms-field {
 	direction: ltr;
 }
 
+html[dir="rtl"] .nf-error.field-wrap .nf-field-element::after {
+	left: 1px!important;
+	right: auto!important;
+}
+
+html[dir="rtl"] .nf-pass.field-wrap .nf-field-element::after {
+	left: 7px!important;
+	right: auto!important;
+}
+
 
 @keyframes flicker {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {
