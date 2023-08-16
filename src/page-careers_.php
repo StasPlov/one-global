@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="px-[2.1875rem] pt-[6.25rem]">
+        <div class="px-[2.1875rem] py-[6.25rem]">
             <span class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-lg font-light leading-7 text-start max-w-[23.125rem]">
                 <?php echo $header_description; ?>
             </span>
@@ -132,21 +132,21 @@
                                 <option value="" selected>All Categories</option>
                                 <?php foreach ($carrers_category as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
 
                             <select name="carrers_job_type" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
                                 <option value="" selected>All Job Types</option>
                                 <?php foreach ($carrers_job_type as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
 
                             <select name="carrers_location" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
                                 <option value="" selected>All Locations</option>
                                 <?php foreach ($carrers_location as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
@@ -207,17 +207,17 @@
 
         <!-- mobile -->
         <div class="hidden flex-col max-md:flex">
-            <div class="flex items-center justify-center bg-white max-h-[26.875rem] max-md:flex-col-reverse max-md:max-h-full">
-                <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-[34.1875rem] h-full w-full object-cover">
+            <div class="flex items-center justify-center bg-white max-h-[50vh] max-md:flex-col-reverse max-md:max-h-full">
+                <img src="<?php echo $info_first['image']['url']; ?>" alt="<?php echo $info_first['image']['alt']; ?>" class="h-full w-full object-cover">
 
                 <div class="flex flex-col gap-6 items-start max-md:px-[2.1875rem] max-md:py-[6.25rem]">
-                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic"   >
+                    <h3 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[6.25rem] italic">
                         <?php echo $info_first['num']; ?>
                     </h3>
-                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic"   >
+                    <span class="text-[#1C2126] text-2xl font-medium leading-7 font-lato rtl:font-droidSansArabic">
                         <?php echo $info_first['title']; ?>
                     </span>
-                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]"  >
+                    <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[23.625rem]">
                         <?php echo $info_first['description']; ?>
                     </span>
                 </div>
@@ -265,14 +265,14 @@
                                 <option value="" selected>All Categories</option>
                                 <?php foreach ($carrers_category as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
 
                             <select name="carrers_job_type" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
                                 <option value="" selected>All Job Types</option>
                                 <?php foreach ($carrers_job_type as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         
@@ -281,7 +281,7 @@
                                 <option value="" selected>All Locations</option>
                                 <?php foreach ($carrers_location as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
-                                <? endforeach; ?>
+                                <?php endforeach; ?>
                             </select>
 
                             <?php if(!empty($clear_button) && $clear_button['is_enable']) : ?>
@@ -372,7 +372,7 @@
         <?php 
             $info = get_field('info');
         ?>
-        <div class="flex border border-solid border-[#1c212633] max-md:flex-col max-md:border-x-0 max-md:border-t-0">
+        <div class="flex border-b first:border-t border-solid border-[#1c212633] max-md:flex-col max-md:border-x-0 max-md:border-t-0">
             <div class="flex-[37.7%] flex items-center border-r border-solid border-[#1c212633]">
                 <div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0">
                     <h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">

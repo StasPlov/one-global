@@ -96,7 +96,7 @@ export default class CareersFilter {
 
 				// add data to page 
 				result.forEach(item => {
-					let htmlItem = `<div class="flex border border-solid border-[#1c212633] max-md:flex-col max-md:border-x-0 max-md:border-t-0">
+					let htmlItem = `<div class="flex border-b first:border-t border-solid border-[#1c212633] max-md:flex-col max-md:border-x-0 max-md:border-t-0">
 						<div class="flex-[37.7%] flex items-center border-r border-solid border-[#1c212633]">
 							<div class="flex flex-col gap-4 px-[4.375rem] py-[3.125rem] max-md:px-[2.1875rem] max-md:py-[2.5rem] max-md:pb-0">
 								<h2 class="text-[#1C2126] font-lato rtl:font-droidSansArabic text-2xl font-medium text-start">

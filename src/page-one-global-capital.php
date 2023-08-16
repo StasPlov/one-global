@@ -200,7 +200,7 @@
 <div class="w-full bg-white py-[10.625rem] relative">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
         <div class="flex-1 z-0 pl-[5.375rem] max-md:p-0">
-            <img src="<?php echo $investing_image['url']; ?>" alt="<?php echo $investing_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]">
+            <img src="<?php echo $investing_image['url']; ?>" alt="<?php echo $investing_image['alt']; ?>" class="h-full max-2xl:max-h-[50vh]">
         </div>
 
         <div class="flex flex-1 w-[57%] z-0 items-start max-md:px-[2.1875rem] max-md:max-w-none max-md:w-full max-md:justify-center">

@@ -295,8 +295,8 @@
             </div>
         </div>
 
-        <div class="flex-1 z-0 pr-[5.375rem] max-md:p-0">
-            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]">
+        <div class="flex-1 z-0 pr-[5.375rem] max-lg:p-0 max-lg:max-w-[70vh]">
+            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>" class="h-full">
         </div>
     </div>
 </div>

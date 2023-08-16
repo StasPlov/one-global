@@ -198,7 +198,7 @@
     <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-phoneX:px-[2.1875rem] max-lg:px-[3.125rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
             <div class="flex flex-col gap-6">
-                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-[4rem] font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
+                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-tight font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $geography_title;?>
                 </h2>
 
