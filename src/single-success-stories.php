@@ -6,7 +6,7 @@
     $header_title = get_field('header_title');
     $header_description = get_field('header_description');
 ?>
-<div class="relative w-full h-screen overflow-hidden">
+<div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background)) : ?>
         <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">

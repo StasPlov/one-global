@@ -311,12 +311,12 @@
 <?php 
     $subscribe_background = get_field('subscribe_background');
 ?>
-<div class="min-h-screen w-full relative bg-black overflow-hidden">
+<div class="min-h-screen w-full relative bg-black overflow-hidden max-lg:min-h-min">
 	<?php if(!empty($subscribe_background)) : ?>
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0"  draggable="false">
 	<?php endif; ?>
 
-    <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
+    <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem] max-lg:h-min max-lg:py-[6.25rem]">
         <div class="flex flex-col gap-12 items-center z-10">
 			<?php 
 				$num = 10; // 6

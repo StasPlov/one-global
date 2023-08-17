@@ -7,12 +7,7 @@
     $header_button = get_field('header_button', 'blog-single');
     $see_post_tag= get_field('see_post_tag', 'blog-single');
 ?>
-<div class="relative w-full h-screen overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
-	
+<div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
     <?php if(!empty($header_image)) :?>
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center" style="background-image: url(<?php echo $header_image['url']; ?>)">
     </div>

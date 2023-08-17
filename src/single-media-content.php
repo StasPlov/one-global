@@ -7,13 +7,8 @@
     $header_button = get_field('header_button', 'media-center-single');
     $see_post_tag= get_field('see_post_tag', 'media-center-single');
 ?>
-<div class="relative w-full h-screen overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
-	
-    <?php if(!empty($header_image)) :?>
+<div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
+<?php if(!empty($header_image)) :?>
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center" style="background-image: url(<?php echo $header_image['url']; ?>)">
     </div>
     <?php endif; ?>
@@ -30,13 +25,13 @@
                 <?php if(!empty($header_button['url'])) :?>
                 <a href="<?php echo $header_button['url']['url']; ?>">
                 <?php endif; ?>
-            <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+			<button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                 <?php if(!empty($header_button['icon'])) :?>
                 <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $header_button['icon']['url']; ?>" alt="<?php echo $header_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                    <img src="<?php echo $header_button['icon']['url']; ?>" alt="<?php echo $header_button['icon']['alt']; ?>" class=" transition duration-300 group-hover:-translate-x-3 ">
                 </div>
                 <?php endif; ?>
-                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $header_button['text'] ?></span>
+                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabi transition duration-300"><?php echo $header_button['text'] ?></span>
             </button>
                 <?php if(!empty($header_button['url'])) :?>
                 </a>
