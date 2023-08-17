@@ -9,17 +9,11 @@
     $info = get_field('info');
     $short_title = get_field('short_title');
     $content = get_field('content');
-
 ?>
-<div class="relative w-full h-screen overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 select-none z-0" gragable="false">
-        <div class="border-r border-solid border-[#c4c4c45e] w-[60%]"></div>
-        <div class="border-r border-solid border-[#c4c4c45e] w-[80%]"></div>
-    </div>
-
+<div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start bg-fixed max-md:bg-scroll bg-cover bg-center max-md:px-[2.1875rem]" style="background-image: url('<?php echo $header_image['url']; ?>')">
         <div>
-            <h1 class="text-white font-caudex rtl:font-droidSansArabic italic font-normal text-[5rem] text-start max-md:text-[4rem]">
+            <h1 class="text-white font-caudex rtl:font-droidSansArabic italic font-normal text-[5rem] text-start max-md:text-[4rem] leading-none">
                 <?php echo $header_title; ?>
             </h1>
         </div>
@@ -29,21 +23,21 @@
 
 <!-- Title -->
 <div class="w-full relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10 animate-flicker" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 4 (1).svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10" draggable="false">
 
-    <div class="flex flex-col gap-10 pl-[11.25rem] pr-[25rem] pt-[8.125rem] pb-[10.375rem] max-md:px-[2.1875rem]">
+    <div class="flex flex-col gap-10 px-[11.25rem] py-[8.125rem] max-md:px-[2.1875rem] max-md:pb-0 max-md:pt-[6.25rem]">
         <div class="flex justify-between">
             <?php if (!empty($button_back) && !empty($button_back['text'])) : ?>
             <a href="<?php echo $button_back['url']['url']; ?>">
             <?php endif; ?>
-            <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pl-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                <?php if(!empty($button_back['icon'])) :?>
+            <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                <?php if(!empty($button_back['icon'])) : ?>
                 <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class=" transition duration-300 group-hover:scale-y-150 group-hover:-translate-x-3 ">
+                    <img src="<?php echo $button_back['icon']['url']; ?>" alt="<?php echo $button_back['icon']['alt']; ?>" class="transition duration-300 group-hover:-translate-x-3 ">
                 </div>
                 <?php endif; ?>
-                <?php if(!empty($button_back['text'])) :?>
-                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
+                <?php if(!empty($button_back['text'])) : ?>
+                <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabi transition duration-300">
                     <?php echo $button_back['text']; ?>
                 </span>
                 <?php endif; ?>
@@ -54,8 +48,8 @@
         </div>
 
         <div class="flex flex-col gap-8"> 
-            <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[5rem] italic font-normal text-start max-md:text-[2.5rem]"><?php the_title(); ?></h2>
-            <span class="text-start"><?php echo $short_title; ?></span>
+            <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[5rem] italic font-normal text-start max-md:text-[2.5rem] leading-none"><?php the_title(); ?></h2>
+            <span class="text-start"><?php echo $short_title ?? ''; ?></span>
         </div>
     </div>
 </div>
