@@ -434,6 +434,22 @@
         <?php endwhile; ?>
         <?php endif; wp_reset_query(); ?>
     </div>
+
+    <div class="flex items-center justify-center max-md:px-[2.1875rem] hidden" id="careersForm">
+        <div class="flex flex-col gap-12 items-center">
+
+            <div class="px-[8.125rem] py-[10.625rem] max-md:rounded-none z-10 max-md:bg-transparent max-md:px-[2.1875rem] max-w-[42.625rem]">
+                <?php 
+                    $num = 11; // 11
+                    if(pll_current_language() == 'ar') {
+                        $num = 11; // 12
+                    }
+                    echo do_shortcode("[ninja_form id=$num]");
+                ?>
+            </div>
+
+        </div>
+    </div>
 </div>
 <!-- Careers list -->
 <?php get_footer(); ?>
