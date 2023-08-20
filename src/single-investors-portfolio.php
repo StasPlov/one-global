@@ -68,7 +68,7 @@
     $content_button = get_field('content_button');
 ?>
 <div class="w-full overflow-hidden relative">
-    <div class="flex flex-col py-[8.125rem]">
+    <div class="flex flex-col py-[8.125rem] max-md:py-0">
         <div class="flex pr-[4.375rem] max-md:pr-0">
             <div class="flex w-full bg-white shadow-[0.625rem_0.625rem_1.875rem_0rem_#057eed33] py-[5.625rem] max-md:shadow-none max-md:flex-col">
                 <div class="flex-1"  data-animation="animate-fadeInLeft" data-duration="2s">
@@ -91,11 +91,13 @@
                         <?php if(!empty($content_button['url'])) : ?>
                         <a href="<?php echo $content_button['url']['url']; ?>">
                         <?php endif; ?>
-                        <button class="relative flex gap-2 justify-between max-md:border max-md:border-solid max-md:border-[#1C2126] max-md:pr-9 items-center pr-9 pl-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:pr-11 hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <button class="relative flex gap-2 justify-between border border-solid border-[#1C2126] items-center pr-9 pl-9 py-3 rounded-3xl transition-all duration-300 group hover:bg-[#1c2126] hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $content_button['text']; ?></span>
+                            <?php if(!empty($content_button['icon'])) : ?>
                             <div class="group-hover:animate-bounce">
-                                <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-y-150 group-hover:translate-x-3 ">
+                                <img src="<?php echo $content_button['icon']['url']; ?>" alt="<?php echo $content_button['icon']['alt']; ?>" class="transition duration-300 group-hover:translate-x-3 ">
                             </div>
+                            <?php endif; ?>
                         </button>
                         <?php if(!empty($content_button['url'])) : ?>
                         </a>

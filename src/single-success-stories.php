@@ -18,9 +18,8 @@
         
         <div class="flex flex-col items-start gap-12 z-0">
             <?php if(!empty($header_title)) :?>
-            <h1 class="text-[5rem] font-lato font-medium text-white text-start leading-[5.625rem]">Success <br><span class="italic font-caudex font-normal">Stories</span></h1>
+            <h1 class="text-[5rem] font-lato font-medium text-white text-start leading-[5.625rem]"><?php echo $header_title; ?></h1>
             <?php endif; ?>
-                <h2 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[37.5rem]"></h2>
             
             <?php if(!empty($header_description)) :?>
             <h12 class="text-4xl text-white  text-start tracking-wide leading-normal max-w-[37.5rem]"><?php echo $header_description; ?></h2>
@@ -38,24 +37,27 @@
 ?>
 <div class="w-full relative">
     <div class="flex flex-col w-full h-full px-[11.25rem] gap-8 py-[8.125rem] items-start max-md:px-[2.1875rem]">
-        <?php if(!empty($title_button) && $title_button['is_enable'] && $title_button['text']) : ?>
-            <?php if(!empty($title_button['url'])) : ?>
-            <a href="<?php echo $title_button['url']['url']; ?>">
-            <?php endif; ?>
-        <button class="flex gap-3 items-center py-1 pl-4 pr-6 rounded-3xl transition hover:bg-slate-300/10 cursor-pointer">
+
+        <?php if($title_button['is_enable']) : ?>
+        <?php if(!empty($title_button['url'])) : ?>
+        <a href="<?php echo $title_button['url']['url']; ?>">
+        <?php endif; ?>
+        <button class="relative flex gap-2 justify-between items-center pl-0 pr-9 py-3 rounded-3xl transition-all duration-300 group cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
             <?php if(!empty($title_button['icon'])) : ?>
-            <img src="<?php echo $title_button['icon']['url']; ?>" alt="<?php echo $title_button['icon']['alt']; ?>">
+            <div class="group-hover:animate-bounce">
+                <img src="<?php echo $title_button['icon']['url']; ?>" alt="<?php echo $title_button['icon']['alt']; ?>" class="transition duration-300 group-hover:-translate-x-3">
+            </div>
             <?php endif; ?>
-            
-            <span class="text-[#1C2126] text-center font-lato text-xs font-medium leading-7"><?php echo $title_button['text']; ?></span>
+
+            <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabi transition duration-300"><?php echo $title_button['text']; ?></span>
         </button>
-            <?php if(!empty($title_button['url'])) : ?>
-            </a>
-            <?php endif; ?>
+        <?php if(!empty($title_button['url'])) : ?>
+        </a>
+        <?php endif; ?>
         <?php endif; ?>
 
         <div class="flex flex-col items-start gap-5 max-md:gap-10">
-            <h2 class="text-[5rem] font-caudex font-normal text-[#1C2126] text-start">
+            <h2 class="text-[5rem] font-caudex font-normal text-[#1C2126] text-start leading-none">
                 <?php echo $title_text; ?>
             </h2>
 
@@ -73,20 +75,20 @@
 ?>
 <?php if(!empty($items)): ?>
 <?php foreach($items as $item ): ?>
-<div class="w-full min-h-screen bg-white relative overflow-hidden">
+<div class="w-full bg-white relative">
     <?php if(!$item['is_revers'] && $item['use_background_effect']): ?>
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 4.svg'?>" alt="" class="absolute top-[26%] left-0 select-none z-0" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 4.svg'?>" alt="" class="absolute top-[26%] left-0 select-none z-10" draggable="false">
     <?php endif; ?>
 
     <?php if($item['is_revers'] && $item['use_background_effect']): ?>
-    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 10.svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-0 <?php echo (($item['is_revers']) ? 'top-[10%]' : '' ) ?>" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Images/Ellipse 10.svg'?>" alt="" class="absolute top-[26%] right-0 select-none z-10 <?php echo (($item['is_revers']) ? 'top-[10%]' : '' ) ?>" draggable="false">
     <?php endif; ?>
     
     <?php if($item['background_image']): ?>
     <img src="<?php echo $item['background_image']['url']; ?>" alt="<?php echo $item['background_image']['alt']; ?>" class="absolute w-full h-full top-0 left-0 -z-0 select-none" draggable="false">
     <?php endif; ?>
 
-    <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse <?php echo (($item['is_revers']) ? 'flex-row-reverse' : '' ) ?>">
+    <div class="flex py-[11.25rem] max-md:pt-0 gap-28 h-full max-md:flex-col-reverse <?php echo (($item['is_revers']) ? 'flex-row-reverse' : '' ); ?>">
         <div class="flex flex-1 items-center justify-center z-0">
             <div class="flex flex-col gap-14 max-md:w-full  max-md:px-[2.1875rem]">
                 <h2 class="text-[4.375rem] font-medium font-caudex italic text-start text-[#1C2126] max-md:text-5xl <?php echo (($item['background_image']) ? 'text-white' : '' ) ?>"><?php echo $item['title']; ?></h2>
@@ -101,7 +103,7 @@
 
         <?php if(!empty($item['image'])): ?>
         <div class="flex-1 relative max-h-screen max-w-[45%] max-md:max-w-none">
-            <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="max-md:max-h-screen h-full w-full object-cover">
+            <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="max-lg:max-h-[50vh] h-full w-full object-cover">
         </div>
         <?php endif; ?>
     </div>
@@ -115,21 +117,21 @@
     $success_stories_title = get_field('success_stories_title');
     $success_stories_items = get_field('success_stories_items');
 ?>
-<div class="w-full min-h-screen bg-white relative">
+<div class="w-full bg-white relative">
     <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
 
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
-        <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
+        <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-lg:px-[3.125rem] max-phoneX:px-[2.1875rem]">
             <h2 class="text-[5rem] text-[#1C2126] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"><?php echo $success_stories_title; ?></h2>
         </div>
 
-        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:flex max-md:flex-col">
+        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-md:flex max-md:flex-col max-lg:px-[3.125rem] max-phoneX:px-[2.1875rem]">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
-                <div class="bg-black/20 flex overflow-hidden rounded-lg">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1 object-contain">
+                <div class="h-[22vw] bg-black/20 flex overflow-hidden rounded-lg max-phoneX:h-[21.875rem]">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="h-full w-full object-cover">
                 </div>
 
                 <div class="flex flex-col gap-10 items-start">
@@ -172,7 +174,7 @@
     $view_image = get_field('view_image'); 
     $view_button = get_field('view_button'); 
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative ">
+<div class="w-full bg-white py-[10.625rem] relative ">
     <?php if(!empty($view_background)) : ?>
     <img src="<?php echo $view_background['url'] ?>" alt="<?php echo $view_background['alt'] ?>" class="absolute w-full h-full top-0 left-0 max-md:hidden">
     <?php endif; ?>
@@ -212,7 +214,7 @@
         
         <?php if(!empty($view_image)) : ?>
         <div class="flex-1 z-0">
-            <img src="<?php echo $view_image['url']; ?>" alt="<?php echo $view_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem] text-white">
+            <img src="<?php echo $view_image['url']; ?>" alt="<?php echo $view_image['alt']; ?>" class="h-full w-full object-cover text-white">
         </div>
         <?php endif; ?>
     </div>
