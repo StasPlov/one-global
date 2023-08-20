@@ -91,12 +91,12 @@
     <?php endif; ?>
     
 
-    <div class="flex gap-3 items-center">
+    <div class="flex gap-3 items-center max-lg:flex-col max-lg:items-start">
         <?php if(!empty($footer_share['title'])) :?>
         <span><?php echo $footer_share['title']; ?></span>
         <?php endif; ?>
 
-        <div class="flex gap-2 max-md:grid max-md:grid-col">
+        <div class="flex gap-2 max-md:flex max-lg:flex-row">
             <?php if(!empty($footer_share['item'])) :?>
             <?php foreach ($footer_share['item'] as $item) :?>
             <?php if(!empty($item['icon']) && !empty($item['url'])) :?>

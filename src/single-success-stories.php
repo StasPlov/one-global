@@ -121,7 +121,7 @@
     <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
     <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
 
-    <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
+    <div class="flex flex-col gap-[8.125rem] pb-[10.625rem] z-0">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-lg:px-[3.125rem] max-phoneX:px-[2.1875rem]">
             <h2 class="text-[5rem] text-[#1C2126] font-medium font-lato rtl:font-droidSansArabic text-start leading-[5.625rem]"><?php echo $success_stories_title; ?></h2>
         </div>
@@ -130,7 +130,7 @@
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
-                <div class="h-[22vw] bg-black/20 flex overflow-hidden rounded-lg max-phoneX:h-[21.875rem]">
+                <div class="h-[22vw] bg-black/20 flex overflow-hidden rounded-lg max-phoneX:h-[21.875rem] max-md:h-[38.125rem]">
                     <img src="<?php echo $item['image']['url']; ?>" alt="image" class="h-full w-full object-cover">
                 </div>
 
@@ -165,59 +165,4 @@
     </div>
 </div>
 <!-- other end -->
-
-<!-- view -->
-<?php 
-    $view_background = get_field('view_background');
-    $view_title = get_field('view_title'); 
-    $view_description = get_field('view_description'); 
-    $view_image = get_field('view_image'); 
-    $view_button = get_field('view_button'); 
-?>
-<div class="w-full bg-white py-[10.625rem] relative ">
-    <?php if(!empty($view_background)) : ?>
-    <img src="<?php echo $view_background['url'] ?>" alt="<?php echo $view_background['alt'] ?>" class="absolute w-full h-full top-0 left-0 max-md:hidden">
-    <?php endif; ?>
-
-    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 8.svg'?>" alt="" class="absolute top-[19%] right-0 select-none max-md:hidden" draggable="false">
-
-    <div class="flex flex-row-reverse gap-28 justify-start items-center h-full px-[11.25rem] pl-[8.5rem] max-md:px-0 max-md:flex-col-reverse">
-        <div class="flex flex-col gap-[4.1875rem] flex-1 w-[57%] z-0 items-start max-md:px-[2.1875rem] max-md:w-full">
-            <div class="flex flex-col gap-7 items-start">
-                <h2 class="text-5xl font-normal text-white font-caudex italic text-start leading-[3.5rem] max-md:text-[#1c2126]">
-                    <?php echo $view_title ?? '';  ?>
-                </h2>
-
-                <span class="text-start font-lato text-lg text-white font-light leading-7 max-w-[31rem] italic max-md:text-[#1c2126]">
-                    <?php echo $view_description ?? '';  ?>
-                </span>
-            </div>
-            
-            <?php if(!empty($view_button) && $view_button['is_enable'] && $view_button['text']) : ?>
-                <?php if(!empty($view_button['url'])) : ?>
-                <a href="<?php echo $view_button['url']['url']; ?>">
-                <?php endif; ?>
-            <button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-white rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                <span class="text-white text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300"><?php echo $view_button['text']; ?></span>
-                
-                <?php if(!empty($view_button['icon'])) : ?>
-                <div class="group-hover:animate-bounce">
-                    <img src="<?php echo $view_button['icon']['url']; ?>" alt="<?php echo $view_button['icon']['alt']; ?>" class="transition duration-300 group-hover:scale-x-150 group-hover:translate-x-3">
-                </div>
-                <?php endif; ?>
-            </button>
-                <?php if(!empty($view_button['url'])) : ?>
-                </a>
-                <?php endif; ?>
-            <?php endif; ?>
-        </div>
-        
-        <?php if(!empty($view_image)) : ?>
-        <div class="flex-1 z-0">
-            <img src="<?php echo $view_image['url']; ?>" alt="<?php echo $view_image['alt']; ?>" class="h-full w-full object-cover text-white">
-        </div>
-        <?php endif; ?>
-    </div>
-</div>
-<!-- view end -->
 <?php get_footer(); ?>
