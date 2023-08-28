@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php /* Template Name: Page Home */ ?>
 
-<!-- header -->
+<!-- header --> 
 <?php
 	$header_button = get_field('header_button', 'home-page');
 	$header_background = get_field('header_background', 'home-page');
