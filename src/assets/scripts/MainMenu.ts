@@ -43,7 +43,7 @@ export default class MainMenu {
             menu.classList.remove('hidden');
 			
 			if(closeMobButton !== null && mainMenuButton !== null) {
-				if (window.innerWidth < 768) {
+				if (window.innerWidth < 770) {
 					mainMenuButton.classList.add('hidden');
 					closeMobButton.classList.remove('hidden'); // Скрываем элемент на маленьких экранах
 				}
@@ -66,7 +66,7 @@ export default class MainMenu {
             menu.classList.add('hidden');
 
 			if(closeMobButton !== null && mainMenuButton !== null) {
-				if (window.innerWidth < 768) {
+				if (window.innerWidth < 770) {
 
 					mainMenuButton.classList.remove('hidden');
 					closeMobButton.classList.add('hidden'); // Скрываем элемент на маленьких экранах
