@@ -196,9 +196,9 @@
 	<div id="stayFormWrapper" class="fixed top-0 left-0 w-full h-full flex justify-center items-center after:content-normal after:absolute after:bg-black after:opacity-50 after:w-full after:h-full after:top-0 after:left-0 overflow-auto py-[100vh] z-50 hidden">
 		<div id="stayForm" class="bg-white px-[5rem] py-[5.625rem] flex flex-col gap-[3.125rem] max-w-[46.875rem] rounded-3xl z-50 scale-[0.7]">
 			<?php 
-				$num = 11; // 2
+				$num = 6; // 11
 				if(pll_current_language() == 'ar') {
-					$num = 12; // 4
+					$num = 4; // 12
 				}
 				echo do_shortcode("[ninja_form id=$num]");
 			?>
