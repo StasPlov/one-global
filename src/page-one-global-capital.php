@@ -46,9 +46,7 @@
     $about_description = get_field('about_description');
     $about_image = get_field('about_image');
 ?>
-<div class="w-full min-h-screen bg-white relative">
-	
-
+<div class="w-full bg-white relative">
     <div class="flex py-[11.25rem] gap-28 h-full max-md:flex-col-reverse max-md:py-[6.25rem]">
         <div class="hidden flex-col gap-7 max-md:flex px-[2.1875rem] max-md:items-center"  data-animation="animate-fadeInRight" data-duration="1.5s">
             <span class="font-lato rtl:font-droidSansArabic font-light text-lg leading-7 text-[#1C2126] text-start max-w-[33.875rem]">
@@ -109,9 +107,7 @@
     $optimal_returns_title = get_field('optimal_returns_title');
     $optimal_returns_items = get_field('optimal_returns_items'); 
 ?>
-<div class="min-h-screen w-full relative">
-	
-
+<div class="w-full relative">
     <div class="flex flex-col -z-0">
         <div class="flex w-full pt-[9.375rem] px-[11.25rem] items-center relative max-md:px-[2.1875rem] max-md:py-[6.25rem] max-md:justify-center">
             <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 8 (2).svg'?>" alt="" class="absolute top-0 left-0 select-none max-md:hidden z-10" draggable="false">
@@ -122,7 +118,7 @@
 
             <!-- info block -->
             <?php foreach($optimal_returns_items as $item ): ?>
-            <div class="w-full min-h-screen bg-white relative max-md:min-h-max">
+            <div class="w-full bg-white relative max-md:min-h-max">
                 <?php if(!empty($item['use_background_effects'])) : ?>
                 <img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse 7.svg'?>" alt="" class="absolute bottom-[15%] right-0 select-none z-0 max-md:hidden" draggable="false">
                 <?php endif; ?>
@@ -201,12 +197,10 @@
     $investing_title = get_field('investing_title'); 
     $investing_button = get_field('investing_button'); 
 ?>
-<div class="w-full min-h-screen bg-white py-[10.625rem] relative">
-	
-
+<div class="w-full bg-white py-[10.625rem] relative">
     <div class="flex gap-28 justify-start items-center h-full max-md:flex-col">
         <div class="flex-1 z-0 pl-[5.375rem] max-md:p-0">
-            <img src="<?php echo $investing_image['url']; ?>" alt="<?php echo $investing_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]">
+            <img src="<?php echo $investing_image['url']; ?>" alt="<?php echo $investing_image['alt']; ?>" class="h-full max-2xl:max-h-[50vh]">
         </div>
 
         <div class="flex flex-1 w-[57%] z-0 items-start max-md:px-[2.1875rem] max-md:max-w-none max-md:w-full max-md:justify-center">

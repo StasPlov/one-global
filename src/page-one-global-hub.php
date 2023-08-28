@@ -99,12 +99,12 @@
     $what_does_description_two = get_field('what_does_description_two');
 ?>
 <div class="w-full bg-black relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_2.svg'; ?>" alt="" class="absolute top-[19%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_3.svg'; ?>" alt="" class="absolute top-[45%] left-0 select-none" draggable="false">
     
     <div class="flex flex-col gap-[18.75rem] py-[12.5rem] z-0 max-md:py-[6.25rem] max-md:gap-[9.375rem]">
         <div class="flex flex-col gap-[12.5rem] px-[11.25rem] max-md:px-[35px] max-md:gap-[6.25rem]">
-            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-lg:grid-cols-2 z-10 max-lg:self-center">
+            <div class="gap-14 max-md:flex-col max-md:gap-[6.25rem] grid grid-cols-3 grid-flow-row max-md:grid-cols-1 max-xl:grid-cols-2 z-10 max-lg:self-center">
                 <?php if(!empty($what_does_items)) : ?>
                 <?php foreach ($what_does_items as $item) : ?>
                 <div class="flex flex-col gap-[1.375rem] flex-1">
@@ -148,8 +148,8 @@
     $business_accelerator_map_mobile = get_field('business_accelerator_map_mobile');
 ?>
 <div class="w-full min-h-screen bg-white pt-[20rem] pb-[15.125rem] relative overflow-hidden max-md:py-[6.25rem]">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_5.svg'; ?>" alt="" class="absolute top-[1%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse_orange_6.svg'; ?>" alt="" class="absolute top-[46%] left-[6%] select-none" draggable="false">
 
     <div class="flex flex-col gap-[15.3125rem]">
         <div class="flex flex-col gap-[10.625rem] z-0">
@@ -208,7 +208,7 @@
     $success_stories_items = get_field('success_stories_items');
 ?>
 <div class="w-full min-h-screen bg-black relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 4.svg'?>" alt="" class="absolute top-0 left-0 select-none" draggable="false">
 
     <div class="flex flex-col gap-[8.125rem] py-[10.625rem] z-0 ">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem]">
@@ -223,12 +223,12 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-phoneX:flex max-phoneX:flex-col max-lg:grid-cols-2">
+        <div class="grid grid-cols-3 gap-12 px-[11.25rem] z-0 max-md:px-[2.1875rem] max-phoneX:flex max-phoneX:flex-col max-lg:grid-cols-2 items-start">
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
                 <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg">
-                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1 object-contain">
+                    <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1">
                 </div>
 
                 <div class="flex flex-col gap-10 items-start">
@@ -295,8 +295,8 @@
             </div>
         </div>
 
-        <div class="flex-1 z-0 pr-[5.375rem] max-md:p-0">
-            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>" class="h-full w-full object-cover max-h-[46.5625rem]">
+        <div class="flex-1 z-0 pr-[5.375rem] max-lg:p-0 max-lg:max-w-[70vh]">
+            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>" class="h-full">
         </div>
     </div>
 </div>

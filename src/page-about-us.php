@@ -14,12 +14,12 @@
             <img src="<?php echo $about_image['url']; ?>" alt="<?php echo $about_image['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-screen" draggable="false">  
             
             <div class="flex w-full h-full max-md:flex-col max-md:gap-20 absolute top-0 left-0 items-center px-[11.25rem] bg-black/20 max-md:px-[2.1875rem] max-md:justify-center max-md:items-start"  data-animation="animate-fadeInLeft" data-duration="2.5s">
-                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:relative max-md:text-start">
+                <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:relative max-md:text-start leading-none">
                     <?php echo $about_image_title; ?>
                 </span>
 
-                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden max-md:block text-start"  data-animation="animate-fadeInRight" data-duration="2.5s">
-                    <?php echo $about_description; ?>
+                <h2 class="text-white font-lato rtl:font-droidSansArabic text-3xl hidden text-start max-md:flex"  data-animation="animate-fadeInRight" data-duration="2.5s">
+                    <?php echo $about_title; ?>
                 </h2>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <?php foreach ($history_items as $key => $item) : $n = 15 * $key; ?>
         <div class="flex flex-col gap-7"  data-animation="animate-fadeInLeft" data-duration="2s" style="<?php echo ((pll_current_language() != 'ar') ? 'margin-left:'.$n.'%' : 'margin-right:'.$n.'%'); ?>">
             <div class="flex flex-col gap-4">
-                <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start"><?php echo $item['title']; ?></h2>
+                <h2 class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[3.75rem] italic font-normal text-start leading-none"><?php echo $item['title']; ?></h2>
                 <span class="text-[#1C2126] font-caudex rtl:font-droidSansArabic text-[2.5rem] italic font-normal text-start"><?php echo $item['year']; ?></span>
             </div>
 
@@ -198,7 +198,7 @@
     <div class="px-[11.25rem] py-[8.125rem] grid grid-cols-2 max-phoneX:px-[2.1875rem] max-lg:px-[3.125rem] max-md:flex max-md:flex-col">
         <div class="flex flex-col gap-14 z-0">
             <div class="flex flex-col gap-6">
-                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-[4rem] font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
+                <h2 class="text-white font-caudex rtl:font-droidSansArabic text-[4rem] italic leading-tight font-normal text-start"  data-animation="animate-fadeInLeft" data-duration="2s">
                     <?php echo $geography_title;?>
                 </h2>
 
@@ -239,7 +239,7 @@
         </div>
         
         <?php if(!empty($geography_map)) : ?>
-        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%]" draggable="false"  data-animation="animate-fadeInRight" data-duration="4s">
+        <img src="<?php echo $geography_map['url']; ?>" alt="<?php echo $geography_map['alt']; ?>" class="absolute w-full h-[33.3125rem] top-[14%] left-[18%] select-none max-md:relative max-md:left-0 rtl:left-[-20%] max-xl:h-[22rem]" draggable="false"  data-animation="animate-fadeInRight" data-duration="4s">
         <?php endif; ?>
     </div>
 </div>
@@ -311,12 +311,12 @@
 <?php 
     $subscribe_background = get_field('subscribe_background');
 ?>
-<div class="min-h-screen w-full relative bg-black overflow-hidden">
+<div class="min-h-screen w-full relative bg-black overflow-hidden max-lg:max-h-min">
 	<?php if(!empty($subscribe_background)) : ?>
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0"  draggable="false">
 	<?php endif; ?>
 
-    <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem]">
+    <div class="flex h-screen items-center justify-center max-md:px-[2.1875rem] max-lg:h-min max-lg:py-[6.25rem]">
         <div class="flex flex-col gap-12 items-center z-10">
 			<?php 
 				$num = 10; // 6

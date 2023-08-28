@@ -5,6 +5,7 @@
 <?php
 	$header_button = get_field('header_button', 'home-page');
 	$header_background = get_field('header_background', 'home-page');
+	$headerAnimTextData = get_field('header_animation_text', 'home-page');
 ?>
 <div class="relative w-full h-screen" id="scroll-trigger2">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
@@ -46,34 +47,34 @@
 			<?php endif; ?>
 			
         </div>
-
-        <div class="text-white max-lg:hidden">
-            <?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
-            <?php if($headerAnimTextData['isenable']) : ?>
-            <div class="fixed max-w-min text-start transition-all <?php echo ((pll_current_language() == 'ar') ? 'scroll-animation-move-ar' : 'scroll-animation-move' ); ?>" style="<?php echo ((pll_current_language() == 'ar') ? 'left: 20%;' : 'right: 20%;' ); ?> top: 42%;">
-                <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
-            </div>
-            <?php endif ?>
-        </div>
     </div>
 </div>
 <!-- header end -->
 
 <!-- wee inovate -->
-<div class="relative w-full h-screen relative" id="stopAnimTrigger">
-	<div class="absolute w-full h-full flex items-center justify-center z-[1] overflow-hidden">
-		<img src="<?php echo get_template_directory_uri().'/assets/images/Ellipse2.svg'; ?>" alt="" id="stopAnimTriggerClose" class="absolute w-full h-screen scroll-animation-scale -scale-100">
+<?php 
+	$headerAnimTextData = get_field('header_animation_text', 'home-page'); 
+?>
+<div class="relative w-full h-[300vh] flex items-center justify-center top-[41%] bg-white" id="anim-trigger">
+	<div class="absolute flex items-center justify-center top-[10%] z-[1] overflow-hidden w-[20rem] h-[20rem]" id="anim-element-two">
+		<img src="<?php echo get_template_directory_uri().'/assets/Icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
 
-	<div class="hidden text-white max-lg:flex">
-		<?php $headerAnimTextData = get_field('header_animation_text', 'home-page'); ?>
-		
-		<?php if($headerAnimTextData['isenable']) : ?>
-		<div class="absolute max-w-min text-start transition-all scroll-animation-move-mobile">
-			<span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span>
-		</div>
-		<?php endif ?>
-	</div>
+    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%] select-none" id="anim-element">
+        <?php if($headerAnimTextData['isenable']) : ?>
+        <div class="max-w-min text-start transition-all">
+            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
+        </div>
+        <?php endif ?>
+    </div>
+
+    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference select-none" style="top: 100%;" id="anim-elemen-mob" >
+        <?php if($headerAnimTextData['isenable']) : ?>
+        <div class="max-w-min text-start transition-all">
+            <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
+        </div>
+        <?php endif ?>
+    </div>
 </div>
 <!-- wee inovate end -->
 
@@ -89,7 +90,7 @@
             <img src="<?php echo $headerAboutBgData['image']['url']; ?>" alt="<?php echo $headerAboutBgData['image']['alt']; ?>" class="w-full h-full object-cover select-none max-md:h-[50vh]" draggable="false">  
             <?php endif ?>
             
-            <div class="flex w-full h-full absolute top-0 left-0 items-center bg-black/20 items-center justify-center">
+            <div class="flex w-full h-full absolute top-0 left-0 items-center bg-black/20 justify-center">
                 <span class="text-white z-0 text-[5rem] font-lato rtl:font-droidSansArabic absolute max-md:left-7">
                     <?php if(!empty($headerAboutBgData['text'])) : ?>
                     <?php echo $headerAboutBgData['text']; ?>
