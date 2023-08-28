@@ -1,6 +1,4 @@
 export default class MainMenu {
-	menuIsOpen: boolean = false;
-
     constructor() {
         this.initClick();
     }
@@ -11,52 +9,34 @@ export default class MainMenu {
             const element = event.target as HTMLElement;
 
             if(element.id === 'main-menu-button') {
-				this.changeSelectMenu('main-menu');
+                this.changeSelectMenu('main-menu');
             }
 
             if(element.id === 'main-menu-button-close') {
                 this.closeMenu('main-menu');
             }
 
-			if(element.id === 'main-menu-button-close-mobile') {
-				this.closeMenu('main-menu');
-			}
-
             if(element.id !== 'main-menu' && element.id !== 'main-menu-button') {
                 this.closeMenu('main-menu');
             }
         });
-	}
+    }
 
     openMenu(id: string): void {
         const menu = document.getElementById(id);
-		
-		const closeMobButton = document.getElementById("main-menu-button-close-mobile");
-		const mainMenuButton = document.getElementById('main-menu-button');
     
         if(menu === null) {
             return;
         }
-		
     
         if(menu.classList.contains('hidden')) {
             menu.classList.remove('hidden');
-			
-			if(closeMobButton !== null && mainMenuButton !== null) {
-				if (window.innerWidth < 770) {
-					mainMenuButton.classList.add('hidden');
-					closeMobButton.classList.remove('hidden'); // Скрываем элемент на маленьких экранах
-				}
-			}
             return;
         }
     }
     
     closeMenu(id: string): void {
         const menu = document.getElementById(id);
-
-		const closeMobButton = document.getElementById("main-menu-button-close-mobile");
-		const mainMenuButton = document.getElementById('main-menu-button');
     
         if(menu === null) {
             throw new Error(`menu not found for id: ${id}`);
@@ -64,14 +44,6 @@ export default class MainMenu {
     
         if(!menu.classList.contains('hidden')) {
             menu.classList.add('hidden');
-
-			if(closeMobButton !== null && mainMenuButton !== null) {
-				if (window.innerWidth < 770) {
-
-					mainMenuButton.classList.remove('hidden');
-					closeMobButton.classList.add('hidden'); // Скрываем элемент на маленьких экранах
-				}
-			}
             return;
         }
     }
@@ -85,11 +57,9 @@ export default class MainMenu {
     
         if(menu.classList.contains('hidden')) {
             this.openMenu(id);
-			this.menuIsOpen = true;
             return;
         }
-		
-		this.menuIsOpen = false;
+    
         this.closeMenu(id);
     }
 }
