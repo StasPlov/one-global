@@ -311,7 +311,7 @@
 <?php 
     $subscribe_background = get_field('subscribe_background');
 ?>
-<div class="min-h-screen w-full relative bg-black overflow-hidden max-lg:min-h-min">
+<div class="min-h-screen w-full relative bg-black overflow-hidden max-lg:max-h-min">
 	<?php if(!empty($subscribe_background)) : ?>
     <img src="<?php echo $subscribe_background['url']; ?>" alt="<?php echo $subscribe_background['alt']; ?>" class="absolute w-full h-full top-0 left-0"  draggable="false">
 	<?php endif; ?>

@@ -68,7 +68,7 @@
         <?php endif ?>
     </div>
 
-    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference" style="top: 100%;" id="anim-elemen-mob" >
+    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference select-none" style="top: 100%;" id="anim-elemen-mob" >
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
