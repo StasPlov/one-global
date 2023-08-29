@@ -66,9 +66,9 @@
 			<div class="shadow-2xl rounded-xl px-[5.25rem] py-[4.625rem] max-md:rounded-none">
                 <div class="flex flex-col gap-11 items-center justify-center max-w-[26.25rem] w-full">
 					<?php
-						$num = 2; // 13
+						$num = 13; // 1
 						if(pll_current_language() == 'ar') {
-							$num = 3; // 9
+							$num = 9; // 3
 						}
 						echo do_shortcode("[ninja_form id=$num]"); 
 					?>

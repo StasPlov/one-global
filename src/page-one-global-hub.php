@@ -11,7 +11,7 @@
 <div class="relative w-full h-screen overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background)) : ?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto" poster="<?php echo get_template_directory_uri().'/assets/images/b_image.webp'; ?>">
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -296,7 +296,7 @@
         </div>
 
         <div class="flex-1 z-0 pr-[5.375rem] max-lg:p-0 max-lg:max-w-[70vh]">
-            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>" class="h-full">
+            <img src="<?php echo $ready_image['url']; ?>" alt="<?php echo $ready_image['alt']; ?>">
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@
 <div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background)) : ?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto" poster="<?php echo get_template_directory_uri().'/assets/images/b_image.webp'; ?>">
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>

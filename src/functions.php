@@ -396,3 +396,30 @@ function handle_load_more() {
 }
 add_action('wp_ajax_load_more', 'handle_load_more');
 add_action('wp_ajax_nopriv_load_more', 'handle_load_more');
+
+/**
+ * Override the default WordPress video shortcode,
+ * injecting the post thumbnail as a poster frame
+ * unless one has explicitly been set.
+ *
+ * @param array $attr The shortcode attributes
+ * @param str $content Content enclosed between open
+ *                     and closing shortcode tags.
+ * @return str
+ */
+function grunwell_video_embed( $attr, $content='' ) {
+	if ( ! isset( $attr['poster'] ) && has_post_thumbnail() ) {
+	  /*
+	   * This uses a custom, 16:9 image size named 'poster'
+	   * but could be any size.
+	   */
+	  $poster = wp_get_attachment_image_src(
+		get_post_thumbnail_id(),
+		'poster'
+	  );
+	  $attr['poster'] = $poster['0'];
+	}
+  
+	return wp_video_shortcode( $attr, $content );
+  }
+  add_shortcode( 'video', 'grunwell_video_embed' );

@@ -49,7 +49,7 @@ Text Domain: one global
 	color: #1C2126!important;
 	outline: 0!important;
 }
-.contac-form-submit {
+.contac-form-submit, .nf-fu-fileinput-button {
 	display: flex!important;
 	padding-left: 2.625rem!important;
 	padding-right: 2.625rem!important;
@@ -168,35 +168,6 @@ html[dir="rtl"] .stayconnected-form-checkbox {
 	margin-left: auto!important;
 	margin-right: auto!important;
 }
-
-html[dir="rtl"] select.ninja-forms-field {
-	direction: ltr;
-}
-
-html[dir="rtl"] .nf-error.field-wrap .nf-field-element::after {
-	left: 1px!important;
-	right: auto!important;
-}
-
-html[dir="rtl"] .nf-pass.field-wrap .nf-field-element::after {
-	left: 7px!important;
-	right: auto!important;
-}
-
-.career-title-blur::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    pointer-events: none;
-    content: " ";
-    filter: blur(5rem);
-    border: 4.8rem solid;
-    border-image-source: linear-gradient(180deg, #057eed 100%, #00ffff00 47.08%);
-    transition: all var(--animation-duration) var(--animation-timing-function);
-    transform: translate(-50%);
-    z-index: -1;
-}
-
 
 @keyframes flicker {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {
