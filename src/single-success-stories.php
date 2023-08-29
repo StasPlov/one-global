@@ -118,8 +118,8 @@
     $success_stories_items = get_field('success_stories_items');
 ?>
 <div class="w-full bg-white relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
 
     <div class="flex flex-col gap-[8.125rem] pb-[10.625rem] z-0">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-lg:px-[3.125rem] max-phoneX:px-[2.1875rem]">
