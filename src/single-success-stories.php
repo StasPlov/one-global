@@ -145,7 +145,7 @@
                     
                     <?php if(!empty($item['button']) && $item['button']['is_enable'] && !empty($item['button']['text'])) : ?>
                     <?php if(!empty($item['button']['url'])) : ?>
-                    <a href="<?php echo $item['button']['url']; ?>" class="cursor-default">
+                    <a href="<?php echo $item['button']['url']['url']; ?>" class="cursor-default">
                     <?php endif; ?>
 					<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
 						<?php if(!empty($item['button']['icon'])) : ?>

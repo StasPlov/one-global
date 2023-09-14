@@ -227,7 +227,7 @@
             <?php if(!empty($success_stories_items)) : ?>
             <?php foreach ($success_stories_items as $item) : ?>
             <div class="flex flex-col gap-8 transition-all duration-500 hover:scale-105">
-                <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg">
+                <div class="bg-black/20 flex drop-shadow-[0rem_0rem_6.25rem_#ff85004d] overflow-hidden rounded-lg h-[22vw] max-phoneX:h-[21.875rem] max-md:h-[45vw]">
                     <img src="<?php echo $item['image']['url']; ?>" alt="image" class="flex-1">
                 </div>
 

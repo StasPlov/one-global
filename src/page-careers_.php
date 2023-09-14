@@ -114,35 +114,47 @@
                 </div>
             </div>
 
+			<?php
+				$carrers_category = get_terms('carrers-category');
+				$carrers_job_type = get_terms('carrers-job-type');
+				$carrers_location = get_terms('carrers-location');
+
+				/* hardcode arabic language =) */
+				$keywords = 'Keywords';
+				$allCategories = 'All Categories';
+				$allJobTypes = 'All Job Types';
+				$allLocations = 'All Locations';
+
+				if(pll_current_language() == 'ar') {
+					$keywords = 'كلمات البحث';
+					$allCategories = 'جميع الأقسام';
+					$allJobTypes = 'جميع الوظائف';
+					$allLocations = 'جميع الدول';
+				}
+			?>
             <div class="col-span-2 row-start-3 max-h-[26.875rem]">
                 <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
-                        <input type="text" name="search" id="inputSearch" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                        <input type="text" name="search" id="inputSearch" placeholder="<?php echo $keywords; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
-                        <div class="flex gap-5 w-full">
-                            <?php
-                                $carrers_category = get_terms('carrers-category');
-                                $carrers_job_type = get_terms('carrers-job-type');
-                                $carrers_location = get_terms('carrers-location');
-                            ?>
-                            
+                        <div class="flex gap-5 w-full">                            
                             <select name="carrers_category" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                                <option value="" selected>All Categories</option>
+                                <option value="" selected><?php echo $allCategories; ?></option>
                                 <?php foreach ($carrers_category as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
                                 <?php endforeach; ?>
                             </select>
 
                             <select name="carrers_job_type" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                                <option value="" selected>All Job Types</option>
+                                <option value="" selected><?php echo $allJobTypes; ?></option>
                                 <?php foreach ($carrers_job_type as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
                                 <?php endforeach; ?>
                             </select>
 
                             <select name="carrers_location" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                                <option value="" selected>All Locations</option>
+                                <option value="" selected><?php echo $allLocations; ?></option>
                                 <?php foreach ($carrers_location as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
                                 <?php endforeach; ?>
