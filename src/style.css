@@ -49,7 +49,7 @@ Text Domain: one global
 	color: #1C2126!important;
 	outline: 0!important;
 }
-.contac-form-submit {
+.contac-form-submit, .nf-fu-fileinput-button {
 	display: flex!important;
 	padding-left: 2.625rem!important;
 	padding-right: 2.625rem!important;

@@ -10,7 +10,7 @@
 <div class="relative w-full h-screen" id="scroll-trigger2">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background['video'])) :?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto" poster="<?php echo get_template_directory_uri().'/assets/images/b_image.webp'; ?>">
             <source src="<?php echo $header_background['video']['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -60,7 +60,7 @@
 		<img src="<?php echo get_template_directory_uri().'/assets/Icons/pic-grad-circle.svg'; ?>" alt="" class="w-full h-screen">
 	</div>
 
-    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%] select-none" id="anim-element">
+    <div class="text-white fixed right-[20%] top-[41%] rtl:right-auto rtl:left-[20%] max-lg:hidden max-xl:right-[10%] max-2xl:right-[15%] select-none max-w-min" id="anim-element">
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic"><?php echo $headerAnimTextData['text']; ?></span> 
@@ -68,7 +68,7 @@
         <?php endif ?>
     </div>
 
-    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference" style="top: 100%;" id="anim-elemen-mob" >
+    <div class="hidden text-white text-center justify-center fixed max-lg:flex mix-blend-difference select-none" style="top: 100%;" id="anim-elemen-mob" >
         <?php if($headerAnimTextData['isenable']) : ?>
         <div class="max-w-min text-start transition-all">
             <span class="italic text-5xl font-caudex rtl:font-droidSansArabic max-phoneX:text-2xl"><?php echo $headerAnimTextData['text']; ?></span> 
@@ -342,7 +342,7 @@
 <?php $headerOurServicesFourData = get_field('our_service_four', 'home-page'); ?>
 
 <div class="w-full overflow-hidden relative">
-    <div class="flex flex-col justify-center px-[11.25rem] pt-[15.625rem] pb-[17.5rem] max-md:px-[2.1875rem] max-md:py-[6.25rem]">
+    <div class="flex flex-col justify-center px-[11.25rem] py-[6.25rem] max-md:px-[2.1875rem]">
         <?php if(!empty($headerOurServicesTitleData)) : ?>
         <h2 class="font-lato rtl:font-droidSansArabic font-medium text-[5rem] text-start w-full max-md:leading-none"  data-animation="animate-fadeInLeft" data-duration="2s"><?php echo $headerOurServicesTitleData; ?></h2>
         <?php endif; ?>

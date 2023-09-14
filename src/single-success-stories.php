@@ -9,7 +9,7 @@
 <div class="relative w-full h-[calc(100vh-var(--header-menu-height))] overflow-hidden">
     <div class="px-[11.25rem] w-full h-full flex items-center justify-start max-md:px-[2.1875rem]">
 		<?php if(!empty($header_background)) : ?>
-        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto">
+        <video class="absolute w-full h-full object-cover top-0 left-0" autoplay loop muted playsinline preload="auto" poster="<?php echo get_template_directory_uri().'/assets/images/b_image.webp'; ?>">
             <source src="<?php echo $header_background['url']; ?>" type="video/mp4">
         </video>
         <?php endif; ?>
@@ -118,8 +118,8 @@
     $success_stories_items = get_field('success_stories_items');
 ?>
 <div class="w-full bg-white relative">
-    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
-    <img src="<?php echo get_template_directory_uri().'/assets/icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 8.svg'?>" alt="" class="absolute top-[40%] right-0 select-none" draggable="false">
+    <img src="<?php echo get_template_directory_uri().'/assets/Icons/Ellipse 9.svg'?>" alt="" class="absolute top-[-10%] left-0 select-none" draggable="false">
 
     <div class="flex flex-col gap-[8.125rem] pb-[10.625rem] z-0">
         <div class="flex flex-col gap-[4.625rem] px-[11.25rem] z-0 max-md:px-[2.1875rem] max-lg:px-[3.125rem] max-phoneX:px-[2.1875rem]">
@@ -145,7 +145,7 @@
                     
                     <?php if(!empty($item['button']) && $item['button']['is_enable'] && !empty($item['button']['text'])) : ?>
                     <?php if(!empty($item['button']['url'])) : ?>
-                    <a href="<?php echo $item['button']['url']; ?>" class="cursor-default">
+                    <a href="<?php echo $item['button']['url']['url']; ?>" class="cursor-default">
                     <?php endif; ?>
 					<button class="relative flex gap-2 justify-between items-center pl-11 pr-9 py-3 border border-solid border-[#1c2126] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
 						<?php if(!empty($item['button']['icon'])) : ?>

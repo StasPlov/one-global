@@ -8,6 +8,7 @@ export default class CareersFilter {
 	careersFilter: HTMLElement | null = null;
 	careersFilterMob: HTMLElement | null = null;
 	careersList: HTMLElement | null = null;
+	careersClearButton : HTMLElement | null = null;
 	isSendingForm: boolean = false;
 
 	constructor() {
@@ -17,6 +18,7 @@ export default class CareersFilter {
 	init() {
 		this.careersFilter = document.getElementById('careersFilter');
 		this.careersFilterMob = document.getElementById('careersFilterMob');
+		this.careersClearButton = document.getElementById('clearFilterButton');
 
 		this.careersList = document.getElementById('careers-list');
 
@@ -33,6 +35,7 @@ export default class CareersFilter {
 				this.filtering(this.careersFilterMob)
 			});
 		}
+
 	}
 
 	async send(url: string, formData: any) {
@@ -42,6 +45,22 @@ export default class CareersFilter {
 	async filtering(filter: HTMLElement|null) {
 		if(filter === null) {
 			return;
+		}
+
+		if (this.careersClearButton !== null) {
+			this.careersClearButton.addEventListener('click', (e) => {
+				e.preventDefault(); 
+
+				const inputSearch = document.getElementById('inputSearch') as HTMLInputElement;
+				if(inputSearch !== null) {
+					inputSearch.value = '';
+				}
+
+				const submitButton = document.querySelector('[type="submit"]') as HTMLInputElement;
+				if(submitButton !== null) {
+					submitButton.click();
+				}
+			});
 		}
 
 		filter.addEventListener('submit', async (event) => {

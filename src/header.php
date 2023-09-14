@@ -47,13 +47,13 @@
 
 				<div class="flex flex-1 justify-center">
 					<span class="text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90 hidden" id="main-menu-button-close-mobile">✕</span>
-					<img src="<?php echo get_template_directory_uri() . '/assets/icons/menu_burger.svg'; ?>" alt="menu icon" class="min-w-[1.875rem]" id="main-menu-button">
+					<img src="<?php echo get_template_directory_uri() . '/assets/Icons/menu_burger.svg'; ?>" alt="menu icon" class="min-w-[1.875rem]" id="main-menu-button">
 				</div>
 			</div>
 		</nav>
 
 		<!-- menu -->
-		<div class="bg-black/80 absolute max-w-[calc(100%/2)] right-0 w-full h-[37.5rem] max-md:max-w-none max-md:h-screen flex max-md:flex-col max-md:justify-between hidden rtl:right-auto rtl:left-0 z-30" id="main-menu">
+		<div class="bg-black/80 absolute max-w-[calc(100%/2)] right-0 w-full h-[37.5rem] max-md:max-w-none max-md:h-[calc(100vh-var(--header-menu-height)-env(safe-area-inset-bottom))] flex max-md:flex-col max-md:justify-between hidden rtl:right-auto rtl:left-0 z-30" id="main-menu">
 			<div class="flex flex-col gap-24 py-14 px-28 w-full max-md:py-9 max-md:px-16">
 				<div class="flex justify-end max-md:hidden rtl:justify-start">
 					<span class="text-white text-4xl opacity-50 z-0 cursor-pointer transition-all hover:rotate-180 hover:opacity-90" id="main-menu-button-close">✕</span>
@@ -75,17 +75,17 @@
 			<?php
 			$menu_login_items = get_field('menu_login_items', 'general-settings');
 			?>
-			<div class="hidden flex-col w-full mb-[var(--header-menu-height)] max-md:flex">
+			<div class="hidden flex-col w-full max-md:flex">
 				<div class="flex justify-center">
-					<div class="flex gap-8">
-						<?php foreach (pll_the_languages(['raw' => true]) as $item) : ?>
-							<a href="<?php echo $item['url']; ?>" class="first:border-r first:border-solid first:border-white first:pr-4 first:rtl:border-r-0 first:rtl:border-l first:rtl:border-solid first:rtl:border-white first:rtl:pl-4">
-								<div class="flex gap-3 min-w-max items-center">
-									<span class="text-sm text-white capitalize rtl:text-lg"><?php echo $item['slug'];  ?></span>
-								</div>
+					<ul class="flex gap-8">
+					<?php foreach (pll_the_languages(['raw' => true]) as $item) : ?>
+						<li class="flex first:gap-5 first:after:border-r first:after:border-solid first:after:border-[#c4c4c44d]">
+							<a href="<?php echo $item['url']; ?>" class="p-5 text-sm text-white/80 leading-tight font-lato rtl:font-droidSansArabic capitalize font-medium rtl:text-lg">
+								<?php echo $item['slug'];  ?>
 							</a>
-						<?php endforeach; ?>
-					</div>
+						</li>
+					<?php endforeach; ?>
+					</ul>
 				</div>
 
 				<?php if (!empty($menu_login_items)) : ?>

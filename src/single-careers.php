@@ -144,9 +144,9 @@
 
             <div class="shadow-2xl px-[8.125rem] py-[10.625rem] max-md:rounded-none z-10 bg-white max-md:bg-transparent max-md:px-[2.1875rem] max-w-[42.625rem]">
                 <?php 
-                    $num = 9; // 11
+                    $num = 14; // 9 dev
                     if(pll_current_language() == 'ar') {
-                        $num = 10; // 12
+                        $num = 15; // 10 dev
                     }
                     echo do_shortcode("[ninja_form id=$num]");
                 ?>
