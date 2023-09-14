@@ -118,8 +118,7 @@
                 <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
-
-                        <input type="text" name="search" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
+                        <input type="text" name="search" id="inputSearch" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">
                             <?php
@@ -153,11 +152,7 @@
 
                     <div class="flex gap-5">
                         <?php if(!empty($clear_button) && $clear_button['is_enable']) : ?>
-                            <?php if(!empty($clear_button['url'])) : ?>
-                                <a href="<?php echo $clear_button['url']['url']; ?>" class="flex-[3]">
-                            <?php endif; ?>
-                        <button class="flex-[3] w-full relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
-                            
+                        <button id="clearFilterButton" class="flex-[3] w-full relative flex gap-2 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <?php if(!empty($clear_button['text'])) :?>
                             <span class="text-[#1C2126] text-sm font-medium font-lato rtl:font-droidSansArabic group-hover:text-white transition duration-300">
                                 <?php echo $clear_button['text']; ?>
@@ -171,9 +166,6 @@
                             <?php endif; ?>
 
                         </button>
-                            <?php if(!empty($clear_button['url'])) : ?>
-                                </a>
-                            <?php endif; ?>
                         <?php endif; ?>
                         
                         <?php if (!empty($search_button) && !empty($search_button['is_enable'])) : ?>
