@@ -170,8 +170,14 @@ html[dir="rtl"] .stayconnected-form-checkbox {
 }
 
 html[dir="rtl"] select.ninja-forms-field {
-	direction: ltr;
+	direction: rtl;
 }
+
+html[dir="rtl"] .nf-form-content .list-select-wrap > div div:after{
+	right: auto;
+	left: 0.625rem!important;
+}
+
 
 html[dir="rtl"] .nf-error.field-wrap .nf-field-element::after {
 	left: 1px!important;
