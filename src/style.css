@@ -203,6 +203,10 @@ html[dir="rtl"] .nf-pass.field-wrap .nf-field-element::after {
     z-index: -1;
 }
 
+#stayForm >:first-child {
+	align-self: flex-end;
+}
+
 
 @keyframes flicker {
 	0%, 18%, 22%, 25%, 53%, 57%, 100% {

@@ -133,14 +133,14 @@
 				}
 			?>
             <div class="col-span-2 row-start-3 max-h-[26.875rem]">
-                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
+                <form onsubmit="return false" class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilter" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
                         <input type="text" name="search" id="inputSearch" placeholder="<?php echo $keywords; ?>" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
 
                         <div class="flex gap-5 w-full">                            
                             <select name="carrers_category" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0 w-full">
-                                <option value="" selected><?php echo $allCategories; ?></option>
+                                <option value="" selected id="category"><?php echo $allCategories; ?></option>
                                 <?php foreach ($carrers_category as $key => $item) : ?>
                                     <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
                                 <?php endforeach; ?>
@@ -181,7 +181,7 @@
                         <?php endif; ?>
                         
                         <?php if (!empty($search_button) && !empty($search_button['is_enable'])) : ?>
-                        <button type="submit" class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                        <button id="filterSubmit" class="flex-[6.8] relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                             <div class="scale-[0.2] absolute grayscale contrast-200 left-0 hidden" id="loader">
                                 <div class="loader">
                                     <svg class="circular" viewBox="25 25 50 50">
@@ -259,7 +259,7 @@
                 </div>
             </div>
             <div class="max-md:py-[2.1875rem]">
-                <form class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilterMob" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
+                <form onsubmit="return false" class="flex flex-col justify-center px-[3.125rem] h-full w-full gap-[3.75rem] transition-all" id="careersFilterMob" data-endpoint="<?php echo admin_url('admin-ajax.php'); ?>">
                     <div class="flex flex-col gap-8 w-full">
                         <input type="text" name="post_id" hidden value="<?php echo get_the_ID(); ?>">
                         <input type="text" name="search" placeholder="Keywords" class="border-0 border-b border-solid border-[#1C2126] bg-transparent py-3 text-[#1C2126] outline-0">
@@ -315,7 +315,7 @@
                     </div>
 
                     <?php if (!empty($search_button) && !empty($search_button['is_enable'])) : ?>
-                    <button type="submit" class="relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
+                    <button id="filterSubmit" class="relative flex gap-4 justify-center items-center pl-11 pr-9 py-3 border border-solid border-[#1c212633] rounded-3xl transition duration-300 group hover:bg-[#1c2126] hover:border-transparent hover:after:opacity-100 cursor-pointer after:absolute after:transition after:duration-500 after:place-content-center after:pointer-events-none after:w-full after:h-full after:blur-[3.4375rem] after:bg-[#057eed] after:left-0 after:right-0 after:top-0 after:bottom-0 after:opacity-0">
                         <div class="scale-[0.2] absolute grayscale contrast-200 left-0 hidden" id="loader">
                             <div class="loader">
                                 <svg class="circular" viewBox="25 25 50 50">
